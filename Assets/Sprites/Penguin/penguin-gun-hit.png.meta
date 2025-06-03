@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin-gun-hit_0: 1915846450542192459
+      penguin-gun-hit_1: -5784226054022590014
+      penguin-gun-hit_2: 3031175351931308243
+      penguin-gun-hit_3: 8948013299282431170
+      penguin-gun-hit_4: -3983140304142022493
+      penguin-gun-hit_5: 4338527707735750133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
