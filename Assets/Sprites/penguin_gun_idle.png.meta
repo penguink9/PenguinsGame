@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin_gun_idle_0: -5569194456775923921
+      penguin_gun_idle_1: -6231474762864885848
+      penguin_gun_idle_2: 1605512931375631309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

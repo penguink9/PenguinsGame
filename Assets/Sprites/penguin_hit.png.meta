@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin_hit_0: 3122615935222633155
+      penguin_hit_1: 8787015254281294631
+      penguin_hit_2: 8998522231464581231
+      penguin_hit_3: 925446941876470096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

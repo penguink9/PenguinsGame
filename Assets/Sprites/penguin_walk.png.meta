@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin_walk_0: 8275566011659808873
+      penguin_walk_1: 105335059961995100
+      penguin_walk_2: -6281267248178329336
+      penguin_walk_3: -4660893041414596238
+      penguin_walk_4: -2424615477456869326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

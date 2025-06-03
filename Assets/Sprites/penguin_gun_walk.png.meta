@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin_gun_walk_0: 2268619522356211942
+      penguin_gun_walk_1: -7877902371779832101
+      penguin_gun_walk_2: -7919409846307161748
+      penguin_gun_walk_3: 3738248350847340255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
