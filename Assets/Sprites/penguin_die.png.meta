@@ -1,0 +1,2002 @@
+fileFormatVersion: 2
+guid: a640eec6a5f0d7247a3ec59966c2eb84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7438324337004809267
+    second: penguin_die_0
+  - first:
+      213: -2124643462884640204
+    second: penguin_die_1
+  - first:
+      213: 8640963335723596318
+    second: penguin_die_2
+  - first:
+      213: -3811393506091870776
+    second: penguin_die_3
+  - first:
+      213: 3704618512484648667
+    second: penguin_die_4
+  - first:
+      213: -1562652938242141624
+    second: penguin_die_5
+  - first:
+      213: 6349954844603083597
+    second: penguin_die_6
+  - first:
+      213: -8596946193511432031
+    second: penguin_die_7
+  - first:
+      213: 1529526303137363378
+    second: penguin_die_8
+  - first:
+      213: -3032450254023775671
+    second: penguin_die_9
+  - first:
+      213: -9028552156122654891
+    second: penguin_die_10
+  - first:
+      213: -2176351730473002588
+    second: penguin_die_11
+  - first:
+      213: 4104644134704904321
+    second: penguin_die_12
+  - first:
+      213: 9078741777526483142
+    second: penguin_die_13
+  - first:
+      213: 4892660460966045972
+    second: penguin_die_14
+  - first:
+      213: -809495231320623750
+    second: penguin_die_15
+  - first:
+      213: -871661659952247364
+    second: penguin_die_16
+  - first:
+      213: 8021008875087753793
+    second: penguin_die_17
+  - first:
+      213: 4505766964284922774
+    second: penguin_die_18
+  - first:
+      213: -5245571685745462298
+    second: penguin_die_19
+  - first:
+      213: -329739264792689886
+    second: penguin_die_20
+  - first:
+      213: -6402618865791072284
+    second: penguin_die_21
+  - first:
+      213: 1721184893306320070
+    second: penguin_die_22
+  - first:
+      213: 697173541330956411
+    second: penguin_die_23
+  - first:
+      213: 880282506357260247
+    second: penguin_die_24
+  - first:
+      213: 1562020780286687207
+    second: penguin_die_25
+  - first:
+      213: -6140431856376656953
+    second: penguin_die_26
+  - first:
+      213: 426577809557249272
+    second: penguin_die_27
+  - first:
+      213: 2200663997170567613
+    second: penguin_die_28
+  - first:
+      213: -4134602875938617391
+    second: penguin_die_29
+  - first:
+      213: 7966018590531742722
+    second: penguin_die_30
+  - first:
+      213: -4023009615474742581
+    second: penguin_die_31
+  - first:
+      213: -1675056694679312842
+    second: penguin_die_32
+  - first:
+      213: 586551231761021915
+    second: penguin_die_33
+  - first:
+      213: 1383824234149213232
+    second: penguin_die_34
+  - first:
+      213: -2070972943973618431
+    second: penguin_die_35
+  - first:
+      213: -704291999457733457
+    second: penguin_die_36
+  - first:
+      213: 5783701759813955538
+    second: penguin_die_37
+  - first:
+      213: -8222968233513662710
+    second: penguin_die_38
+  - first:
+      213: -7961246065870731309
+    second: penguin_die_39
+  - first:
+      213: -5250941502234776473
+    second: penguin_die_40
+  - first:
+      213: 3882681640794467021
+    second: penguin_die_41
+  - first:
+      213: 8131941363631387878
+    second: penguin_die_42
+  - first:
+      213: -3335612269566084443
+    second: penguin_die_43
+  - first:
+      213: 9140177419730607995
+    second: penguin_die_44
+  - first:
+      213: 2481320590024578874
+    second: penguin_die_45
+  - first:
+      213: -3541217899144439245
+    second: penguin_die_46
+  - first:
+      213: -5326591155217026346
+    second: penguin_die_47
+  - first:
+      213: 8593569012470122898
+    second: penguin_die_48
+  - first:
+      213: -133956760869971325
+    second: penguin_die_49
+  - first:
+      213: 8139761021827777571
+    second: penguin_die_50
+  - first:
+      213: -471511863856843269
+    second: penguin_die_51
+  - first:
+      213: -2971024203721268863
+    second: penguin_die_52
+  - first:
+      213: 7636389720748346657
+    second: penguin_die_53
+  - first:
+      213: 8825415717065993289
+    second: penguin_die_54
+  - first:
+      213: 7914508160929736343
+    second: penguin_die_55
+  - first:
+      213: 4369404106572855540
+    second: penguin_die_56
+  - first:
+      213: -8909057434862103491
+    second: penguin_die_57
+  - first:
+      213: -8829287668154650931
+    second: penguin_die_58
+  - first:
+      213: 1370144853756044629
+    second: penguin_die_59
+  - first:
+      213: 3994145400278767272
+    second: penguin_die_60
+  - first:
+      213: 4291408344859209291
+    second: penguin_die_61
+  - first:
+      213: 5769212331359404578
+    second: penguin_die_62
+  - first:
+      213: -1858317173089616481
+    second: penguin_die_63
+  - first:
+      213: 5376761742280450047
+    second: penguin_die_64
+  - first:
+      213: 7210563509659994338
+    second: penguin_die_65
+  - first:
+      213: -3571695494773224896
+    second: penguin_die_66
+  - first:
+      213: 428767417526124099
+    second: penguin_die_67
+  - first:
+      213: -2218160970542124584
+    second: penguin_die_68
+  - first:
+      213: -8915919696176224869
+    second: penguin_die_69
+  - first:
+      213: -3222045043588162174
+    second: penguin_die_70
+  - first:
+      213: -6705557197692697087
+    second: penguin_die_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: penguin_die_0
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c8057139c3a3760800000000000000
+      internalID: 7438324337004809267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_1
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ab7600700c382e0800000000000000
+      internalID: -2124643462884640204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 123
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1abafe3f5edae770800000000000000
+      internalID: 8640963335723596318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_3
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5d922ccc53b1bc0800000000000000
+      internalID: -3811393506091870776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_4
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6cbf0c8e2796330800000000000000
+      internalID: 3704618512484648667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 31
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8425bd49e67505ae0800000000000000
+      internalID: -1562652938242141624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b6654a9429f1850800000000000000
+      internalID: 6349954844603083597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_7
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0ca9e4cf281b880800000000000000
+      internalID: -8596946193511432031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_8
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b57e15a118f93510800000000000000
+      internalID: 1529526303137363378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_9
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94aaed18f829ae5d0800000000000000
+      internalID: -3032450254023775671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_10
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557d83a36a324b280800000000000000
+      internalID: -9028552156122654891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_11
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a999d6c1ab0cc1e0800000000000000
+      internalID: -2176351730473002588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_12
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188f97ad710a6f830800000000000000
+      internalID: 4104644134704904321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_13
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8e6f0ab8b2efd70800000000000000
+      internalID: 9078741777526483142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_14
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 23
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419ea7e44c836e340800000000000000
+      internalID: 4892660460966045972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_15
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 27
+        width: 82
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75f2c1406814c4f0800000000000000
+      internalID: -809495231320623750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_16
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd083aa65c37e3f0800000000000000
+      internalID: -871661659952247364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_17
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1427cd32319505f60800000000000000
+      internalID: 8021008875087753793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b94e27e23b78e30800000000000000
+      internalID: 4505766964284922774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_19
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 95
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e37b43185cf337b0800000000000000
+      internalID: -5245571685745462298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_20
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223888db2e78c6bf0800000000000000
+      internalID: -329739264792689886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_21
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e70f4860145527a0800000000000000
+      internalID: -6402618865791072284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_22
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 87
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4ba4e8a80e2e710800000000000000
+      internalID: 1721184893306320070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_23
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7035dd54abdca900800000000000000
+      internalID: 697173541330956411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_24
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df3a6d8644673c00800000000000000
+      internalID: 880282506357260247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_25
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e734ccaf996da510800000000000000
+      internalID: 1562020780286687207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_26
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb4d2192cdc8caa0800000000000000
+      internalID: -6140431856376656953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_27
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc59b7f1428be500800000000000000
+      internalID: 426577809557249272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_28
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9c75dee345a8e10800000000000000
+      internalID: 2200663997170567613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_29
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 75
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7ce542790fe96c0800000000000000
+      internalID: -4134602875938617391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_30
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c6dcac3bbfc8e60800000000000000
+      internalID: 7966018590531742722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_31
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcaa5adc1166b28c0800000000000000
+      internalID: -4023009615474742581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_32
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636effe9fc001c8e0800000000000000
+      internalID: -1675056694679312842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_33
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 71
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdbfea3dc39d32800800000000000000
+      internalID: 586551231761021915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_34
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0347a042fc4543310800000000000000
+      internalID: 1383824234149213232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_35
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10de107741d6243e0800000000000000
+      internalID: -2070972943973618431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_36
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa41c22782ad936f0800000000000000
+      internalID: -704291999457733457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_37
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df23807b16d34050800000000000000
+      internalID: 5783701759813955538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_38
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07c81275f522ed80800000000000000
+      internalID: -8222968233513662710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_39
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 63
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d78c4232e8f38190800000000000000
+      internalID: -7961246065870731309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_40
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ca0fe3688e027b0800000000000000
+      internalID: -5250941502234776473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_41
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 43
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca2c77816e02e530800000000000000
+      internalID: 3882681640794467021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_42
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 59
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4fd89d5957ad070800000000000000
+      internalID: 8131941363631387878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_43
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa341c405685b1d0800000000000000
+      internalID: -3335612269566084443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_44
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7fd61fbfee68de70800000000000000
+      internalID: 9140177419730607995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_45
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3717461eeb6f6220800000000000000
+      internalID: 2481320590024578874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_46
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a9d3935111bdec0800000000000000
+      internalID: -3541217899144439245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_47
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 47
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d23d89d0952416b0800000000000000
+      internalID: -5326591155217026346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_48
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29906157c7d724770800000000000000
+      internalID: 8593569012470122898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_49
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a55152907142ef0800000000000000
+      internalID: -133956760869971325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_50
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3248d96e58d36f070800000000000000
+      internalID: 8139761021827777571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_51
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 39
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf53e6f357ad479f0800000000000000
+      internalID: -471511863856843269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_52
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 31
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1812b165a3dc4c6d0800000000000000
+      internalID: -2971024203721268863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_53
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d46afddf7e9f960800000000000000
+      internalID: 7636389720748346657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_54
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c2edae5dc2a7a70800000000000000
+      internalID: 8825415717065993289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_55
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796a5205d3bf5dd60800000000000000
+      internalID: 7914508160929736343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_56
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8786482ed33ac30800000000000000
+      internalID: 4369404106572855540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_57
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 31
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34dd77177bac5480800000000000000
+      internalID: -8909057434862103491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_58
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcea7e735a1187580800000000000000
+      internalID: -8829287668154650931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_59
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55565f23c7bb30310800000000000000
+      internalID: 1370144853756044629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_60
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a650e4641e0e6730800000000000000
+      internalID: 3994145400278767272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_61
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 23
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4eea7d17252e8b30800000000000000
+      internalID: 4291408344859209291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_62
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2220b7c7c0c501050800000000000000
+      internalID: 5769212331359404578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_63
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d3cf9706ee536e0800000000000000
+      internalID: -1858317173089616481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_64
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff598a31581e9a40800000000000000
+      internalID: 5376761742280450047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_65
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 23
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e88daf0f41111460800000000000000
+      internalID: 7210563509659994338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_66
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04acd240fd9ce6ec0800000000000000
+      internalID: -3571695494773224896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_67
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 15
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ef7ecc1b943f500800000000000000
+      internalID: 428767417526124099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_68
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1733089528731e0800000000000000
+      internalID: -2218160970542124584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_69
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 15
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95e18f564a444480800000000000000
+      internalID: -8915919696176224869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_70
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 15
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d9e9e9a1ff843d0800000000000000
+      internalID: -3222045043588162174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_71
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106867a914311f2a0800000000000000
+      internalID: -6705557197692697087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      penguin_die_0: 7438324337004809267
+      penguin_die_1: -2124643462884640204
+      penguin_die_10: -9028552156122654891
+      penguin_die_11: -2176351730473002588
+      penguin_die_12: 4104644134704904321
+      penguin_die_13: 9078741777526483142
+      penguin_die_14: 4892660460966045972
+      penguin_die_15: -809495231320623750
+      penguin_die_16: -871661659952247364
+      penguin_die_17: 8021008875087753793
+      penguin_die_18: 4505766964284922774
+      penguin_die_19: -5245571685745462298
+      penguin_die_2: 8640963335723596318
+      penguin_die_20: -329739264792689886
+      penguin_die_21: -6402618865791072284
+      penguin_die_22: 1721184893306320070
+      penguin_die_23: 697173541330956411
+      penguin_die_24: 880282506357260247
+      penguin_die_25: 1562020780286687207
+      penguin_die_26: -6140431856376656953
+      penguin_die_27: 426577809557249272
+      penguin_die_28: 2200663997170567613
+      penguin_die_29: -4134602875938617391
+      penguin_die_3: -3811393506091870776
+      penguin_die_30: 7966018590531742722
+      penguin_die_31: -4023009615474742581
+      penguin_die_32: -1675056694679312842
+      penguin_die_33: 586551231761021915
+      penguin_die_34: 1383824234149213232
+      penguin_die_35: -2070972943973618431
+      penguin_die_36: -704291999457733457
+      penguin_die_37: 5783701759813955538
+      penguin_die_38: -8222968233513662710
+      penguin_die_39: -7961246065870731309
+      penguin_die_4: 3704618512484648667
+      penguin_die_40: -5250941502234776473
+      penguin_die_41: 3882681640794467021
+      penguin_die_42: 8131941363631387878
+      penguin_die_43: -3335612269566084443
+      penguin_die_44: 9140177419730607995
+      penguin_die_45: 2481320590024578874
+      penguin_die_46: -3541217899144439245
+      penguin_die_47: -5326591155217026346
+      penguin_die_48: 8593569012470122898
+      penguin_die_49: -133956760869971325
+      penguin_die_5: -1562652938242141624
+      penguin_die_50: 8139761021827777571
+      penguin_die_51: -471511863856843269
+      penguin_die_52: -2971024203721268863
+      penguin_die_53: 7636389720748346657
+      penguin_die_54: 8825415717065993289
+      penguin_die_55: 7914508160929736343
+      penguin_die_56: 4369404106572855540
+      penguin_die_57: -8909057434862103491
+      penguin_die_58: -8829287668154650931
+      penguin_die_59: 1370144853756044629
+      penguin_die_6: 6349954844603083597
+      penguin_die_60: 3994145400278767272
+      penguin_die_61: 4291408344859209291
+      penguin_die_62: 5769212331359404578
+      penguin_die_63: -1858317173089616481
+      penguin_die_64: 5376761742280450047
+      penguin_die_65: 7210563509659994338
+      penguin_die_66: -3571695494773224896
+      penguin_die_67: 428767417526124099
+      penguin_die_68: -2218160970542124584
+      penguin_die_69: -8915919696176224869
+      penguin_die_7: -8596946193511432031
+      penguin_die_70: -3222045043588162174
+      penguin_die_71: -6705557197692697087
+      penguin_die_8: 1529526303137363378
+      penguin_die_9: -3032450254023775671
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
