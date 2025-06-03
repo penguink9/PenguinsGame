@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 2d947c547402ebc46aaa5992b6c3c464
+guid: 6e15c82a1621f3d4eaa1f96e726e22ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2268619522356211942
-    second: penguin_gun_walk_0
+      213: 8275566011659808873
+    second: penguin_walk_0
   - first:
-      213: -7877902371779832101
-    second: penguin_gun_walk_1
+      213: 105335059961995100
+    second: penguin_walk_1
   - first:
-      213: -7919409846307161748
-    second: penguin_gun_walk_2
+      213: -6281267248178329336
+    second: penguin_walk_2
   - first:
-      213: 3738248350847340255
-    second: penguin_gun_walk_3
+      213: -4660893041414596238
+    second: penguin_walk_3
+  - first:
+      213: -2424615477456869326
+    second: penguin_walk_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin_gun_walk_0
+      name: penguin_walk_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 14
-        width: 132
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e0fe889f61cb7f10800000000000000
-      internalID: 2268619522356211942
+      spriteID: 96077481177b8d270800000000000000
+      internalID: 8275566011659808873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_gun_walk_1
+      name: penguin_walk_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 9
-        width: 132
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd61bd228811ca290800000000000000
-      internalID: -7877902371779832101
+      spriteID: c5fdd6fcda9367100800000000000000
+      internalID: 105335059961995100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_gun_walk_2
+      name: penguin_walk_2
       rect:
         serializedVersion: 2
-        x: 344
-        y: 14
-        width: 132
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c69712024ba981290800000000000000
-      internalID: -7919409846307161748
+      spriteID: 8090905a7b474d8a0800000000000000
+      internalID: -6281267248178329336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_gun_walk_3
+      name: penguin_walk_3
       rect:
         serializedVersion: 2
-        x: 504
-        y: 14
-        width: 132
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fde027aa11de0e330800000000000000
-      internalID: 3738248350847340255
+      spriteID: 279946a297e215fb0800000000000000
+      internalID: -4660893041414596238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_walk_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238e445c1190a5ed0800000000000000
+      internalID: -2424615477456869326
       vertices: []
       indices: 
       edges: []
@@ -213,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 89d664db0b365754881081d1e2cbb0fb
     internalID: 0
     vertices: []
     indices: 
@@ -221,8 +246,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      penguin_walk_0: 8275566011659808873
+      penguin_walk_1: 105335059961995100
+      penguin_walk_2: -6281267248178329336
+      penguin_walk_3: -4660893041414596238
+      penguin_walk_4: -2424615477456869326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

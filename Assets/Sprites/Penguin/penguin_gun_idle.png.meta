@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 6e15c82a1621f3d4eaa1f96e726e22ea
+guid: 51d52406caf586e40949e431d7e4dbb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8275566011659808873
-    second: penguin_walk_0
+      213: -5569194456775923921
+    second: penguin_gun_idle_0
   - first:
-      213: 105335059961995100
-    second: penguin_walk_1
+      213: -6231474762864885848
+    second: penguin_gun_idle_1
   - first:
-      213: -6281267248178329336
-    second: penguin_walk_2
-  - first:
-      213: -4660893041414596238
-    second: penguin_walk_3
-  - first:
-      213: -2424615477456869326
-    second: penguin_walk_4
+      213: 1605512931375631309
+    second: penguin_gun_idle_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin_walk_0
+      name: penguin_gun_idle_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 31
-        width: 78
-        height: 78
+        x: 24
+        y: 14
+        width: 132
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96077481177b8d270800000000000000
-      internalID: 8275566011659808873
+      spriteID: f27ebcef52f36b2b0800000000000000
+      internalID: -5569194456775923921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_walk_1
+      name: penguin_gun_idle_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 31
-        width: 78
-        height: 78
+        x: 184
+        y: 14
+        width: 132
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5fdd6fcda9367100800000000000000
-      internalID: 105335059961995100
+      spriteID: 8af70ac08ba5589a0800000000000000
+      internalID: -6231474762864885848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_walk_2
+      name: penguin_gun_idle_2
       rect:
         serializedVersion: 2
-        x: 279
-        y: 27
-        width: 78
-        height: 82
+        x: 344
+        y: 14
+        width: 132
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,52 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8090905a7b474d8a0800000000000000
-      internalID: -6281267248178329336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_walk_3
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 27
-        width: 74
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 279946a297e215fb0800000000000000
-      internalID: -4660893041414596238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_walk_4
-      rect:
-        serializedVersion: 2
-        x: 535
-        y: 27
-        width: 70
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 238e445c1190a5ed0800000000000000
-      internalID: -2424615477456869326
+      spriteID: dcbc0f4318de74610800000000000000
+      internalID: 1605512931375631309
       vertices: []
       indices: 
       edges: []
@@ -247,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      penguin_gun_idle_0: -5569194456775923921
+      penguin_gun_idle_1: -6231474762864885848
+      penguin_gun_idle_2: 1605512931375631309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
