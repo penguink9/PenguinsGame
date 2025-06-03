@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 9bf969391599d524baab342f99ff3d5b
+guid: 49f5f032542d3a045a00f5af94e77473
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1915846450542192459
-    second: penguin-gun-hit_0
+      213: 801037590278108532
+    second: lion_walk 1_0
   - first:
-      213: -5784226054022590014
-    second: penguin-gun-hit_1
+      213: -9216956702604172797
+    second: lion_walk 1_1
   - first:
-      213: 3031175351931308243
-    second: penguin-gun-hit_2
+      213: -7648854392976408055
+    second: lion_walk 1_2
   - first:
-      213: 8948013299282431170
-    second: penguin-gun-hit_3
+      213: -4748256685386389102
+    second: lion_walk 1_3
   - first:
-      213: -3983140304142022493
-    second: penguin-gun-hit_4
+      213: -786620640390502597
+    second: lion_walk 1_4
   - first:
-      213: 4338527707735750133
-    second: penguin-gun-hit_5
+      213: 3883402311426747279
+    second: lion_walk 1_5
+  - first:
+      213: 6155453903046515034
+    second: lion_walk 1_6
+  - first:
+      213: 5180608531962976240
+    second: lion_walk 1_7
+  - first:
+      213: -2304856436716873772
+    second: lion_walk 1_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin-gun-hit_0
+      name: lion_walk 1_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 14
-        width: 132
-        height: 122
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b47a2c83234769a10800000000000000
-      internalID: 1915846450542192459
+      spriteID: 475f24cb17bdd1b00800000000000000
+      internalID: 801037590278108532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_1
+      name: lion_walk 1_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 14
-        width: 132
-        height: 122
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c19c6dcc0d4abfa0800000000000000
-      internalID: -5784226054022590014
+      spriteID: 3026f1766bac61080800000000000000
+      internalID: -9216956702604172797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_2
+      name: lion_walk 1_2
       rect:
         serializedVersion: 2
-        x: 344
-        y: 14
-        width: 132
-        height: 122
+        x: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d809c73ce5e01a20800000000000000
-      internalID: 3031175351931308243
+      spriteID: 90284f7747fc9d590800000000000000
+      internalID: -7648854392976408055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_3
+      name: lion_walk 1_3
       rect:
         serializedVersion: 2
-        x: 504
-        y: 14
-        width: 132
-        height: 122
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cc4335efaabd2c70800000000000000
-      internalID: 8948013299282431170
+      spriteID: 299ab25b3bdca1eb0800000000000000
+      internalID: -4748256685386389102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_4
+      name: lion_walk 1_4
       rect:
         serializedVersion: 2
-        x: 664
-        y: 14
-        width: 132
-        height: 122
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a8c2193ffa09b8c0800000000000000
-      internalID: -3983140304142022493
+      spriteID: b37a88cf1bc5515f0800000000000000
+      internalID: -786620640390502597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_5
+      name: lion_walk 1_5
       rect:
         serializedVersion: 2
-        x: 824
-        y: 14
-        width: 132
-        height: 122
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +262,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f577c3b6fb853c30800000000000000
-      internalID: 4338527707735750133
+      spriteID: f8ba58cb3dd94e530800000000000000
+      internalID: 3883402311426747279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lion_walk 1_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59116a36b09c6550800000000000000
+      internalID: 6155453903046515034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lion_walk 1_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7d204030835e740800000000000000
+      internalID: 5180608531962976240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lion_walk 1_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7d73f48418300e0800000000000000
+      internalID: -2304856436716873772
       vertices: []
       indices: 
       edges: []
@@ -263,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f23698b00c14cb446ba82c82556229fe
     internalID: 0
     vertices: []
     indices: 
@@ -271,14 +346,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      penguin-gun-hit_0: 1915846450542192459
-      penguin-gun-hit_1: -5784226054022590014
-      penguin-gun-hit_2: 3031175351931308243
-      penguin-gun-hit_3: 8948013299282431170
-      penguin-gun-hit_4: -3983140304142022493
-      penguin-gun-hit_5: 4338527707735750133
+      lion_walk 1_0: 801037590278108532
+      lion_walk 1_1: -9216956702604172797
+      lion_walk 1_2: -7648854392976408055
+      lion_walk 1_3: -4748256685386389102
+      lion_walk 1_4: -786620640390502597
+      lion_walk 1_5: 3883402311426747279
+      lion_walk 1_6: 6155453903046515034
+      lion_walk 1_7: 5180608531962976240
+      lion_walk 1_8: -2304856436716873772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

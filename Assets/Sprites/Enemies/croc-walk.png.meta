@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 9bf969391599d524baab342f99ff3d5b
+guid: fba554d932f54f446b8ba43930ff1fd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1915846450542192459
-    second: penguin-gun-hit_0
+      213: 6726883845948981683
+    second: croc-walk_0
   - first:
-      213: -5784226054022590014
-    second: penguin-gun-hit_1
+      213: -3866556678329336166
+    second: croc-walk_1
   - first:
-      213: 3031175351931308243
-    second: penguin-gun-hit_2
+      213: -5966725215192924389
+    second: croc-walk_2
   - first:
-      213: 8948013299282431170
-    second: penguin-gun-hit_3
+      213: 4042225982456258861
+    second: croc-walk_3
   - first:
-      213: -3983140304142022493
-    second: penguin-gun-hit_4
+      213: 1443096838414615713
+    second: croc-walk_4
   - first:
-      213: 4338527707735750133
-    second: penguin-gun-hit_5
+      213: -2746341870118637880
+    second: croc-walk_5
+  - first:
+      213: 6608813963590222188
+    second: croc-walk_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin-gun-hit_0
+      name: croc-walk_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 14
-        width: 132
-        height: 122
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b47a2c83234769a10800000000000000
-      internalID: 1915846450542192459
+      spriteID: 3b14a13a731ba5d50800000000000000
+      internalID: 6726883845948981683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_1
+      name: croc-walk_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 14
-        width: 132
-        height: 122
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c19c6dcc0d4abfa0800000000000000
-      internalID: -5784226054022590014
+      spriteID: a9ef34cdf2b375ac0800000000000000
+      internalID: -3866556678329336166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_2
+      name: croc-walk_2
       rect:
         serializedVersion: 2
-        x: 344
-        y: 14
-        width: 132
-        height: 122
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d809c73ce5e01a20800000000000000
-      internalID: 3031175351931308243
+      spriteID: b1f3f04a70fe13da0800000000000000
+      internalID: -5966725215192924389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_3
+      name: croc-walk_3
       rect:
         serializedVersion: 2
-        x: 504
-        y: 14
-        width: 132
-        height: 122
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cc4335efaabd2c70800000000000000
-      internalID: 8948013299282431170
+      spriteID: d21e82a4d1fd81830800000000000000
+      internalID: 4042225982456258861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_4
+      name: croc-walk_4
       rect:
         serializedVersion: 2
-        x: 664
-        y: 14
-        width: 132
-        height: 122
+        x: 512
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a8c2193ffa09b8c0800000000000000
-      internalID: -3983140304142022493
+      spriteID: 1a4413ebde8e60410800000000000000
+      internalID: 1443096838414615713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin-gun-hit_5
+      name: croc-walk_5
       rect:
         serializedVersion: 2
-        x: 824
-        y: 14
-        width: 132
-        height: 122
+        x: 640
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +256,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f577c3b6fb853c30800000000000000
-      internalID: 4338527707735750133
+      spriteID: 8ceebcfae9803e9d0800000000000000
+      internalID: -2746341870118637880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: croc-walk_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61cf6ee84937bb50800000000000000
+      internalID: 6608813963590222188
       vertices: []
       indices: 
       edges: []
@@ -263,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 099c4cbf2af80424c86ff7350e083242
     internalID: 0
     vertices: []
     indices: 
@@ -271,14 +296,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      penguin-gun-hit_0: 1915846450542192459
-      penguin-gun-hit_1: -5784226054022590014
-      penguin-gun-hit_2: 3031175351931308243
-      penguin-gun-hit_3: 8948013299282431170
-      penguin-gun-hit_4: -3983140304142022493
-      penguin-gun-hit_5: 4338527707735750133
+      croc-walk_0: 6726883845948981683
+      croc-walk_1: -3866556678329336166
+      croc-walk_2: -5966725215192924389
+      croc-walk_3: 4042225982456258861
+      croc-walk_4: 1443096838414615713
+      croc-walk_5: -2746341870118637880
+      croc-walk_6: 6608813963590222188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
