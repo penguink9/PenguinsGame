@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 8702961106276997792}
   - component: {fileID: 8463366762886292464}
   - component: {fileID: 2351355919792182318}
+  - component: {fileID: 2704420470847709477}
+  - component: {fileID: 4284179661453979323}
+  - component: {fileID: 2541469995210822477}
   - component: {fileID: 3024604036869643124}
   m_Layer: 0
   m_Name: Lion
@@ -181,6 +184,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ea75909ad6fd140b54830ec6edb330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamingRange: 8
+  trackingRange: 5
+  returnSpeedMultiplier: 2
+  chasingSpeedMultiplier: 1.5
+--- !u!114 &2704420470847709477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537830771005015885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30487474ff56094daad86ed564b5e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
+--- !u!114 &4284179661453979323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537830771005015885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db7ca588dd59e4281ac27a24cd93f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
+--- !u!114 &2541469995210822477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537830771005015885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd725ceb3d949940a00e4a36a8b5479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: 9780148af679e5348bf62bd48d56fa51, type: 2}
+  restoreDefaultMatTime: 0.2
 --- !u!95 &3024604036869643124
 Animator:
   serializedVersion: 7
