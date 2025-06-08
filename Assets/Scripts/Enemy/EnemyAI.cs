@@ -89,20 +89,23 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator RoamingRoutine()
     {
         Vector2 roamPosition = GetRoamingPosition();
-        enemyPathfinding.MoveTo(roamPosition - (Vector2)transform.position);
+
+        // Check trước khi di chuyển: nếu vị trí mục tiêu nằm ngoài vùng hoạt động thì bỏ
+        if (Vector2.Distance(startingPosition, roamPosition) > roamingRange)
+            yield break;
+
+        Vector2 moveDir = roamPosition - (Vector2)transform.position;
+        enemyPathfinding.moveSpeed = defaultMoveSpeed;
+        enemyPathfinding.MoveTo(moveDir);
 
         float timer = 0f;
         while (timer < 2f)
         {
             timer += Time.deltaTime;
 
-            if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
-            {
-                state = State.ReturningToStart;
-                yield break;
-            }
-
-            if (playerTransform != null && Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
+            // Nếu phát hiện Player → chuyển trạng thái
+            if (playerTransform != null &&
+                Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
             {
                 state = State.ChasingPlayer;
                 yield break;
@@ -112,9 +115,15 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
     private Vector2 GetRoamingPosition()
     {
-        Vector2 randomDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-        return startingPosition + randomDir * Random.Range(1f, roamingRange);
+        // Tạo một hướng ngẫu nhiên (góc)
+        float angle = Random.Range(0f, Mathf.PI * 2f);
+        float radius = Random.Range(0.5f, roamingRange);
+
+        Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+        return startingPosition + offset;
     }
+
 }
