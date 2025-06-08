@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform attackCollider;
+    
 
     public static PlayerMovement Instance;
     private PlayerController playerControls;
@@ -163,6 +164,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         playerControls.Combat.Attack.started += _ => Attack();
+        attackCollider.gameObject.SetActive(false);
+
 
     }
 
