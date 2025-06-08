@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Enable();
     }
 
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
     private void Update()
     {
         PlayerInput();
@@ -70,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (knockback.gettingKnockedBack) return;
+        if (knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead) return;
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 

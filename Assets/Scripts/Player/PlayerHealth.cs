@@ -1,5 +1,7 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,7 +12,11 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockback;
+    public bool isDead { get; private set; }
     private Flash flash;
+
+    const string MAP = "Map1";
+    readonly int DEATH_HASH = Animator.StringToHash("Death");
 
     private void Awake()
     {
@@ -20,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
         currentHealth = maxHealth;
     }
 
@@ -32,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(1);
             knockback.GetKnockedBack(other.gameObject.transform, knockBackThrustAmount);
             StartCoroutine(flash.FlashRoutine());
+            CheckIfPlayerDead();
         }
     }
 
@@ -43,6 +51,23 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(DamageRecoveryRoutine());
     }
 
+    private void CheckIfPlayerDead()
+    {
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            currentHealth = 0;
+            GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            StartCoroutine(DeadLoadSceneRoutine());
+        }
+    }
+
+    private IEnumerator DeadLoadSceneRoutine()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+        SceneManager.LoadScene(MAP);
+    }
     private IEnumerator DamageRecoveryRoutine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
