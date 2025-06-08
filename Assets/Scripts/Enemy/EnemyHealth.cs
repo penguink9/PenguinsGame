@@ -33,7 +33,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            deathVFXPrefab = Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            Destroy(deathVFXPrefab, 1f);
             Destroy(gameObject);
         }
     }

@@ -1,7 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,8 +16,8 @@ public class PlayerHealth : MonoBehaviour
     private KnockBack knockback;
     public bool isDead { get; private set; }
     private Flash flash;
-
-    const string MAP = "Map1";
+    [SerializeField] private Slider healthBar;
+    const string MAP = "Level1_Map1";
     readonly int DEATH_HASH = Animator.StringToHash("Death");
 
     private void Awake()
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = false;
         currentHealth = maxHealth;
+        UpdateHPSlider();
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -47,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     {
         canTakeDamage = false;
         currentHealth -= damageAmount;
+        UpdateHPSlider();
         Debug.Log("HP: " + currentHealth);
         StartCoroutine(DamageRecoveryRoutine());
     }
@@ -72,5 +76,10 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
+    }
+    private void UpdateHPSlider()
+    {
+        healthBar.maxValue = maxHealth;
+        healthBar.value = currentHealth;
     }
 }
