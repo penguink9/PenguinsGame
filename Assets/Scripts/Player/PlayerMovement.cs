@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
     }
 
+    private void OnDisable()
+    {
+        playerControls.Disable(); 
+    }
+
     private void FixedUpdate()
     {
         AdjustPlayerFacingDirection();
