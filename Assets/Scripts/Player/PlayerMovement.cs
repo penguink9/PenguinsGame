@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform attackCollider;
-    
+    [SerializeField] private TrailRenderer trailRenderer;
 
     public static PlayerMovement Instance;
     private PlayerController playerControls;
@@ -23,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private GameObject slashAnim;
     [SerializeField] private float attackCooldown = 0.5f; 
     private float lastAttackTime = 0f;
-    private bool isAttacking = false; // Biến kiểm tra trạng thái tấn công
-
+    private bool isAttacking = false; 
+    private bool isDashing = false;
+    private float dashSpeed = 4f;
 
 
     private void Awake()
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<KnockBack>();
+        attackCollider.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -121,12 +123,10 @@ public class PlayerMovement : MonoBehaviour
             if (FacingLeft)
             {
                 slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-                Debug.Log("Facingleft");
             }
             else
             {
                 slashAnim.GetComponent<SpriteRenderer>().flipX = false;
-                Debug.Log("Facingright");
 
             }
         }
@@ -167,12 +167,31 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Dash()
+    {
+        if (isDashing || isAttacking || knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead) return;
+
+        isDashing = true;
+        moveSpeed *= dashSpeed;
+        trailRenderer.emitting = true;
+
+        StartCoroutine(DashCooldownCoroutine());
+    }
+    private IEnumerator DashCooldownCoroutine()
+    {
+        float dashDuration = 0.2f; // Thời gian dashes
+        float dashCD = 0.5f; // Thời gian cooldown dashes
+        yield return new WaitForSeconds(dashDuration);
+        moveSpeed /= dashSpeed;
+        trailRenderer.emitting = false;
+        yield return new WaitForSeconds(dashCD);
+        isDashing = false; // Kết thúc trạng thái dashes
+    }
     private void Start()
     {
-
         playerControls.Combat.Attack.started += _ => Attack();
-        attackCollider.gameObject.SetActive(false);
-
+        playerControls.Combat.Dash.started += _ => Dash();
+        trailRenderer.emitting = false; // Tắt hiệu ứng trail khi bắt đầu
 
     }
 
