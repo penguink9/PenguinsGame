@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
     }
 
-   
 
     private void FixedUpdate()
     {
