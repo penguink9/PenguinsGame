@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
+    private KnockBack knockback;
     private GameObject slashAnim;
     [SerializeField] private float attackCooldown = 0.5f; 
     private float lastAttackTime = 0f;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
+        knockback = GetComponent<KnockBack>();
     }
 
     private void OnEnable()
@@ -68,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        if (knockback.gettingKnockedBack) return;
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 

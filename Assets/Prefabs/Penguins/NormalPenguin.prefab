@@ -45,6 +45,9 @@ GameObject:
   - component: {fileID: 2224327067233820739}
   - component: {fileID: 8437410181095185196}
   - component: {fileID: 5904142255240530015}
+  - component: {fileID: -5148751217878842010}
+  - component: {fileID: 124645483937949491}
+  - component: {fileID: -731949965901745443}
   m_Layer: 0
   m_Name: NormalPenguin
   m_TagString: Player
@@ -165,6 +168,7 @@ MonoBehaviour:
   moveSpeed: 4
   slashAnimPrefab: {fileID: 6200771517480363254, guid: 123a3b9ea4d86e44e8d828aeb067b927, type: 3}
   slashAnimSpawnPoint: {fileID: 5814272530645411574}
+  attackCollider: {fileID: 0}
   attackCooldown: 0.5
 --- !u!95 &8437410181095185196
 Animator:
@@ -225,3 +229,42 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000001749588, y: -0.17660622}
   m_Size: {x: 0.96251893, y: 0.60558385}
   m_Direction: 1
+--- !u!114 &-5148751217878842010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108201292597396186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cdb60cd945e3c4caab6657229bf9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &124645483937949491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108201292597396186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd725ceb3d949940a00e4a36a8b5479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: 9780148af679e5348bf62bd48d56fa51, type: 2}
+  restoreDefaultMatTime: 0.2
+--- !u!114 &-731949965901745443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108201292597396186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db7ca588dd59e4281ac27a24cd93f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2

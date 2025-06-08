@@ -4391,6 +4391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124645483937949491, guid: de9c38b633333bf4d8c1ce05d056cd85, type: 3}
+      propertyPath: whiteFlashMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8a468d539688d4c9459dbe31a23db4, type: 2}
     - target: {fileID: 2224327067233820739, guid: de9c38b633333bf4d8c1ce05d056cd85, type: 3}
       propertyPath: attackCollider
       value: 
