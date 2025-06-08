@@ -171,6 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ea75909ad6fd140b54830ec6edb330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamingRange: 8
+  trackingRange: 5
+  returnSpeedMultiplier: 2
+  chasingSpeedMultiplier: 1.5
 --- !u!114 &3093704983575260484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2495c1136de726c45bf0a5091ccc3179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
 --- !u!114 &7389800440858469408
 MonoBehaviour:
   m_ObjectHideFlags: 0

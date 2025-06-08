@@ -184,6 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ea75909ad6fd140b54830ec6edb330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamingRange: 8
+  trackingRange: 5
+  returnSpeedMultiplier: 2
+  chasingSpeedMultiplier: 1.5
 --- !u!114 &2704420470847709477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30487474ff56094daad86ed564b5e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 5
+  deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
 --- !u!114 &4284179661453979323
 MonoBehaviour:
   m_ObjectHideFlags: 0
