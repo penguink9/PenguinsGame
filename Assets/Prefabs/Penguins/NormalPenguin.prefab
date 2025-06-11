@@ -435,11 +435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  trailRenderer: {fileID: 2597642669123445293}
   slashAnimPrefab: {fileID: 6200771517480363254, guid: 123a3b9ea4d86e44e8d828aeb067b927, type: 3}
   slashAnimSpawnPoint: {fileID: 5814272530645411574}
   attackCollider: {fileID: 5690196780956872876}
-  trailRenderer: {fileID: 2597642669123445293}
-  attackCooldown: 0.5
 --- !u!95 &8437410181095185196
 Animator:
   serializedVersion: 7
@@ -514,6 +513,7 @@ MonoBehaviour:
   maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+  healthBar: {fileID: 0}
 --- !u!114 &124645483937949491
 MonoBehaviour:
   m_ObjectHideFlags: 0

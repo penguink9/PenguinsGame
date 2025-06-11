@@ -21,10 +21,10 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Transform transform)
     {
         currentHealth -= damage;
-        knockback.GetKnockedBack(NormalPenguinController.Instance.transform, 15f);
+        knockback.GetKnockedBack(transform, 15f);
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }

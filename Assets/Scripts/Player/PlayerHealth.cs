@@ -38,19 +38,19 @@ public class PlayerHealth : MonoBehaviour
 
         if (enemy && canTakeDamage)
         {
-            TakeDamage(1);
-            knockback.GetKnockedBack(other.gameObject.transform, knockBackThrustAmount);
-            StartCoroutine(flash.FlashRoutine());
+            TakeDamage(1, other.transform);
             CheckIfPlayerDead();
         }
     }
 
-    private void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, Transform hitTransform)
     {
+        if (!canTakeDamage) { return; }
+
+        knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
+        StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
         currentHealth -= damageAmount;
-        //UpdateHPSlider();
-        Debug.Log("HP: " + currentHealth);
         StartCoroutine(DamageRecoveryRoutine());
     }
 
