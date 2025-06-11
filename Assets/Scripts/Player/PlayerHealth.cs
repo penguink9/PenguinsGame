@@ -51,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
         currentHealth -= damageAmount;
+        UpdateHPSlider();
         StartCoroutine(DamageRecoveryRoutine());
     }
 
