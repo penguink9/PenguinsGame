@@ -22,6 +22,7 @@ public class NormalPenguinController : PlayerBase
         // Gán sự kiện từ playerControls cho các phương thức Attack và Dash
         playerControls.Combat.Attack.started += _ => Attack();
         playerControls.Combat.Dash.started += _ => Dash();
+        attackCollider.gameObject.SetActive(false);  // Tắt collider khi bắt đầu
     }
 
     private void Update()

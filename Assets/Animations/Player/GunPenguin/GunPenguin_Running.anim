@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GunPenguin_Idle
+  m_Name: GunPenguin_Running
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -5569194456775923921, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
-    - time: 0.25
-      value: {fileID: -6231474762864885848, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
+      value: {fileID: 2268619522356211942, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
+    - time: 0.16666667
+      value: {fileID: -7877902371779832101, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
+    - time: 0.33333334
+      value: {fileID: -7919409846307161748, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
     - time: 0.5
-      value: {fileID: 1605512931375631309, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
+      value: {fileID: 3738248350847340255, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -5569194456775923921, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
-    - {fileID: -6231474762864885848, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
-    - {fileID: 1605512931375631309, guid: 51d52406caf586e40949e431d7e4dbb2, type: 3}
+    - {fileID: 2268619522356211942, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
+    - {fileID: -7877902371779832101, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
+    - {fileID: -7919409846307161748, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
+    - {fileID: 3738248350847340255, guid: 2d947c547402ebc46aaa5992b6c3c464, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

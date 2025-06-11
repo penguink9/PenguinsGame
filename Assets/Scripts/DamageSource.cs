@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class DamageSource : MonoBehaviour
 {
     [SerializeField] private int damageAmount = 1;
 
@@ -9,7 +9,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (other.gameObject.GetComponent<EnemyHealth>())
         {
             EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(damageAmount);
+            enemyHealth.TakeDamage(damageAmount, other.transform);
         }
     }
 }
