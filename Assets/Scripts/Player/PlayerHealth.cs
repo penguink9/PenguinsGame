@@ -18,7 +18,6 @@ public class PlayerHealth : MonoBehaviour
     private Flash flash;
     [SerializeField] private Slider healthBar;
     const string MAP = "Level1_Map1";
-    readonly int DEATH_HASH = Animator.StringToHash("Death");
 
     private void Awake()
     {
@@ -50,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
     {
         canTakeDamage = false;
         currentHealth -= damageAmount;
-        UpdateHPSlider();
+        //UpdateHPSlider();
         Debug.Log("HP: " + currentHealth);
         StartCoroutine(DamageRecoveryRoutine());
     }
@@ -61,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isDead = true;
             currentHealth = 0;
-            GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            GetComponent<Animator>().SetTrigger("Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
     }
@@ -79,6 +78,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private void UpdateHPSlider()
     {
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+        }
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
