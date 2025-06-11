@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        knockback.GetKnockedBack(PlayerMovement.Instance.transform, 15f);
+        knockback.GetKnockedBack(NormalPenguinController.Instance.transform, 15f);
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }

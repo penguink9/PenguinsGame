@@ -5,7 +5,7 @@ using UnityEngine;
 public class AreaEntrance : MonoBehaviour
 {
     [SerializeField] private string transitionName;
-    [SerializeField] private PlayerMovement player;
+    [SerializeField] private NormalPenguinController player;
 
     private void Start()
     {

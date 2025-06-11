@@ -13,7 +13,7 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerMovement>())
+        if (other.gameObject.GetComponent<NormalPenguinController>())
         {
             SceneManagement.Instance.SetTransitionName(sceneTransitionName);
             //UIFade.Instance.FadeToBlack();
