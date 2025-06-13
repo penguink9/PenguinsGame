@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private KnockBack knockback;
     public bool isDead { get; private set; }
     private Flash flash;
-    [SerializeField] private Slider healthBar;
+    private Slider healthBar;
     const string MAP = "Level1_Map1";
 
     private void Awake()
@@ -42,7 +42,11 @@ public class PlayerHealth : MonoBehaviour
             CheckIfPlayerDead();
         }
     }
-
+    public void SetHealthBar(Slider slider)
+    {
+        healthBar = slider;
+        UpdateHPSlider();
+    }
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
         if (!canTakeDamage) { return; }
@@ -79,10 +83,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void UpdateHPSlider()
     {
-        if (healthBar != null)
-        {
-            healthBar.maxValue = maxHealth;
-        }
+        if (healthBar == null) return;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
