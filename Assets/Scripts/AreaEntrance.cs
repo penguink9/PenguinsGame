@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +9,14 @@ public class AreaEntrance : MonoBehaviour
 
     private void Start()
     {
+       
+
+        
         if (transitionName == SceneManagement.Instance.SceneTransitionName)
         {
-            player.transform.position = this.transform.position; 
-            
-            //UIFade.Instance.FadeToClear();
+            player.transform.position = this.transform.position;
+            UIFade.Instance.FadeToClear();
         }
+        
     }
 }

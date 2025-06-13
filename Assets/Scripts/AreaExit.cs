@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +15,13 @@ public class AreaExit : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
+            
+
             SceneManagement.Instance.SetTransitionName(sceneTransitionName);
-            //UIFade.Instance.FadeToBlack();
+             UIFade.Instance.FadeToBlack();
             StartCoroutine(LoadSceneRoutine());
         }
+
     }
 
     private IEnumerator LoadSceneRoutine()
