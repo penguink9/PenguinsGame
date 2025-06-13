@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 76d2b1d13d52a7c4abfaad87591db507
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3062344163311095077
+    second: penguin-gun-die_0
+  - first:
+      213: -8778092901612507827
+    second: penguin-gun-die_1
+  - first:
+      213: -6544851110655018668
+    second: penguin-gun-die_2
+  - first:
+      213: 2211465856560185072
+    second: penguin-gun-die_3
+  - first:
+      213: 2973165402139158933
+    second: penguin-gun-die_4
+  - first:
+      213: -3367683545569040453
+    second: penguin-gun-die_5
+  - first:
+      213: -6391934685472574804
+    second: penguin-gun-die_6
+  - first:
+      213: 8402649423274853716
+    second: penguin-gun-die_7
+  - first:
+      213: -8318575755208463123
+    second: penguin-gun-die_8
+  - first:
+      213: 6057567222802372958
+    second: penguin-gun-die_9
+  - first:
+      213: -1717468909186554256
+    second: penguin-gun-die_10
+  - first:
+      213: -8816453784083890684
+    second: penguin-gun-die_11
+  - first:
+      213: 6778514355895074113
+    second: penguin-gun-die_12
+  - first:
+      213: 9130919899937564971
+    second: penguin-gun-die_13
+  - first:
+      213: 8890383884346601403
+    second: penguin-gun-die_14
+  - first:
+      213: -6185234765506357965
+    second: penguin-gun-die_15
+  - first:
+      213: 6004023405251187708
+    second: penguin-gun-die_16
+  - first:
+      213: -2072730170490134669
+    second: penguin-gun-die_17
+  - first:
+      213: 2667669779885759629
+    second: penguin-gun-die_18
+  - first:
+      213: -7252128650326648348
+    second: penguin-gun-die_19
+  - first:
+      213: 1936671896654537227
+    second: penguin-gun-die_20
+  - first:
+      213: -403682237305962037
+    second: penguin-gun-die_21
+  - first:
+      213: 5221630161538078350
+    second: penguin-gun-die_22
+  - first:
+      213: -5720772795288051361
+    second: penguin-gun-die_23
+  - first:
+      213: -145510303731249869
+    second: penguin-gun-die_24
+  - first:
+      213: 4134593481348219141
+    second: penguin-gun-die_25
+  - first:
+      213: 8685999935854187273
+    second: penguin-gun-die_26
+  - first:
+      213: 3532087398220010969
+    second: penguin-gun-die_27
+  - first:
+      213: -1617750538622612330
+    second: penguin-gun-die_28
+  - first:
+      213: -3749589145931577534
+    second: penguin-gun-die_29
+  - first:
+      213: 2394199009442129556
+    second: penguin-gun-die_30
+  - first:
+      213: -7704523836370923710
+    second: penguin-gun-die_31
+  - first:
+      213: 3103231149949839109
+    second: penguin-gun-die_32
+  - first:
+      213: -8262663162429131420
+    second: penguin-gun-die_33
+  - first:
+      213: -3440234073038010912
+    second: penguin-gun-die_34
+  - first:
+      213: -8293510062384708657
+    second: penguin-gun-die_35
+  - first:
+      213: -1195261440945956062
+    second: penguin-gun-die_36
+  - first:
+      213: 3100480928267898205
+    second: penguin-gun-die_37
+  - first:
+      213: 8936467279979339266
+    second: penguin-gun-die_38
+  - first:
+      213: -2868257951353899928
+    second: penguin-gun-die_39
+  - first:
+      213: 3327101627422553102
+    second: penguin-gun-die_40
+  - first:
+      213: -3829692818065778005
+    second: penguin-gun-die_41
+  - first:
+      213: 8317718471270048548
+    second: penguin-gun-die_42
+  - first:
+      213: 3542585585837235189
+    second: penguin-gun-die_43
+  - first:
+      213: 5948297665093033777
+    second: penguin-gun-die_44
+  - first:
+      213: -3261756768986188781
+    second: penguin-gun-die_45
+  - first:
+      213: -4524119660002213898
+    second: penguin-gun-die_46
+  - first:
+      213: -3890404988300872879
+    second: penguin-gun-die_47
+  - first:
+      213: -4422544335840409631
+    second: penguin-gun-die_48
+  - first:
+      213: -2399685382967092849
+    second: penguin-gun-die_49
+  - first:
+      213: 4288354465447685062
+    second: penguin-gun-die_50
+  - first:
+      213: -2500723247886130039
+    second: penguin-gun-die_51
+  - first:
+      213: -8494786110188086201
+    second: penguin-gun-die_52
+  - first:
+      213: -4207312118435457362
+    second: penguin-gun-die_53
+  - first:
+      213: 3425631454162848528
+    second: penguin-gun-die_54
+  - first:
+      213: -7155366501707053108
+    second: penguin-gun-die_55
+  - first:
+      213: -2318209358665316428
+    second: penguin-gun-die_56
+  - first:
+      213: -701646073356854504
+    second: penguin-gun-die_57
+  - first:
+      213: 3834703175329265143
+    second: penguin-gun-die_58
+  - first:
+      213: -6940683503374371622
+    second: penguin-gun-die_59
+  - first:
+      213: 289388045518163208
+    second: penguin-gun-die_60
+  - first:
+      213: 3916783688298891738
+    second: penguin-gun-die_61
+  - first:
+      213: -1175124747393320183
+    second: penguin-gun-die_62
+  - first:
+      213: 1213577064964327765
+    second: penguin-gun-die_63
+  - first:
+      213: -3042697093872722429
+    second: penguin-gun-die_64
+  - first:
+      213: -2525503371549685697
+    second: penguin-gun-die_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: penguin-gun-die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d0622aac1af7a20800000000000000
+      internalID: 3062344163311095077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin-gun-die_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d220aa303fd2680800000000000000
+      internalID: -8778092901612507827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin-gun-die_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459369947940c25a0800000000000000
+      internalID: -6544851110655018668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin-gun-die_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0febc2dca74b0be10800000000000000
+      internalID: 2211465856560185072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 11942304b95d9a94e974e437bf6b6049
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      penguin-gun-die_0: 3062344163311095077
+      penguin-gun-die_1: -8778092901612507827
+      penguin-gun-die_2: -6544851110655018668
+      penguin-gun-die_3: 2211465856560185072
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

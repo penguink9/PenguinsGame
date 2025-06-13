@@ -20,7 +20,7 @@ public class TransparentDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerMovement>())
+        if (other.gameObject.CompareTag("Player")) 
         {
             if (spriteRenderer)
             {
@@ -35,7 +35,7 @@ public class TransparentDetection : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerMovement>())
+        if (other.gameObject.CompareTag("Player"))
         {
             if (spriteRenderer)
             {
