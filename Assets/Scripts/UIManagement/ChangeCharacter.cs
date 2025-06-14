@@ -5,7 +5,6 @@ public class ChangeCharacter : MonoBehaviour
     private int activeSlotIndexNum = 0;
 
     private PlayerController playerControls;
-    private int unlockedCharacterCount;
 
     private void Awake()
     {
@@ -15,8 +14,6 @@ public class ChangeCharacter : MonoBehaviour
     private void Start()
     {
         playerControls.SelectChar.Keyboard.performed += ctx => TriggerSlot((int)ctx.ReadValue<float>());
-        unlockedCharacterCount = PlayerManager.Instance.UnlockedCharacterCount();
-        UpdateCharBox(unlockedCharacterCount);
         HighlightSelectedChar(PlayerManager.Instance.GetActivePlayerIndex());
     }
 
@@ -25,10 +22,13 @@ public class ChangeCharacter : MonoBehaviour
         playerControls.Enable();
     }
 
-    private void TriggerSlot(int numValue)
+    public void TriggerSlot(int numValue)
     {
-        if(PlayerManager.Instance.IsCharacterUnlocked(numValue - 1) == false)
+        if (!PlayerManager.Instance.IsCharacterUnlocked(numValue - 1) || !PlayerManager.Instance.IsCharacterAlive(numValue - 1))
+        {
+            Debug.LogWarning("Character not unlocked or alive: " + numValue);
             return;
+        }
         HighlightSelectedChar(numValue - 1);
         PlayerManager.Instance.SwitchCharacter(numValue - 1);
     }

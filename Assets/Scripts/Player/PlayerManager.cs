@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Unity.Cinemachine;
+using Unity.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerManager : Singleton<PlayerManager>
@@ -12,6 +14,7 @@ public class PlayerManager : Singleton<PlayerManager>
     private List<Slider> characterHPSliders = new List<Slider>();
 
     private List<GameObject> unlockedPlayers = new List<GameObject>();
+    private List<bool> aliveCharacterList = new List<bool>();
     private int activePlayerIndex = 0;
 
 
@@ -31,12 +34,47 @@ public class PlayerManager : Singleton<PlayerManager>
         var health = newPlayer.GetComponent<PlayerHealth>();
         if (health != null)
         {
+            health.OnPlayerDeath += () => OnPlayerDeath(prefabIndex);
             health.SetHealthBar(characterHPSliders[prefabIndex]);
         }
         newPlayer.SetActive(false);
-        unlockedPlayers.Add(newPlayer);        
+        unlockedPlayers.Add(newPlayer);
+        aliveCharacterList.Add(true); // Assume the character is alive when unlocked
+        charactersUIParent.GetComponent<ChangeCharacter>().UpdateCharBox(unlockedPlayers.Count);
+    }
+    private void OnPlayerDeath(int playerIndex)
+    {
+        aliveCharacterList[playerIndex] = false;
+
+        // Cập nhật UI Death
+        var charUI = charactersUIParent.GetChild(playerIndex);
+        charUI.Find("CharBox/Death").gameObject.SetActive(true);
+        charUI.Find("CharBox/CharAvt").gameObject.SetActive(false);
+        // Tự động tìm nhân vật sống và switch
+        bool switched = false;
+        for (int i = 0; i < aliveCharacterList.Count; i++)
+        {
+            if (aliveCharacterList[i])
+            {
+                charactersUIParent.GetComponent<ChangeCharacter>().TriggerSlot(i + 1);
+                switched = true;
+                break;
+            }
+        }
+
+        // Nếu không còn nhân vật nào sống -> GameOver
+        if (!switched)
+        {
+            TriggerGameOver();
+        }
+
     }
 
+    private void TriggerGameOver()
+    {
+        Debug.Log("GAME OVER");
+        SceneManager.LoadScene("Level1_Map1");
+    }
 
     public void SwitchCharacter(int index)
     {
@@ -78,5 +116,9 @@ public class PlayerManager : Singleton<PlayerManager>
             Slider hpSlider = character.GetChild(1).GetComponent<Slider>();
             characterHPSliders.Add(hpSlider);
         }
+    }
+    public bool IsCharacterAlive(int index)
+    {
+        return index >= 0 && index < aliveCharacterList.Count && aliveCharacterList[index];
     }
 }

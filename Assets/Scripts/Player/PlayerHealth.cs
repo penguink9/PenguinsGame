@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -17,18 +18,19 @@ public class PlayerHealth : MonoBehaviour
     public bool isDead { get; private set; }
     private Flash flash;
     private Slider healthBar;
-    const string MAP = "Level1_Map1";
+
+    public event Action OnPlayerDeath;
 
     private void Awake()
     {
         flash = GetComponent<Flash>();
         knockback = GetComponent<KnockBack>();
+        currentHealth = maxHealth;
+        isDead = false;
     }
 
     private void Start()
-    {
-        isDead = false;
-        currentHealth = maxHealth;
+    {               
         UpdateHPSlider();
     }
 
@@ -67,14 +69,13 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger("Death");
             StartCoroutine(DeadLoadSceneRoutine());
+            OnPlayerDeath?.Invoke();
         }
     }
 
     private IEnumerator DeadLoadSceneRoutine()
     {
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-        SceneManager.LoadScene(MAP);
     }
     private IEnumerator DamageRecoveryRoutine()
     {

@@ -387,10 +387,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0febc2dca74b0be10800000000000000
-      internalID: 2211465856560185072
+      spriteID: 94edaf1664b31654bb8465b69588e49d
+      internalID: -1634094171
       vertices: []
       indices: 
       edges: []
@@ -414,7 +414,7 @@ TextureImporter:
       penguin-gun-die_0: 3062344163311095077
       penguin-gun-die_1: -8778092901612507827
       penguin-gun-die_2: -6544851110655018668
-      penguin-gun-die_3: 2211465856560185072
+      penguin-gun-die_3: -1634094171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
