@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
-        if (!canTakeDamage) { return; }
+        if (!canTakeDamage || isDead) { return; }
 
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
@@ -68,14 +68,14 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger("Death");
-            StartCoroutine(DeadLoadSceneRoutine());
-            OnPlayerDeath?.Invoke();
+            StartCoroutine(DeadLoadSceneRoutine());            
         }
     }
 
     private IEnumerator DeadLoadSceneRoutine()
     {
         yield return new WaitForSeconds(2f);
+        OnPlayerDeath?.Invoke();
     }
     private IEnumerator DamageRecoveryRoutine()
     {
