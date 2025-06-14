@@ -94,6 +94,8 @@ public class PlayerManager : Singleton<PlayerManager>
         cinemachineCamera.Follow = unlockedPlayers[activePlayerIndex].transform;
         // Set the health bar for the active player
         unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(healthSlider);
+        // Update the enemy target provider to follow the new player
+        EnemyTargetProvider.Instance.SetTarget(unlockedPlayers[activePlayerIndex].transform);
     }
 
     public GameObject GetActivePlayer()
