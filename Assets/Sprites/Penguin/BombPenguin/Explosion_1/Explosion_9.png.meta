@@ -1,10 +1,88 @@
 fileFormatVersion: 2
-guid: 976d5fe5f5501614586f877f32d74c12
+guid: bf9ea6a6fead35542ac2cb39326ec3f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2909395303743811487
-    second: Heart Full_0
+      213: -3763575537813911758
+    second: Explosion_9_0
+  - first:
+      213: 8379212897653880908
+    second: Explosion_9_1
+  - first:
+      213: -3494180769982700266
+    second: Explosion_9_2
+  - first:
+      213: 4111426489026771356
+    second: Explosion_9_3
+  - first:
+      213: -2286789931232891905
+    second: Explosion_9_4
+  - first:
+      213: -5984383266051822347
+    second: Explosion_9_5
+  - first:
+      213: -2613289636675422873
+    second: Explosion_9_6
+  - first:
+      213: -5079504009661521143
+    second: Explosion_9_7
+  - first:
+      213: 3320000413954019748
+    second: Explosion_9_8
+  - first:
+      213: 6786963713358861315
+    second: Explosion_9_9
+  - first:
+      213: -2903854406920429214
+    second: Explosion_9_10
+  - first:
+      213: 1128894292168370538
+    second: Explosion_9_11
+  - first:
+      213: 7739099350884358849
+    second: Explosion_9_12
+  - first:
+      213: -1216670938472134119
+    second: Explosion_9_13
+  - first:
+      213: 980251714336421792
+    second: Explosion_9_14
+  - first:
+      213: -3672122681821923181
+    second: Explosion_9_15
+  - first:
+      213: 7330886095072564524
+    second: Explosion_9_16
+  - first:
+      213: -6261665206663877897
+    second: Explosion_9_17
+  - first:
+      213: -8187644155708127786
+    second: Explosion_9_18
+  - first:
+      213: 6198830894376024363
+    second: Explosion_9_19
+  - first:
+      213: 2541573228448336348
+    second: Explosion_9_20
+  - first:
+      213: 5437384980715629383
+    second: Explosion_9_21
+  - first:
+      213: 4317743123110433763
+    second: Explosion_9_22
+  - first:
+      213: 8906807328128724138
+    second: Explosion_9_23
+  - first:
+      213: -6798153765796056773
+    second: Explosion_9_24
+  - first:
+      213: 3857810187291470504
+    second: Explosion_9_25
+  - first:
+      213: -3453246162568079731
+    second: Explosion_9_26
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +129,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,30 +174,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heart Full_0
+      name: Explosion_9_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 15
-        height: 15
+        y: 0
+        width: 550
+        height: 550
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1601929c260cf97d0800000000000000
-      internalID: -2909395303743811487
+      spriteID: 23780471df715cbc0800000000000000
+      internalID: -3763575537813911758
       vertices: []
       indices: 
       edges: []
@@ -138,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 82d7ae434ddc73645b085b0449fef8df
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +211,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":550.0,"y":550.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Heart Full_0: -2909395303743811487
+      Explosion_9_0: -3763575537813911758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
