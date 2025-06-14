@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4849492258841811474}
+  - component: {fileID: 3930057823630868589}
   m_Layer: 0
   m_Name: AreaEntrance
   m_TagString: Untagged
@@ -25,12 +26,26 @@ Transform:
   m_GameObject: {fileID: 683268889603522814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 0.11, z: 0}
+  m_LocalPosition: {x: -1.33, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2506010896372484294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3930057823630868589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683268889603522814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0392315597ec107499f1beb9c7658e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: 
+  player: {fileID: 0}
 --- !u!1 &4762207657172789688
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2506010896372484294}
   - component: {fileID: 8466091682079346361}
+  - component: {fileID: 372031631821871637}
   m_Layer: 0
   m_Name: AreaExit
   m_TagString: Untagged
@@ -110,3 +126,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.1481028, y: 3.132191}
   m_EdgeRadius: 0
+--- !u!114 &372031631821871637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762207657172789688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20fc59b63c85f346b2d3cdc10df1cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  sceneTransitionName: 

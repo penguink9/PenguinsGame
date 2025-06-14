@@ -1,14 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIFade : Singleton<UIFade>
 {
-    [SerializeField] private Image fadeScreen;
+    private Image fadeScreen;
     [SerializeField] private float fadeSpeed = 1f;
 
     private IEnumerator fadeRoutine;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        fadeScreen = GetComponent<Image>();
+
+        if (fadeScreen == null)
+        {
+            Debug.LogError("UIFade: No Image component found on this GameObject.");
+        }
+    }
 
     public void FadeToBlack()
     {

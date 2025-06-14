@@ -5,16 +5,11 @@ using UnityEngine;
 public class AreaEntrance : MonoBehaviour
 {
     [SerializeField] private string transitionName;
-    [SerializeField] private NormalPenguinController player;
-
     private void Start()
-    {
-       
-
-        
+    { 
         if (transitionName == SceneManagement.Instance.SceneTransitionName)
         {
-            player.transform.position = this.transform.position;
+            PlayerManager.Instance.GetActivePlayer().transform.position = transform.position;
             UIFade.Instance.FadeToClear();
         }
         
