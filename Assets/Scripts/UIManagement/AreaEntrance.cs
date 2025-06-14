@@ -10,6 +10,8 @@ public class AreaEntrance : MonoBehaviour
         if (transitionName == SceneManagement.Instance.SceneTransitionName)
         {
             PlayerManager.Instance.GetActivePlayer().transform.position = transform.position;
+            GameObject confiner = GameObject.FindGameObjectWithTag("Confiner");
+            CameraManager.Instance.SetConfiner(confiner.GetComponent<PolygonCollider2D>());
             UIFade.Instance.FadeToClear();
         }
         

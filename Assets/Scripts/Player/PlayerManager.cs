@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class PlayerManager : Singleton<PlayerManager>
 {
     [SerializeField] private PlayerPrefabsDatabase prefabDatabase;
-    [SerializeField] private CinemachineCamera cinemachineCamera;
     [SerializeField] private Transform charactersUIParent;
     [SerializeField] private Slider healthSlider;
     private List<Slider> characterHPSliders = new List<Slider>();
@@ -91,7 +90,7 @@ public class PlayerManager : Singleton<PlayerManager>
         unlockedPlayers[activePlayerIndex].SetActive(true);
         unlockedPlayers[activePlayerIndex].transform.position = currentPosition;
         // Update the camera to follow the new player
-        cinemachineCamera.Follow = unlockedPlayers[activePlayerIndex].transform;
+        CameraManager.Instance.SetFollow(unlockedPlayers[activePlayerIndex].transform);
         // Set the health bar for the active player
         unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(healthSlider);
         // Update the enemy target provider to follow the new player
