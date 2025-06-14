@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -16,19 +17,20 @@ public class PlayerHealth : MonoBehaviour
     private KnockBack knockback;
     public bool isDead { get; private set; }
     private Flash flash;
-    [SerializeField] private Slider healthBar;
-    const string MAP = "Level1_Map1";
+    private Slider healthBar;
+
+    public event Action OnPlayerDeath;
 
     private void Awake()
     {
         flash = GetComponent<Flash>();
         knockback = GetComponent<KnockBack>();
+        currentHealth = maxHealth;
+        isDead = false;
     }
 
     private void Start()
-    {
-        isDead = false;
-        currentHealth = maxHealth;
+    {               
         UpdateHPSlider();
     }
 
@@ -42,10 +44,14 @@ public class PlayerHealth : MonoBehaviour
             CheckIfPlayerDead();
         }
     }
-
+    public void SetHealthBar(Slider slider)
+    {
+        healthBar = slider;
+        UpdateHPSlider();
+    }
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
-        if (!canTakeDamage) { return; }
+        if (!canTakeDamage || isDead) { return; }
 
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
@@ -62,15 +68,14 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger("Death");
-            StartCoroutine(DeadLoadSceneRoutine());
+            StartCoroutine(DeadLoadSceneRoutine());            
         }
     }
 
     private IEnumerator DeadLoadSceneRoutine()
     {
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-        SceneManager.LoadScene(MAP);
+        OnPlayerDeath?.Invoke();
     }
     private IEnumerator DamageRecoveryRoutine()
     {
@@ -79,10 +84,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void UpdateHPSlider()
     {
-        if (healthBar != null)
-        {
-            healthBar.maxValue = maxHealth;
-        }
+        if (healthBar == null) return;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
