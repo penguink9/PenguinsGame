@@ -9,7 +9,7 @@ public class DamageSource : MonoBehaviour
         if (other.gameObject.GetComponent<EnemyHealth>())
         {
             EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(damageAmount, other.transform);
+            enemyHealth.TakeDamage(damageAmount, transform);
         }
     }
 }

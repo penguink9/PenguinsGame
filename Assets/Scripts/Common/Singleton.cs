@@ -9,18 +9,18 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
     protected virtual void Awake()
     {
-        if (instance != null && this.gameObject != null)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
-        }
-        else
-        {
-            instance = (T)this;
+            return;
         }
 
-        if (!gameObject.transform.parent)
+        instance = (T)this;
+
+        if (!transform.parent)
         {
             DontDestroyOnLoad(gameObject);
         }
     }
+
 }
