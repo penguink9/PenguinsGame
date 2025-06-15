@@ -1,0 +1,36 @@
+using UnityEngine;
+using Unity.Cinemachine;
+
+public class CameraManager : Singleton<CameraManager>
+{
+    private CinemachineCamera virtualCamera;
+    private CinemachineConfiner2D confiner;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        virtualCamera = GetComponent<CinemachineCamera>();
+        confiner = GetComponent<CinemachineConfiner2D>();
+
+        if (virtualCamera == null)
+            Debug.LogError("CameraManager: Missing CinemachineCamera component!");
+
+        if (confiner == null)
+            Debug.LogError("CameraManager: Missing CinemachineConfiner2D component!");
+    }
+
+    public void SetFollow(Transform target)
+    {
+        virtualCamera.Follow = target;
+    }
+
+    public void SetConfiner(Collider2D newConfiner)
+    {
+        if (confiner != null)
+        {
+            confiner.BoundingShape2D = newConfiner;
+            confiner.InvalidateBoundingShapeCache();
+        }
+    }
+}

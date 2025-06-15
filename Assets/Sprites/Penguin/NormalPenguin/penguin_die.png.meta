@@ -1,0 +1,440 @@
+fileFormatVersion: 2
+guid: a640eec6a5f0d7247a3ec59966c2eb84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7438324337004809267
+    second: penguin_die_0
+  - first:
+      213: -2124643462884640204
+    second: penguin_die_1
+  - first:
+      213: 8640963335723596318
+    second: penguin_die_2
+  - first:
+      213: -3811393506091870776
+    second: penguin_die_3
+  - first:
+      213: 3704618512484648667
+    second: penguin_die_4
+  - first:
+      213: -1562652938242141624
+    second: penguin_die_5
+  - first:
+      213: 6349954844603083597
+    second: penguin_die_6
+  - first:
+      213: -8596946193511432031
+    second: penguin_die_7
+  - first:
+      213: 1529526303137363378
+    second: penguin_die_8
+  - first:
+      213: -3032450254023775671
+    second: penguin_die_9
+  - first:
+      213: -9028552156122654891
+    second: penguin_die_10
+  - first:
+      213: -2176351730473002588
+    second: penguin_die_11
+  - first:
+      213: 4104644134704904321
+    second: penguin_die_12
+  - first:
+      213: 9078741777526483142
+    second: penguin_die_13
+  - first:
+      213: 4892660460966045972
+    second: penguin_die_14
+  - first:
+      213: -809495231320623750
+    second: penguin_die_15
+  - first:
+      213: -871661659952247364
+    second: penguin_die_16
+  - first:
+      213: 8021008875087753793
+    second: penguin_die_17
+  - first:
+      213: 4505766964284922774
+    second: penguin_die_18
+  - first:
+      213: -5245571685745462298
+    second: penguin_die_19
+  - first:
+      213: -329739264792689886
+    second: penguin_die_20
+  - first:
+      213: -6402618865791072284
+    second: penguin_die_21
+  - first:
+      213: 1721184893306320070
+    second: penguin_die_22
+  - first:
+      213: 697173541330956411
+    second: penguin_die_23
+  - first:
+      213: 880282506357260247
+    second: penguin_die_24
+  - first:
+      213: 1562020780286687207
+    second: penguin_die_25
+  - first:
+      213: -6140431856376656953
+    second: penguin_die_26
+  - first:
+      213: 426577809557249272
+    second: penguin_die_27
+  - first:
+      213: 2200663997170567613
+    second: penguin_die_28
+  - first:
+      213: -4134602875938617391
+    second: penguin_die_29
+  - first:
+      213: 7966018590531742722
+    second: penguin_die_30
+  - first:
+      213: -4023009615474742581
+    second: penguin_die_31
+  - first:
+      213: -1675056694679312842
+    second: penguin_die_32
+  - first:
+      213: 586551231761021915
+    second: penguin_die_33
+  - first:
+      213: 1383824234149213232
+    second: penguin_die_34
+  - first:
+      213: -2070972943973618431
+    second: penguin_die_35
+  - first:
+      213: -704291999457733457
+    second: penguin_die_36
+  - first:
+      213: 5783701759813955538
+    second: penguin_die_37
+  - first:
+      213: -8222968233513662710
+    second: penguin_die_38
+  - first:
+      213: -7961246065870731309
+    second: penguin_die_39
+  - first:
+      213: -5250941502234776473
+    second: penguin_die_40
+  - first:
+      213: 3882681640794467021
+    second: penguin_die_41
+  - first:
+      213: 8131941363631387878
+    second: penguin_die_42
+  - first:
+      213: -3335612269566084443
+    second: penguin_die_43
+  - first:
+      213: 9140177419730607995
+    second: penguin_die_44
+  - first:
+      213: 2481320590024578874
+    second: penguin_die_45
+  - first:
+      213: -3541217899144439245
+    second: penguin_die_46
+  - first:
+      213: -5326591155217026346
+    second: penguin_die_47
+  - first:
+      213: 8593569012470122898
+    second: penguin_die_48
+  - first:
+      213: -133956760869971325
+    second: penguin_die_49
+  - first:
+      213: 8139761021827777571
+    second: penguin_die_50
+  - first:
+      213: -471511863856843269
+    second: penguin_die_51
+  - first:
+      213: -2971024203721268863
+    second: penguin_die_52
+  - first:
+      213: 7636389720748346657
+    second: penguin_die_53
+  - first:
+      213: 8825415717065993289
+    second: penguin_die_54
+  - first:
+      213: 7914508160929736343
+    second: penguin_die_55
+  - first:
+      213: 4369404106572855540
+    second: penguin_die_56
+  - first:
+      213: -8909057434862103491
+    second: penguin_die_57
+  - first:
+      213: -8829287668154650931
+    second: penguin_die_58
+  - first:
+      213: 1370144853756044629
+    second: penguin_die_59
+  - first:
+      213: 3994145400278767272
+    second: penguin_die_60
+  - first:
+      213: 4291408344859209291
+    second: penguin_die_61
+  - first:
+      213: 5769212331359404578
+    second: penguin_die_62
+  - first:
+      213: -1858317173089616481
+    second: penguin_die_63
+  - first:
+      213: 5376761742280450047
+    second: penguin_die_64
+  - first:
+      213: 7210563509659994338
+    second: penguin_die_65
+  - first:
+      213: -3571695494773224896
+    second: penguin_die_66
+  - first:
+      213: 428767417526124099
+    second: penguin_die_67
+  - first:
+      213: -2218160970542124584
+    second: penguin_die_68
+  - first:
+      213: -8915919696176224869
+    second: penguin_die_69
+  - first:
+      213: -3222045043588162174
+    second: penguin_die_70
+  - first:
+      213: -6705557197692697087
+    second: penguin_die_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: penguin_die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c8057139c3a3760800000000000000
+      internalID: 7438324337004809267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ab7600700c382e0800000000000000
+      internalID: -2124643462884640204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1abafe3f5edae770800000000000000
+      internalID: 8640963335723596318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_die_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5d922ccc53b1bc0800000000000000
+      internalID: -3811393506091870776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: efc8b1ff08690454a88a7b68825064b8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      penguin_die_0: 7438324337004809267
+      penguin_die_1: -2124643462884640204
+      penguin_die_2: 8640963335723596318
+      penguin_die_3: -3811393506091870776
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
