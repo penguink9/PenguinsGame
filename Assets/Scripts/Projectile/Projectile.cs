@@ -41,8 +41,9 @@ public class Projectile : MonoBehaviour
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         Indestructible indestructible = other.gameObject.GetComponent<Indestructible>();
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        bool isDestructible = other.gameObject.GetComponent<Destructible>();
 
-        if (!other.isTrigger && (enemyHealth || indestructible || player))
+        if (!other.isTrigger && (enemyHealth || indestructible || player || isDestructible))
         {
             if (player && isEnemyProjectile)
             {
