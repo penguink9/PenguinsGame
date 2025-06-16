@@ -203,6 +203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
+  healthDropChance: 0.5
+  hasKey: 1
+  maxCoins: 3
 --- !u!114 &2426086547142530549
 MonoBehaviour:
   m_ObjectHideFlags: 0

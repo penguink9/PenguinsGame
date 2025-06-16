@@ -213,6 +213,7 @@ MonoBehaviour:
   maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+  healTextPrefab: {fileID: 7915403926660659086, guid: 1e5521e33e0154c4cbe67fb9a22bddce, type: 3}
 --- !u!114 &2211827179031171502
 MonoBehaviour:
   m_ObjectHideFlags: 0

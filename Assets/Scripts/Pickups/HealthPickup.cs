@@ -4,6 +4,6 @@ public class HealthPickup : Pickup
 {
     public override void OnPickup()
     {
-        base.OnPickup();
+        InventoryManager.Instance.PickupHealPotions();
     }
 }
