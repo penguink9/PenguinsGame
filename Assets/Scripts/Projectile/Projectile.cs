@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 22f;
+    [SerializeField] private float moveSpeed = 30f;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
     [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private float projectileRange = 10f;
