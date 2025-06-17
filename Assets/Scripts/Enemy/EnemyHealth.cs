@@ -6,6 +6,9 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
     [SerializeField] private GameObject deathVFXPrefab;
+    [SerializeField] private float healthDropChance = 0.5f; // 50% chance to drop health on death
+    [SerializeField] private bool hasKey; // Enemy has a key to drop
+    [SerializeField] private int maxCoins = 3; // Amount of max coins to drop
 
     private int currentHealth;
     private KnockBack knockback;
@@ -21,10 +24,11 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damage, Transform transform)
+    public void TakeDamage(int damage, Transform damageSrc)
     {
         currentHealth -= damage;
-        knockback.GetKnockedBack(transform, 15f);
+        knockback.GetKnockedBack(damageSrc, 15f);
+        UISingleton.Instance.ShowDmgDealEffect(transform, damage);
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }
@@ -34,7 +38,21 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            SpawnPickup();
             Destroy(gameObject);
         }
+    }
+    public void SpawnPickup()
+    {
+        if(Random.value < healthDropChance)
+        {
+            PickupSpawner.Instance.SpawnHealthPotions(1, transform.position);
+        }
+        if (hasKey)
+        {
+            PickupSpawner.Instance.SpawnKeys(1, transform.position);
+        }
+        int coinsToDrop = Random.Range(1, maxCoins + 1);
+        PickupSpawner.Instance.SpawnCoins(coinsToDrop, transform.position);
     }
 }

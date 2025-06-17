@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3024604036869643124}
   m_Layer: 0
   m_Name: Lion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,6 +202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
+  healthDropChance: 0.5
+  hasKey: 0
+  maxCoins: 3
 --- !u!114 &4284179661453979323
 MonoBehaviour:
   m_ObjectHideFlags: 0

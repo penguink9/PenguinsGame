@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -57,10 +58,24 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
         currentHealth -= damageAmount;
+        UISingleton.Instance.ShowDmgTakeEffect(transform, damageAmount);
         UpdateHPSlider();
         StartCoroutine(DamageRecoveryRoutine());
     }
+    public bool Heal(int healAmount)
+    {
+        if (isDead) return false;
+        if (currentHealth == maxHealth) return false; // No need to heal if already at max health
 
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        UISingleton.Instance.ShowHealEffect(transform, healAmount);
+        UpdateHPSlider();
+        return true;
+    }
     private void CheckIfPlayerDead()
     {
         if (currentHealth <= 0 && !isDead)
@@ -88,4 +103,6 @@ public class PlayerHealth : MonoBehaviour
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
+
+
 }

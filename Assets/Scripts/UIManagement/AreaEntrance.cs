@@ -12,6 +12,7 @@ public class AreaEntrance : MonoBehaviour
             PlayerManager.Instance.GetActivePlayer().transform.position = transform.position;
             GameObject confiner = GameObject.FindGameObjectWithTag("Confiner");
             CameraManager.Instance.SetConfiner(confiner.GetComponent<PolygonCollider2D>());
+            TrackCurrentMap.Instance.UpdateLevelText();
             UIFade.Instance.FadeToClear();
         }
         

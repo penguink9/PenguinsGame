@@ -22,6 +22,7 @@ public class PlayerManager : Singleton<PlayerManager>
         CacheCharacterHPSliders();
         UnlockCharacter(0);
         UnlockCharacter(1);
+        UnlockCharacter(2);
         SwitchCharacter(0);
     }
 
