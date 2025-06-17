@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 
 public class PlayerBase : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 1f;
     [SerializeField] protected TrailRenderer trailRenderer;
-    public static PlayerBase Instance;
+
     protected Rigidbody2D rb;
     protected Animator myAnimator;
     protected SpriteRenderer mySpriteRender;
@@ -14,32 +14,54 @@ public class PlayerBase : MonoBehaviour
     protected bool facingLeft = false;
     protected bool isDashing = false;
     protected float dashSpeed = 4f;
-    protected PlayerController playerControls;  
+    protected bool isAttacking = false;
+    protected Vector2 movement;
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        Instance = this;
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<KnockBack>();
         trailRenderer.emitting = false;
-        playerControls = new PlayerController();
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        PlayerInputManager.Instance.OnAttack += Attack;
+        PlayerInputManager.Instance.OnDash += Dash;
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        PlayerInputManager.Instance.OnAttack -= Attack;
+        PlayerInputManager.Instance.OnDash -= Dash;
+    }
+
+    private void Update()
+    {
+        movement = PlayerInputManager.Instance.MoveInput;
+        UpdateAnimator();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isAttacking)
+        {
+            AdjustPlayerFacingDirection();
+            Move(movement);
+        }
+    }
+
+    private void UpdateAnimator()
+    {
+        myAnimator.SetFloat("moveX", movement.x);
+        myAnimator.SetFloat("moveY", movement.y);
     }
 
     public virtual void Move(Vector2 movement)
     {
-        if (knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead) return;
+        if (knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead || isAttacking) return;
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
@@ -56,14 +78,15 @@ public class PlayerBase : MonoBehaviour
 
     private IEnumerator DashCooldownCoroutine()
     {
-        float dashDuration = 0.2f; // Thời gian dashes
-        float dashCD = 0.5f; // Thời gian cooldown dashes
+        float dashDuration = 0.2f;
+        float dashCD = 0.5f;
         yield return new WaitForSeconds(dashDuration);
         moveSpeed /= dashSpeed;
         trailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCD);
-        isDashing = false; // Kết thúc trạng thái dashes
+        isDashing = false;
     }
+
     public virtual void AdjustPlayerFacingDirection()
     {
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -80,5 +103,10 @@ public class PlayerBase : MonoBehaviour
             facingLeft = false;
         }
     }
-}
 
+    public virtual void Attack()
+    {
+        Debug.Log($"{gameObject.name} Attack Triggered");
+        // Override ở từng class con
+    }
+}

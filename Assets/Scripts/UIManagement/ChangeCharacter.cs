@@ -4,24 +4,22 @@ using System.Collections;
 public class ChangeCharacter : MonoBehaviour
 {
     private int activeSlotIndexNum = 0;
-    private PlayerController playerControls;
     private bool isCooldown = false;
-
-    private void Awake()
-    {
-        playerControls = new PlayerController();
-    }
-
     private void Start()
     {
-        playerControls.SelectChar.Keyboard.performed += ctx => TriggerSlot((int)ctx.ReadValue<float>());
         HighlightSelectedChar(PlayerManager.Instance.GetActivePlayerIndex());
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        PlayerInputManager.Instance.OnCharacterSelect += TriggerSlot;
     }
+
+    private void OnDisable()
+    {
+        PlayerInputManager.Instance.OnCharacterSelect -= TriggerSlot;
+    }
+
 
     public void TriggerSlot(int numValue)
     {

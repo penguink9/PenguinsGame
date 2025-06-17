@@ -6,7 +6,6 @@ public class InventoryManager : Singleton<InventoryManager>
 {
     private int healthPotions = 0;
     private int keyCount = 0;
-    private PlayerController playerControls;
     private TextMeshProUGUI potionCountText;
     private TextMeshProUGUI keyCountText;
     private bool isCooldown = false;
@@ -14,18 +13,19 @@ public class InventoryManager : Singleton<InventoryManager>
     protected override void Awake()
     {
         base.Awake();
-        playerControls = new PlayerController();
         potionCountText = transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
         keyCountText = transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
     }
     private void OnEnable()
     {
-        playerControls.Enable();
+        PlayerInputManager.Instance.OnHeal += Healing;
+        PlayerInputManager.Instance.OnInteract += UseKey;
     }
-    private void Start()
+
+    private void OnDisable()
     {
-        playerControls.Combat.Heal.performed += _ => Healing();
-        playerControls.Combat.Interact.performed += _ => UseKey();
+        PlayerInputManager.Instance.OnHeal -= Healing;
+        PlayerInputManager.Instance.OnInteract -= UseKey;
     }
     private void Healing()
     {
