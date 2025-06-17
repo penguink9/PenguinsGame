@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
+using System.Collections;
 public class ChangeCharacter : MonoBehaviour
 {
     private int activeSlotIndexNum = 0;
-
     private PlayerController playerControls;
+    private bool isCooldown = false;
 
     private void Awake()
     {
@@ -24,20 +25,31 @@ public class ChangeCharacter : MonoBehaviour
 
     public void TriggerSlot(int numValue)
     {
+        if (isCooldown)
+            return;
+
         if (!PlayerManager.Instance.IsCharacterUnlocked(numValue - 1) || !PlayerManager.Instance.IsCharacterAlive(numValue - 1))
         {
             Debug.LogWarning("Character not unlocked or alive: " + numValue);
             return;
         }
+
         HighlightSelectedChar(numValue - 1);
         PlayerManager.Instance.SwitchCharacter(numValue - 1);
+        StartCoroutine(CooldownCoroutine());
+    }
+
+    private IEnumerator CooldownCoroutine()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(1f);
+        isCooldown = false;
     }
 
     private void HighlightSelectedChar(int indexNum)
     {
         activeSlotIndexNum = indexNum;
 
-        // Set all character highlights to inactive and active Hp Slider
         foreach (Transform character in transform)
         {
             if (!character.gameObject.activeSelf)
@@ -45,15 +57,12 @@ public class ChangeCharacter : MonoBehaviour
 
             character.GetChild(0).GetChild(0).gameObject.SetActive(false);
             character.GetChild(1).gameObject.SetActive(true);
-
         }
 
-        // Set active character highlight
         Transform selectedCharacter = transform.GetChild(indexNum);
         selectedCharacter.GetChild(0).GetChild(0).gameObject.SetActive(true);
         selectedCharacter.GetChild(1).gameObject.SetActive(false);
     }
-
 
     public void UpdateCharBox(int unlockedCount)
     {
@@ -69,5 +78,4 @@ public class ChangeCharacter : MonoBehaviour
                 charBox.gameObject.SetActive(false);
         }
     }
-
 }

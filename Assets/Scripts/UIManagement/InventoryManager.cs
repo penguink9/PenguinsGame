@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class InventoryManager : Singleton<InventoryManager>
     private PlayerController playerControls;
     private TextMeshProUGUI potionCountText;
     private TextMeshProUGUI keyCountText;
-
+    private bool isCooldown = false;
 
     protected override void Awake()
     {
@@ -28,7 +29,8 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     private void Healing()
     {
-        if(healthPotions <= 0)
+        if (isCooldown) return;
+        if (healthPotions <= 0)
         {
             Debug.LogWarning("No health potions available to use.");
             return;
@@ -41,6 +43,13 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             Debug.LogWarning("Player is already at full health or cannot heal further.");
         }
+        StartCoroutine(HealingCooldown());
+    }
+    private IEnumerator HealingCooldown()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(1.5f);
+        isCooldown = false;
     }
     private void UseKey()
     {

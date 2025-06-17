@@ -15,8 +15,8 @@ public class BombPenguinController : PlayerBase
     private void Start()
     {
         // Gán sự kiện từ playerControls cho các phương thức Attack và Dash
-        playerControls.Combat.Attack.started += _ => Attack();
-        playerControls.Combat.Dash.started += _ => Dash();
+        playerControls.Combat.Attack.performed += _ => Attack();
+        playerControls.Combat.Dash.performed += _ => Dash();
     }
 
     private void Update()
@@ -66,12 +66,4 @@ public class BombPenguinController : PlayerBase
         yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
     }
-
-
-    public override void Move(Vector2 movement)
-    {
-        base.Move(movement);
-    }
-
-
 }

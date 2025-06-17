@@ -13,15 +13,15 @@ public class NormalPenguinController : PlayerBase
     [SerializeField] private Transform attackCollider;
 
     private bool isAttacking = false;
-    private float attackCooldown = 0.5f;
+    private float attackCooldown = 0.75f;
     private float lastAttackTime = 0f;
     private GameObject slashAnim;
 
     private void Start()
     {
         // Gán sự kiện từ playerControls cho các phương thức Attack và Dash
-        playerControls.Combat.Attack.started += _ => Attack();
-        playerControls.Combat.Dash.started += _ => Dash();
+        playerControls.Combat.Attack.performed += _ => Attack();
+        playerControls.Combat.Dash.performed += _ => Dash();
         attackCollider.gameObject.SetActive(false);  // Tắt collider khi bắt đầu
     }
 
@@ -81,11 +81,6 @@ public class NormalPenguinController : PlayerBase
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = facingLeft;
         }
-    }
-
-    public override void Move(Vector2 movement)
-    {
-        base.Move(movement);  // Gọi lại phương thức Move từ PlayerBase
     }
     public void DoneAttackingAnimEvent()
     {
