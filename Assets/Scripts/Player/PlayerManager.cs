@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(-100)]
 public class PlayerManager : Singleton<PlayerManager>
 {
     [SerializeField] private PlayerPrefabsDatabase prefabDatabase;
@@ -76,16 +77,16 @@ public class PlayerManager : Singleton<PlayerManager>
         SceneManager.LoadScene("Level1_Map1");
     }
 
-    public void SwitchCharacter(int index)
+    public bool SwitchCharacter(int index)
     {
         Vector3 currentPosition = unlockedPlayers[activePlayerIndex].transform.position;
-        if (index < 0 || index >= unlockedPlayers.Count) return;
+        if (index < 0 || index >= unlockedPlayers.Count) return false;
         //Set old player's health bar to the UI
+        if (!unlockedPlayers[activePlayerIndex].GetComponent<PlayerState>().CanSwitch()) return false;
         unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(characterHPSliders[activePlayerIndex]);
 
         // Deactivate all players and activate the selected one
-        foreach (var player in unlockedPlayers)
-            player.SetActive(false);
+        unlockedPlayers[activePlayerIndex].SetActive(false);
         // Activate the new player and set its position
         activePlayerIndex = index;
         unlockedPlayers[activePlayerIndex].SetActive(true);
@@ -96,6 +97,7 @@ public class PlayerManager : Singleton<PlayerManager>
         unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(healthSlider);
         // Update the enemy target provider to follow the new player
         EnemyTargetProvider.Instance.SetTarget(unlockedPlayers[activePlayerIndex].transform);
+        return true;
     }
 
     public GameObject GetActivePlayer()

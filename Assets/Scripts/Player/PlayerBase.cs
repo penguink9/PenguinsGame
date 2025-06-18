@@ -10,11 +10,9 @@ public class PlayerBase : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator myAnimator;
     protected SpriteRenderer mySpriteRender;
-    protected KnockBack knockback;
+    protected PlayerState playerState;
     protected bool facingLeft = false;
-    protected bool isDashing = false;
     protected float dashSpeed = 4f;
-    protected bool isAttacking = false;
     protected Vector2 movement;
 
     protected virtual void Awake()
@@ -22,7 +20,7 @@ public class PlayerBase : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
-        knockback = GetComponent<KnockBack>();
+        playerState = GetComponent<PlayerState>();
         trailRenderer.emitting = false;
     }
 
@@ -46,7 +44,9 @@ public class PlayerBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isAttacking)
+        if (playerState.CurrentState != PlayerState.State.Attacking &&
+            playerState.CurrentState != PlayerState.State.TakingDamage &&
+            playerState.CurrentState != PlayerState.State.Dead)
         {
             AdjustPlayerFacingDirection();
             Move(movement);
@@ -61,15 +61,16 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void Move(Vector2 movement)
     {
-        if (knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead || isAttacking) return;
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        playerState.CurrentState = movement != Vector2.zero ? PlayerState.State.Moving : PlayerState.State.Idle;
     }
 
     public virtual void Dash()
     {
-        if (isDashing || knockback.gettingKnockedBack || GetComponent<PlayerHealth>().isDead) return;
+        if (playerState.CurrentState != PlayerState.State.Moving)
+            return;
 
-        isDashing = true;
+        playerState.CurrentState = PlayerState.State.Dashing;
         moveSpeed *= dashSpeed;
         trailRenderer.emitting = true;
 
@@ -80,11 +81,12 @@ public class PlayerBase : MonoBehaviour
     {
         float dashDuration = 0.2f;
         float dashCD = 0.5f;
+
         yield return new WaitForSeconds(dashDuration);
         moveSpeed /= dashSpeed;
         trailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCD);
-        isDashing = false;
+        playerState.CurrentState = PlayerState.State.Idle;
     }
 
     public virtual void AdjustPlayerFacingDirection()
@@ -92,21 +94,19 @@ public class PlayerBase : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (mousePos.x < playerScreenPoint.x)
-        {
-            mySpriteRender.flipX = true;
-            facingLeft = true;
-        }
-        else
-        {
-            mySpriteRender.flipX = false;
-            facingLeft = false;
-        }
+        mySpriteRender.flipX = mousePos.x < playerScreenPoint.x;
+        facingLeft = mySpriteRender.flipX;
     }
 
     public virtual void Attack()
     {
-        Debug.Log($"{gameObject.name} Attack Triggered");
-        // Override ở từng class con
+        if (playerState.CurrentState == PlayerState.State.Dead ||
+            playerState.CurrentState == PlayerState.State.Attacking)
+            return;
+
+        playerState.CurrentState = PlayerState.State.Attacking;
+        // Additional attack behavior here
+
     }
 }
+

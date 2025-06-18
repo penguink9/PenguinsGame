@@ -31,16 +31,18 @@ public class ChangeCharacter : MonoBehaviour
             Debug.LogWarning("Character not unlocked or alive: " + numValue);
             return;
         }
-
-        HighlightSelectedChar(numValue - 1);
-        PlayerManager.Instance.SwitchCharacter(numValue - 1);
-        StartCoroutine(CooldownCoroutine());
+        if (PlayerManager.Instance.SwitchCharacter(numValue - 1))
+        {
+            HighlightSelectedChar(numValue - 1);
+            StartCoroutine(CooldownCoroutine());
+        }
+        else return;
     }
 
     private IEnumerator CooldownCoroutine()
     {
         isCooldown = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         isCooldown = false;
     }
 

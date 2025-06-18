@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class PlayerInputManager : Singleton<PlayerInputManager>
 {
     private PlayerController playerControls;

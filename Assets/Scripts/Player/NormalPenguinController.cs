@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class NormalPenguinController : PlayerBase
@@ -20,9 +21,9 @@ public class NormalPenguinController : PlayerBase
     }
     public override void Attack()
     {
-        if ((Time.time - lastAttackTime >= attackCooldown) && !isAttacking)
+        if ((Time.time - lastAttackTime >= attackCooldown) && !(playerState.CurrentState == PlayerState.State.Attacking))
         {
-            isAttacking = true;
+            playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             AdjustPlayerFacingDirection();
             myAnimator.SetTrigger("Attack");
@@ -42,7 +43,7 @@ public class NormalPenguinController : PlayerBase
     private IEnumerator AttackCooldownCoroutine()
     {
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
+        playerState.CurrentState = PlayerState.State.Idle;
         attackCollider.gameObject.SetActive(false);
     }
 

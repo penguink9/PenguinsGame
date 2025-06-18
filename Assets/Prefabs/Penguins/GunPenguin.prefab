@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 5897446906312758224}
   - component: {fileID: 5455344674626018289}
   - component: {fileID: 2043261226357292554}
+  - component: {fileID: 3240346385689716960}
   m_Layer: 0
   m_Name: GunPenguin
   m_TagString: Player
@@ -363,7 +364,6 @@ MonoBehaviour:
   maxHealth: 3
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
-  healthBar: {fileID: 0}
 --- !u!114 &5897446906312758224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +407,18 @@ MonoBehaviour:
   trailRenderer: {fileID: 1163135342229815472}
   bulletSpawnPoint: {fileID: 8252420198113687698}
   bulletPrefab: {fileID: 4798695554701900391, guid: fb35d0d033b902946bf6fa498294bf11, type: 3}
+--- !u!114 &3240346385689716960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325987290752140458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819864b80d9f937468f96b1dd001605d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8722640881286066734
 GameObject:
   m_ObjectHideFlags: 0

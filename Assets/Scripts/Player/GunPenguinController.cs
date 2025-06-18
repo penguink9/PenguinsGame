@@ -14,9 +14,9 @@ public class GunPenguinController : PlayerBase
     }
     public override void Attack()
     {
-        if ((Time.time - lastAttackTime >= attackCooldown) && !isAttacking)
+        if ((Time.time - lastAttackTime >= attackCooldown) && !(playerState.CurrentState == PlayerState.State.Attacking))
         {
-            isAttacking = true;
+            playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             Vector3 spawnPos = bulletSpawnPoint.position;
             spawnPos.x += facingLeft ? -1.5f : 0f;
@@ -33,7 +33,7 @@ public class GunPenguinController : PlayerBase
     private IEnumerator AttackCooldownCoroutine()
     {
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
+        playerState.CurrentState = PlayerState.State.Idle;
     }
 
 }

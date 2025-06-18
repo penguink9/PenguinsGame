@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8513856698740361023}
   - component: {fileID: 2211827179031171502}
   - component: {fileID: 8215215276818348420}
+  - component: {fileID: -1773980808385792334}
   m_Layer: 0
   m_Name: BombPenguin
   m_TagString: Player
@@ -179,8 +180,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.08460826, y: 0.11176827}
-  m_Size: {x: 1.4455613, y: 1.4455613}
+  m_Offset: {x: -0.062245287, y: -0.24359693}
+  m_Size: {x: 1.1324688, y: 0.6006492}
   m_Direction: 1
 --- !u!114 &2658200147413769002
 MonoBehaviour:
@@ -213,7 +214,6 @@ MonoBehaviour:
   maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
-  healTextPrefab: {fileID: 7915403926660659086, guid: 1e5521e33e0154c4cbe67fb9a22bddce, type: 3}
 --- !u!114 &2211827179031171502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +241,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+--- !u!114 &-1773980808385792334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109181127490626756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819864b80d9f937468f96b1dd001605d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4167730346654735966
 GameObject:
   m_ObjectHideFlags: 0

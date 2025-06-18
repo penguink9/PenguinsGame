@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: -5148751217878842010}
   - component: {fileID: 124645483937949491}
   - component: {fileID: -731949965901745443}
+  - component: {fileID: 4732333087174476310}
   m_Layer: 0
   m_Name: NormalPenguin
   m_TagString: Player
@@ -513,7 +514,6 @@ MonoBehaviour:
   maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
-  healTextPrefab: {fileID: 7915403926660659086, guid: 1e5521e33e0154c4cbe67fb9a22bddce, type: 3}
 --- !u!114 &124645483937949491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,3 +541,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+--- !u!114 &4732333087174476310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108201292597396186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819864b80d9f937468f96b1dd001605d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

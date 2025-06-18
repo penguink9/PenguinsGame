@@ -13,9 +13,9 @@ public class BombPenguinController : PlayerBase
     }
     public override void Attack()
     {
-        if ((Time.time - lastAttackTime >= attackCooldown) && !isAttacking)
+        if ((Time.time - lastAttackTime >= attackCooldown) && !(playerState.CurrentState == PlayerState.State.Attacking))
         {
-            isAttacking = true;
+            playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             myAnimator.SetTrigger("Attack");
             Vector3 spawnPos = bombSpawnPoint.position;
@@ -31,6 +31,6 @@ public class BombPenguinController : PlayerBase
     private IEnumerator AttackCooldownCoroutine()
     {
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
+        playerState.CurrentState = PlayerState.State.Idle;
     }
 }
