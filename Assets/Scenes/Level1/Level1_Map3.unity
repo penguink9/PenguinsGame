@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
-      value: Croc (3)
+      value: Croc3
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -377,6 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169294259}
+  - component: {fileID: 169294260}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -405,6 +406,19 @@ Transform:
   - {fileID: 765786511}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169294260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169294258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ee453ebd3b9504097e60195089877d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapIndex: 3
 --- !u!1001 &172940745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823672791286127905, guid: 0474e4aad1683804fad62fb276fae7bc, type: 3}
       propertyPath: m_Name
-      value: Barrel2
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7748,7 +7762,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1802505468897458135, guid: aa480712049635243839ac65db121146, type: 3}
       propertyPath: m_Name
-      value: Crate1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3014679123137890015, guid: aa480712049635243839ac65db121146, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8455,7 +8469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
-      value: Croc (5)
+      value: Croc5
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -8481,7 +8495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7648189892121555073, guid: a84d54b1eb780954496bb6ce8258a979, type: 3}
       propertyPath: m_Name
-      value: Crate2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9093283364032385673, guid: a84d54b1eb780954496bb6ce8258a979, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8671,7 +8685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823672791286127905, guid: 0474e4aad1683804fad62fb276fae7bc, type: 3}
       propertyPath: m_Name
-      value: Barrel2 (1)
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8692,6 +8706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979741033}
+  - component: {fileID: 979741034}
   m_Layer: 0
   m_Name: DestructibleItems
   m_TagString: Untagged
@@ -8722,6 +8737,19 @@ Transform:
   - {fileID: 959191302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979741034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979741032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e16e765a6b1194ba9e65362d30dfe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapIndex: 3
 --- !u!1001 &1006814012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8772,7 +8800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5055833900352340782, guid: 5e2cf28307272784dba42d8e6e15f001, type: 3}
       propertyPath: m_Name
-      value: Crate3 (1)
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9288,7 +9316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
-      value: Croc (4)
+      value: Croc4
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -9359,7 +9387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
-      value: Croc (2)
+      value: Croc2
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -9481,7 +9509,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5804891362109393790, guid: c0e51e5471b7df542b830f2e31815718, type: 3}
       propertyPath: m_Name
-      value: Barrel1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6954337834422277938, guid: c0e51e5471b7df542b830f2e31815718, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36350,7 +36378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
-      value: Croc (1)
+      value: Croc1
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -36504,7 +36532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5055833900352340782, guid: 5e2cf28307272784dba42d8e6e15f001, type: 3}
       propertyPath: m_Name
-      value: Crate3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45231,7 +45259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7648189892121555073, guid: a84d54b1eb780954496bb6ce8258a979, type: 3}
       propertyPath: m_Name
-      value: Crate2 (1)
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9093283364032385673, guid: a84d54b1eb780954496bb6ce8258a979, type: 3}
       propertyPath: m_LocalPosition.x

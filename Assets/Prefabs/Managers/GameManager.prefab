@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1768722166189658343}
   - component: {fileID: 8093644329043481755}
   - component: {fileID: 7217884780477724861}
+  - component: {fileID: 5426825461702235154}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -71,3 +72,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupDatabase: {fileID: 11400000, guid: 12cb05bc35ac26d42b9b751a73472505, type: 2}
+--- !u!114 &5426825461702235154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557580367362319803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59de9d767bc40ff41bc76e0783f2aa59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

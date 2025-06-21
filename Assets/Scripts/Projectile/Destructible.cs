@@ -21,4 +21,8 @@ public class Destructible : MonoBehaviour
         int coinsToDrop = Random.Range(1, maxCoins + 1);
         PickupSpawner.Instance.SpawnCoins(coinsToDrop, transform.position);
     }
+    public ItemState SaveState()
+    {
+        return new ItemState { id = name, isDestroyed = false };
+    }
 }
