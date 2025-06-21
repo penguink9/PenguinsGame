@@ -55,4 +55,14 @@ public class EnemyHealth : MonoBehaviour
         int coinsToDrop = Random.Range(1, maxCoins + 1);
         PickupSpawner.Instance.SpawnCoins(coinsToDrop, transform.position);
     }
+
+    public EnemyState SaveState()
+    {
+        return new EnemyState { id = name, currentHP = currentHealth };
+    }
+
+    public void LoadState(EnemyState state)
+    {
+        currentHealth = state.currentHP;
+    }
 }
