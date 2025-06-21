@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     private int currentHealth;
     private KnockBack knockback;
+    private SlowEffect sloweffect;
     private Flash flash;
 
     private void Awake()
@@ -32,6 +33,16 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }
+
+    public void TakeSlow(int damage , Transform damageSrc)
+    {
+        currentHealth -= damage;
+        sloweffect.ApplySlow();
+        UISingleton.Instance.ShowDmgDealEffect(transform, damage);
+        StartCoroutine(flash.FlashRoutine());
+        DetectDeath();
+    }
+
 
     public void DetectDeath()
     {
