@@ -9,7 +9,9 @@ public class InventoryManager : Singleton<InventoryManager>
     private TextMeshProUGUI potionCountText;
     private TextMeshProUGUI keyCountText;
     private bool isCooldown = false;
-
+    private bool canInteract = false;
+    private int unlockCharacterIndex = 0;
+    public bool usedKey = false;
     protected override void Awake()
     {
         base.Awake();
@@ -53,12 +55,20 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     private void UseKey()
     {
+        if (!canInteract) return;
         if (keyCount <= 0)
         {
             Debug.LogWarning("No keys available to use.");
             return;
         }
-        return;
+        else
+        {
+            usedKey = true; // Set usedKey to true when a key is used
+            keyCount--;
+            PlayerManager.Instance.UnlockCharacter(unlockCharacterIndex);
+            UpdateKeyCount();
+            canInteract = false; // Reset interaction state after using a key
+        }
     }
     public void PickupHealPotions()
     {
@@ -77,5 +87,15 @@ public class InventoryManager : Singleton<InventoryManager>
     private void UpdateKeyCount()
     {
         keyCountText.text = keyCount.ToString();
+    }
+    public void EnterInteractArea(int characterIndex)
+    {
+        unlockCharacterIndex = characterIndex;
+        canInteract = true;
+    }
+    public void ExitInteractArea()
+    {
+        canInteract = false;
+        unlockCharacterIndex = 0; // Reset the index when exiting the interact area
     }
 }

@@ -14,6 +14,7 @@ public class PlayerBase : MonoBehaviour
     protected bool facingLeft = false;
     protected float dashSpeed = 4f;
     protected Vector2 movement;
+    protected bool canDash = true;
 
     protected virtual void Awake()
     {
@@ -67,9 +68,9 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void Dash()
     {
-        if (playerState.CurrentState != PlayerState.State.Moving)
+        if (!canDash || playerState.CurrentState != PlayerState.State.Moving)
             return;
-
+        canDash = false;
         playerState.CurrentState = PlayerState.State.Dashing;
         moveSpeed *= dashSpeed;
         trailRenderer.emitting = true;
@@ -87,6 +88,7 @@ public class PlayerBase : MonoBehaviour
         trailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCD);
         playerState.CurrentState = PlayerState.State.Idle;
+        canDash = true;
     }
 
     public virtual void AdjustPlayerFacingDirection()

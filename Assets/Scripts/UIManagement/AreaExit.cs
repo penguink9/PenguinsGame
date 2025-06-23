@@ -6,6 +6,7 @@ using static UnityEngine.Rendering.DebugManager;
 
 public class AreaExit : MonoBehaviour
 {
+
     [SerializeField] private string sceneToLoad;
     [SerializeField] private string sceneTransitionName;
 
@@ -16,7 +17,9 @@ public class AreaExit : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {         
             SceneManagement.Instance.SetTransitionName(sceneTransitionName);
-             UIFade.Instance.FadeToBlack();
+            int mapIndex = MapStateManager.Instance.GetMapIndexFromSceneName();
+            MapStateManager.Instance.SaveMapState(mapIndex);
+            UIFade.Instance.FadeToBlack();
             StartCoroutine(LoadSceneRoutine());
         }
 
