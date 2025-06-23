@@ -1,9 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CapturedPenguin : MonoBehaviour
 {
     [SerializeField] private int penguinIndex;
 
+    private void Awake()
+    {
+        MapStateManager.Instance.isCapturedPenguinUnlocked.TryGetValue(penguinIndex, out bool isUnlocked);
+        if (isUnlocked)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,6 +26,7 @@ public class CapturedPenguin : MonoBehaviour
         {
             InventoryManager.Instance.usedKey = false;
             Debug.Log("Penguin Captured: " + penguinIndex);
+            MapStateManager.Instance.isCapturedPenguinUnlocked[penguinIndex] = true;
             Destroy(gameObject);
         }
     }

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 // Cũng đăng ký và điều phối các group theo mapIndex.
 public class MapStateManager : Singleton<MapStateManager>
 {
+    [SerializeField] List<int> capturedPenguinIndexs = new();
+    public Dictionary<int,bool> isCapturedPenguinUnlocked = new();
     // Trạng thái từng map
     private Dictionary<int, MapState> mapStates = new();
 
@@ -13,6 +15,14 @@ public class MapStateManager : Singleton<MapStateManager>
     private Dictionary<int, EnemyGroupManager> enemyGroups = new();
     private Dictionary<int, ItemGroupManager> itemGroups = new();
 
+    protected override void Awake()
+    {
+        base.Awake();
+        foreach (var index in capturedPenguinIndexs)
+        {
+            isCapturedPenguinUnlocked.Add(index, false);
+        }
+    }
     // Đăng ký enemy group với mapIndex cụ thể
     public void RegisterEnemyGroup(int mapIndex, EnemyGroupManager group)
     {
