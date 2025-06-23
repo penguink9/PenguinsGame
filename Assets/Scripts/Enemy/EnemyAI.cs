@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float trackingRange = 3f;
     [SerializeField] private float returnSpeedMultiplier = 2f;
     [SerializeField] private float chasingSpeedMultiplier = 1.5f;
+    [SerializeField] private int damage = 1;
 
     private Vector2 startingPosition;
     private EnemyPathing enemyPathfinding;
@@ -35,7 +36,10 @@ public class EnemyAI : MonoBehaviour
     {
         StartCoroutine(StateRoutine());
     }
-
+    public int GetDamage()
+    {
+        return damage;
+    }
     private IEnumerator StateRoutine()
     {
         while (true)
