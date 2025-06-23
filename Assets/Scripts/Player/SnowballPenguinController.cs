@@ -20,7 +20,9 @@ public class SnowballPenguinController : PlayerBase
             myAnimator.SetTrigger("Attack");
             Vector3 spawnPos = snowballSpawnPoint.position;
             spawnPos.x += facingLeft ? -1.5f : 0f;
-            Instantiate(snowballProjectilePrefab, transform.position, Quaternion.identity);
+            //Instantiate(snowballProjectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(snowballProjectilePrefab, spawnPos, Quaternion.identity);
+
             // Spawn projectile và set direction
             lastAttackTime = Time.time;
             StartCoroutine(AttackCooldownCoroutine());

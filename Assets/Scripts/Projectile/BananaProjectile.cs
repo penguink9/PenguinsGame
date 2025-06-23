@@ -22,7 +22,7 @@ public class BananaProjectile : MonoBehaviour
     private IEnumerator ProjectileCurveRoutine(Vector3 startPosition, Vector3 endPosition)
     {
         float timePassed = 0f;
-        endPosition.y -= 1f;
+
         while (timePassed < duration)
         {
             timePassed += Time.deltaTime;

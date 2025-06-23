@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         flash = GetComponent<Flash>();
         knockback = GetComponent<KnockBack>();
+        sloweffect = GetComponent<SlowEffect>();
     }
     private void Start()
     {
@@ -39,7 +40,6 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         sloweffect.ApplySlow();
         UISingleton.Instance.ShowDmgDealEffect(transform, damage);
-        StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2704420470847709477}
   - component: {fileID: 4284179661453979323}
   - component: {fileID: 2541469995210822477}
+  - component: {fileID: 5954137487539286613}
   - component: {fileID: 3024604036869643124}
   m_Layer: 0
   m_Name: Lion
@@ -232,6 +233,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: 9780148af679e5348bf62bd48d56fa51, type: 2}
   restoreDefaultMatTime: 0.2
+  BlueStun: {fileID: 0}
+--- !u!114 &5954137487539286613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537830771005015885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad9c212b26c4d479b074e78c3c4184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 10
+  slowFactor: 0.9
+  restoreStuntime: 2
+  BlueStun: {fileID: 2100000, guid: 2384466d9f47a994dad7e8e44571e88d, type: 2}
 --- !u!95 &3024604036869643124
 Animator:
   serializedVersion: 7

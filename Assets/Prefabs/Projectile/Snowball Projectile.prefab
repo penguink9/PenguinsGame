@@ -148,7 +148,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -180,19 +180,19 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.3780273
-      value: 0.010475395
-      inSlope: -0.78189856
-      outSlope: -0.78189856
+      time: 1.0104363
+      value: -0.010423319
+      inSlope: -2.0629401
+      outSlope: -2.0629401
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.04644529
+      inWeight: 0.07723568
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  heightY: 3
-  maxRange: 5
+  heightY: 5
+  maxRange: 8
   explosionPrefab: {fileID: 319984309766695710, guid: 906e3cd931c6a9a4285e2b8c8bc41cda, type: 3}
 --- !u!95 &5458681247390793115
 Animator:

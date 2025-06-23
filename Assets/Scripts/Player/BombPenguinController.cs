@@ -20,7 +20,7 @@ public class BombPenguinController : PlayerBase
             myAnimator.SetTrigger("Attack");
             Vector3 spawnPos = bombSpawnPoint.position;
             spawnPos.x += facingLeft ? -1.5f : 0f;
-            Instantiate(bombProjectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(bombProjectilePrefab, spawnPos, Quaternion.identity);
             // Spawn projectile và set direction
             lastAttackTime = Time.time;
             StartCoroutine(AttackCooldownCoroutine());
