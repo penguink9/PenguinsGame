@@ -2,56 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class NormalPenguinController : PlayerBase
 {
-    private Vector2 movement;
 
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform attackCollider;
-
-    private bool isAttacking = false;
-    private float attackCooldown = 0.5f;
+    private float attackCooldown = 0.75f;
     private float lastAttackTime = 0f;
     private GameObject slashAnim;
 
     private void Start()
     {
-        // Gán sự kiện từ playerControls cho các phương thức Attack và Dash
-        playerControls.Combat.Attack.started += _ => Attack();
-        playerControls.Combat.Dash.started += _ => Dash();
         attackCollider.gameObject.SetActive(false);  // Tắt collider khi bắt đầu
     }
-
-    private void Update()
+    public override void Attack()
     {
-        PlayerInput();
-    }
-
-    private void FixedUpdate()
-    {
-        // Chỉ cho phép di chuyển nếu không đang tấn công
-        if (!isAttacking)
+        if ((Time.time - lastAttackTime >= attackCooldown) && !(playerState.CurrentState == PlayerState.State.Attacking))
         {
-            AdjustPlayerFacingDirection();
-            Move(movement);  // Sử dụng phương thức Move từ PlayerBase
-        }
-    }
-
-    private void PlayerInput()
-    {
-        movement = playerControls.Movement.Move.ReadValue<Vector2>();  // Đọc dữ liệu từ playerControls
-        myAnimator.SetFloat("moveX", movement.x);
-        myAnimator.SetFloat("moveY", movement.y);
-    }
-
-    public void Attack()
-    {
-        if ((Time.time - lastAttackTime >= attackCooldown) && !isAttacking)
-        {
-            isAttacking = true;
+            playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             AdjustPlayerFacingDirection();
             myAnimator.SetTrigger("Attack");
@@ -71,7 +43,7 @@ public class NormalPenguinController : PlayerBase
     private IEnumerator AttackCooldownCoroutine()
     {
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
+        playerState.CurrentState = PlayerState.State.Idle;
         attackCollider.gameObject.SetActive(false);
     }
 
@@ -81,11 +53,6 @@ public class NormalPenguinController : PlayerBase
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = facingLeft;
         }
-    }
-
-    public override void Move(Vector2 movement)
-    {
-        base.Move(movement);  // Gọi lại phương thức Move từ PlayerBase
     }
     public void DoneAttackingAnimEvent()
     {

@@ -33,7 +33,6 @@ public class MonkeyAI : MonoBehaviour
         enemyPathfinding = GetComponent<EnemyPathing>();
         state = State.Roaming;
         startingPosition = transform.position;
-        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
         defaultMoveSpeed = enemyPathfinding.moveSpeed;
 
         myAnimator = GetComponent<Animator>();
@@ -50,6 +49,7 @@ public class MonkeyAI : MonoBehaviour
     {
         while (true)
         {
+            playerTransform = EnemyTargetProvider.Instance.GetTarget();
             switch (state)
             {
                 case State.Roaming:

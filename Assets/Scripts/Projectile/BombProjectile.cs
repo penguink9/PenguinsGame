@@ -32,7 +32,7 @@ public class BombProjectile : MonoBehaviour
         
 
         StartCoroutine(ProjectileCurveRoutine(transform.position, targetPosition));
-        StartCoroutine(MoveGrapeShadowRoutine(bombShadow, bombShadowStartPosition, targetPosition));
+        StartCoroutine(MoveShadowRoutine(bombShadow, bombShadowStartPosition, targetPosition));
     }
 
     private IEnumerator ProjectileCurveRoutine(Vector3 startPosition, Vector3 endPosition)
@@ -55,7 +55,7 @@ public class BombProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator MoveGrapeShadowRoutine(GameObject bombShadow, Vector3 startPosition, Vector3 endPosition)
+    private IEnumerator MoveShadowRoutine(GameObject bombShadow, Vector3 startPosition, Vector3 endPosition)
     {
         float timePassed = 0f;
 
