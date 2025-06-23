@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
 
     private Vector2 startingPosition;
     private EnemyPathing enemyPathfinding;
-    private float defaultMoveSpeed;
+    public float defaultMoveSpeed { get; set; }
 
     private void Awake()
     {

@@ -1,16 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-
-public class BombPenguinController : PlayerBase
+public class SnowballPenguinController : PlayerBase
 {
-    [SerializeField] Transform bombSpawnPoint;
-    [SerializeField] private GameObject bombProjectilePrefab;
+    [SerializeField] Transform snowballSpawnPoint;
+    [SerializeField] private GameObject snowballProjectilePrefab;
     private float attackCooldown = 0.8f;
     private float lastAttackTime = 0f;
 
     private void Start()
     {
     }
+
     public override void Attack()
     {
         if ((Time.time - lastAttackTime >= attackCooldown) && !(playerState.CurrentState == PlayerState.State.Attacking))
@@ -18,10 +18,12 @@ public class BombPenguinController : PlayerBase
             playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             myAnimator.SetTrigger("Attack");
-            Vector3 spawnPos = bombSpawnPoint.position;
+            Vector3 spawnPos = snowballSpawnPoint.position;
             spawnPos.x += facingLeft ? -1.5f : 0f;
-            Instantiate(bombProjectilePrefab, spawnPos, Quaternion.identity);
-            // Spawn projectile và set direction
+            //Instantiate(snowballProjectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(snowballProjectilePrefab, spawnPos, Quaternion.identity);
+
+            // Spawn projectile v� set direction
             lastAttackTime = Time.time;
             StartCoroutine(AttackCooldownCoroutine());
         }

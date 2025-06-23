@@ -147,7 +147,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -179,13 +179,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.0827332
-      value: -0.0010986328
-      inSlope: -1.6757776
-      outSlope: -1.6757776
+      time: 1.0033326
+      value: 0.00078271073
+      inSlope: -1.9938811
+      outSlope: -1.9938811
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.053583488
+      inWeight: 0.035971094
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

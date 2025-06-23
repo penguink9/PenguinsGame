@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8737995239656155052}
   - component: {fileID: 2426086547142530549}
   - component: {fileID: 3579304331241115853}
+  - component: {fileID: 1501572970893400403}
   - component: {fileID: 4535447072610203715}
   m_Layer: 0
   m_Name: Monkey
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamingRange: 5
-  trackingRange: 3
+  trackingRange: 10
   returnSpeedMultiplier: 2
   attackCooldown: 2
   bananaProjectilePrefab: {fileID: 6100429040915409503, guid: b023c867ead7ebd45a05889d277faf92, type: 3}
@@ -233,6 +234,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: 9780148af679e5348bf62bd48d56fa51, type: 2}
   restoreDefaultMatTime: 0.2
+--- !u!114 &1501572970893400403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188496756222339482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad9c212b26c4d479b074e78c3c4184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowFactor: 0.5
+  restoreStuntime: 2
+  BlueStun: {fileID: 0}
 --- !u!95 &4535447072610203715
 Animator:
   serializedVersion: 7
