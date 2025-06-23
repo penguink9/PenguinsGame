@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using Unity.Cinemachine;
 using Unity.Collections;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class PlayerManager : Singleton<PlayerManager>
     private int activePlayerIndex = 0;
 
 
+   
     private void Start()
     {
         CacheCharacterHPSliders();

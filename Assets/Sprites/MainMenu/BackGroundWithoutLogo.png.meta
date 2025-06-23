@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 3ccef78e499b38e4ab926c824de14653
+guid: 2fecf530af8bb7a4192fb794c8d55543
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5987172831673589917
-    second: Monkey Iddle_0
-  - first:
-      213: -263387757052379930
-    second: Monkey Iddle_1
-  - first:
-      213: -4201703358647335717
-    second: Monkey Iddle_2
+      213: 8380947460829750837
+    second: BackGroundWithoutLogo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monkey Iddle_0
+      name: BackGroundWithoutLogo_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 34
-        width: 77
-        height: 69
+        x: 0
+        y: 0
+        width: 1536
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36fd93fe70a49eca0800000000000000
-      internalID: -5987172831673589917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Monkey Iddle_1
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 34
-        width: 80
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ecb4befa32485cf0800000000000000
-      internalID: -263387757052379930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Monkey Iddle_2
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 34
-        width: 77
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd482409e0d80b5c0800000000000000
-      internalID: -4201703358647335717
+      spriteID: 53628fbbf4b1f4470800000000000000
+      internalID: 8380947460829750837
       vertices: []
       indices: 
       edges: []
@@ -197,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Monkey Iddle_0: -5987172831673589917
-      Monkey Iddle_1: -263387757052379930
-      Monkey Iddle_2: -4201703358647335717
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
