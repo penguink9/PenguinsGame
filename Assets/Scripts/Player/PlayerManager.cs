@@ -11,6 +11,7 @@ public class PlayerManager : Singleton<PlayerManager>
     [SerializeField] private PlayerPrefabsDatabase prefabDatabase;
     [SerializeField] private Transform charactersUIParent;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] List<int> beginningCharacterIndexs;
     private List<Slider> characterHPSliders = new List<Slider>();
 
     private List<GameObject> unlockedPlayers = new List<GameObject>();
@@ -21,7 +22,13 @@ public class PlayerManager : Singleton<PlayerManager>
     private void Start()
     {
         CacheCharacterHPSliders();
-        UnlockCharacter(0);
+        if (beginningCharacterIndexs.Count != 0) 
+        {
+            foreach (int index in beginningCharacterIndexs)
+            {
+                UnlockCharacter(index);
+            }
+        }
         SwitchCharacter(0);
     }
 
@@ -39,6 +46,15 @@ public class PlayerManager : Singleton<PlayerManager>
         newPlayer.SetActive(false);
         unlockedPlayers.Add(newPlayer);
         aliveCharacterList.Add(true); // Assume the character is alive when unlocked
+        List<int> unlockedPlayersIndext = new List<int>();
+        for (int i = 0; i < unlockedPlayers.Count; i++)
+        {
+            if (unlockedPlayers[i])
+            {
+                unlockedPlayersIndext.Add(i);
+            }
+        }
+        //charactersUIParent.GetChild(prefabIndex).gameObject.SetActive(true);
         charactersUIParent.GetComponent<ChangeCharacter>().UpdateCharBox(unlockedPlayers.Count);
     }
     private void OnPlayerDeath(int playerIndex)

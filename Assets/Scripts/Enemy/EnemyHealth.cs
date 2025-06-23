@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int maxCoins = 3; // Amount of max coins to drop
     [SerializeField] private float knockBackThrust = 15f; // Thrust amount for knockback
 
+
     private int currentHealth;
     private KnockBack knockback;
     private SlowEffect sloweffect;
@@ -35,16 +36,13 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }
-
-    public void TakeSlow(int damage , Transform damageSrc)
+    public void TakeSlow(int damage, Transform damageSrc)
     {
         currentHealth -= damage;
         sloweffect.ApplySlow();
         UISingleton.Instance.ShowDmgDealEffect(transform, damage);
         DetectDeath();
     }
-
-
     public void DetectDeath()
     {
         if (currentHealth <= 0)

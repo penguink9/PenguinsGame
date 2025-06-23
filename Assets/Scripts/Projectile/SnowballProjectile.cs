@@ -46,9 +46,7 @@ public class SnowballProjectile : MonoBehaviour
             float height = Mathf.Lerp(0f, heightY, heightT);
 
             transform.position = Vector2.Lerp(startPosition, endPosition, linearT) + new Vector2(0f, height);
-            // In ra vị trí tính toán tại mỗi bước
 
-            Debug.Log("Current Position: " + transform.position.y);
             yield return null;
         }
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);

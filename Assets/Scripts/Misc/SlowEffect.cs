@@ -5,14 +5,13 @@ public class SlowEffect : MonoBehaviour
 {
     public bool isSlowed { get; private set; }
 
-    [SerializeField] private float slowDuration = 10f; // Duration of slow
-    [SerializeField] private float slowFactor = 0.9f; // Amount of slow (e.g. 0.5 means 50% speed)
+    [SerializeField] private float slowDuration = 5f; // Duration of slow
+    [SerializeField] private float slowFactor = 0.5f; // Amount of slow (e.g. 0.5 means 50% speed)
 
     private float originalSpeed;
     private EnemyAI enemyMovement;
     private Coroutine slowCoroutine; // To store the current coroutine
-    [SerializeField]
-    private float restoreStuntime = 2f;
+    private float restoreStuntime = 0.5f;
     [SerializeField] private Material BlueStun;
     private SpriteRenderer spriteRenderer;
     private Material defaultMat;
@@ -35,15 +34,11 @@ public class SlowEffect : MonoBehaviour
             isSlowed = true;
             originalSpeed = enemyMovement.defaultMoveSpeed; // Store the original speed
             enemyMovement.defaultMoveSpeed *= slowFactor; // Reduce the speed
-
-
-
             slowCoroutine = StartCoroutine(SlowRoutine());
 
         }
         else
         {
-            
             StopCoroutine(slowCoroutine);
             slowCoroutine = StartCoroutine(SlowRoutine());  
             
