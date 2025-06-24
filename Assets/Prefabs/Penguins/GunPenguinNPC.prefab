@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1847397575849597045}
   - component: {fileID: 3763089936062307940}
   m_Layer: 0
-  m_Name: PenguinNPC
+  m_Name: GunPenguinNPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0000017571094, y: 0.26029974}
-  m_Size: {x: 2.4436061, y: 2.4436061}
+  m_Offset: {x: -0.017518282, y: 0.010583404}
+  m_Size: {x: 2.7912438, y: 2.7095048}
   m_Direction: 1
 --- !u!114 &3763089936062307940
 MonoBehaviour:
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6394888585581640024, guid: 7cb37c3d492734d4282d7a5e44774145, type: 3}
+  m_Sprite: {fileID: -2158393171876259689, guid: ab954ae6284a0b54faa2cda2df96489d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 8342327900660642939}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c3b099fa8bf0ee4a909ce3db82bc90c, type: 2}
+  m_Controller: {fileID: 9100000, guid: a3a09dc0068e185439e426766ed6301b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -285,6 +285,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0000029556907, y: 0.2058723}
-  m_Size: {x: 1.0763296, y: 0.98806626}
+  m_Offset: {x: -0.06868708, y: 0.048881903}
+  m_Size: {x: 1.2137433, y: 1.2039316}
   m_Direction: 1
