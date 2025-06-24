@@ -22,6 +22,10 @@ public class TestUnlock : MonoBehaviour
             Debug.Log("Đã reset PlayerPrefs, hãy reload lại scene.");
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            UnLockCharacter.instance.ShowUnlockCharacterPanel();
+        }
        
     }
 }
