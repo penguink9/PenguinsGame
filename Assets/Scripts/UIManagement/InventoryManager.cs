@@ -65,9 +65,16 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             usedKey = true; // Set usedKey to true when a key is used
             keyCount--;
-            PlayerManager.Instance.UnlockCharacter(unlockCharacterIndex);
-            UpdateKeyCount();
-            canInteract = false; // Reset interaction state after using a key
+            if (PlayerManager.Instance.UnlockCharacter(unlockCharacterIndex))
+            {
+                UnLockCharacter.Instance.ShowUnlockCharacterPanel(unlockCharacterIndex);
+                UpdateKeyCount();
+                canInteract = false; // Reset interaction state after using a key
+            } else
+            {
+                Debug.LogWarning("Failed to unlock character with index: " + unlockCharacterIndex);
+            }
+            
         }
     }
     public void PickupHealPotions()

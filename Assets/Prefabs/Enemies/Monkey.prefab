@@ -248,8 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDuration: 2
-  slowFactor: 0.5
-  restoreStuntime: 2
+  slowFactor: 0.2
   BlueStun: {fileID: 2100000, guid: 2384466d9f47a994dad7e8e44571e88d, type: 2}
 --- !u!95 &4535447072610203715
 Animator:

@@ -7,13 +7,13 @@ public class SettingPanelController : MonoBehaviour
 {
     [SerializeField] private Scrollbar musicScrollbar;
     [SerializeField] private Scrollbar sfxScrollbar;
-    private GameObject audioContent;
+    private Transform audioContent;
     private void Start()
     {
         // Initialize scrollbars with current volume levels
         musicScrollbar.value = AudioManager.Instance.GetMusicVolume();
         sfxScrollbar.value = AudioManager.Instance.GetSfxVolume();
-        audioContent = GameObject.Find("AudioContent");
+        audioContent = transform.GetChild(0).GetChild(1).GetChild(0).GetChild(1);
     }
     private void OnEnable()
     {
@@ -29,7 +29,7 @@ public class SettingPanelController : MonoBehaviour
     }
     public void OnClickAudioButton()
     {
-        audioContent.SetActive(true);
+        audioContent.gameObject.SetActive(true);
     }
     public void ExitToMainMenu()
     {

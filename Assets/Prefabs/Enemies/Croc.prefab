@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2495c1136de726c45bf0a5091ccc3179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
 --- !u!114 &7389800440858469408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +270,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDuration: 5
-  slowFactor: 0.5
-  restoreStuntime: 2
+  slowFactor: 0.2
   BlueStun: {fileID: 2100000, guid: 2384466d9f47a994dad7e8e44571e88d, type: 2}
