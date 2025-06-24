@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
             {
                 enemyHealth.TakeDamage(1, transform);
             }
-
+            AudioManager.Instance.PlaySFX("Enemy Shot");
             Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
             Destroy(gameObject);
         }

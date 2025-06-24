@@ -18,6 +18,7 @@ public class SnowballPenguinController : PlayerBase
             playerState.CurrentState = PlayerState.State.Attacking;
             rb.linearVelocity = Vector2.zero;
             myAnimator.SetTrigger("Attack");
+            AudioManager.Instance.PlaySFX("Throwing");
             Vector3 spawnPos = snowballSpawnPoint.position;
             spawnPos.x += facingLeft ? -1.5f : 0f;
             //Instantiate(snowballProjectilePrefab, transform.position, Quaternion.identity);

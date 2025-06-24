@@ -27,6 +27,7 @@ public class NormalPenguinController : PlayerBase
             rb.linearVelocity = Vector2.zero;
             AdjustPlayerFacingDirection();
             myAnimator.SetTrigger("Attack");
+            AudioManager.Instance.PlaySFX("NormalPenguin Attacking");
             attackCollider.gameObject.SetActive(true);
 
             Vector3 spawnPosition = slashAnimSpawnPoint.position;

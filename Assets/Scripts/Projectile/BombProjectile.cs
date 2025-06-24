@@ -50,8 +50,8 @@ public class BombProjectile : MonoBehaviour
 
             yield return null;
         }
+        AudioManager.Instance.PlaySFX("Explosion");
         Instantiate(explosionPrefab, transform.position , Quaternion.identity);
-
         Destroy(gameObject);
     }
 

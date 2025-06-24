@@ -47,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            AudioManager.Instance.PlaySFX("Enemy Death");
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             SpawnPickup();
             Destroy(gameObject);

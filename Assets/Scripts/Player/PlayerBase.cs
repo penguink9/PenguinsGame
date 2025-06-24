@@ -15,6 +15,7 @@ public class PlayerBase : MonoBehaviour
     protected float dashSpeed = 4f;
     protected Vector2 movement;
     protected bool canDash = true;
+    private bool hasPlayedWalkSFX = false;
 
     protected virtual void Awake()
     {
@@ -63,14 +64,31 @@ public class PlayerBase : MonoBehaviour
     public virtual void Move(Vector2 movement)
     {
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
-        playerState.CurrentState = movement != Vector2.zero ? PlayerState.State.Moving : PlayerState.State.Idle;
+
+        bool isCurrentlyMoving = movement != Vector2.zero;
+        playerState.CurrentState = isCurrentlyMoving ? PlayerState.State.Moving : PlayerState.State.Idle;
+
+        if (isCurrentlyMoving)
+        {
+            if (!hasPlayedWalkSFX)
+            {
+                AudioManager.Instance.PlaySFX("Penguin Walking");
+                hasPlayedWalkSFX = true;
+            }
+        }
+        else
+        {
+            hasPlayedWalkSFX = false;
+        }
     }
+
 
     public virtual void Dash()
     {
         if (!canDash || playerState.CurrentState != PlayerState.State.Moving)
             return;
         canDash = false;
+        AudioManager.Instance.PlaySFX("Dashing");
         playerState.CurrentState = PlayerState.State.Dashing;
         moveSpeed *= dashSpeed;
         trailRenderer.emitting = true;

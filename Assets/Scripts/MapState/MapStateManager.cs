@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 // Singleton trung tâm lưu trạng thái từng map (enemy + item).
-// Cũng đăng ký và điều phối các group theo mapIndex.
+[DefaultExecutionOrder(-1)]
 public class MapStateManager : Singleton<MapStateManager>
 {
     [SerializeField] List<int> capturedPenguinIndexs = new();
