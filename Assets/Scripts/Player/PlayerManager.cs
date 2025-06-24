@@ -90,6 +90,11 @@ public class PlayerManager : Singleton<PlayerManager>
     private void TriggerGameOver()
     {
         Debug.Log("GAME OVER");
+        AudioManager.Instance.PlaySFX("Game Over");
+        Destroy(CameraManager.Instance.gameObject);
+        Destroy(EnemyTargetProvider.Instance.gameObject);
+        Destroy(UISingleton.Instance.gameObject);
+        Destroy(gameObject);
         SceneManager.LoadScene("Level1_Map1");
     }
 

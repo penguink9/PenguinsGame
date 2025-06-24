@@ -51,5 +51,28 @@ public class AudioManager : Singleton<AudioManager>
             sfxSrc.Stop();
         }
     }
- 
+    public void ToggleMusic()
+    {
+        musicSrc.mute = !musicSrc.mute;
+    }
+    public void ToggleSfx()
+    {
+        sfxSrc.mute = !sfxSrc.mute;
+    }
+    public float GetMusicVolume()
+    {
+        return musicSrc.volume;
+    }
+    public float GetSfxVolume()
+    {
+        return sfxSrc.volume;
+    }
+    public void SetMusicVolume(float volume)
+    {
+        musicSrc.volume = volume;
+    }
+    public void SetSfxVolume(float volume)
+    {
+        sfxSrc.volume = volume;
+    }
 }
