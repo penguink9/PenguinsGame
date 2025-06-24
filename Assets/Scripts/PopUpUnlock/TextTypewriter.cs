@@ -5,15 +5,9 @@ using System.Collections;
 public class TextTypewriter : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;
-    [TextArea] public string fullText;
+    private string fullText;
     public float delay = 0.03f;
-
-    void OnEnable()
-    {
-        StartCoroutine(RevealText());
-    }
-
-    IEnumerator RevealText()
+    public IEnumerator RevealText()
     {
         textMeshPro.text = "";
         foreach (char c in fullText)
@@ -21,5 +15,11 @@ public class TextTypewriter : MonoBehaviour
             textMeshPro.text += c;
             yield return new WaitForSeconds(delay);
         }
+    }
+    public void SetText(string newText)
+    {
+        fullText = newText;
+        textMeshPro.text = "";
+        StartCoroutine(RevealText());
     }
 }

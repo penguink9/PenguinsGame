@@ -34,9 +34,9 @@ public class PlayerManager : Singleton<PlayerManager>
         SwitchCharacter(0);
     }
 
-    public void UnlockCharacter(int prefabIndex)
+    public bool UnlockCharacter(int prefabIndex)
     {
-        if (prefabIndex < 0 || prefabIndex >= prefabDatabase.playerPrefabs.Length) return;
+        if (prefabIndex < 0 || prefabIndex >= prefabDatabase.playerPrefabs.Length) return false;
 
         GameObject newPlayer = Instantiate(prefabDatabase.playerPrefabs[prefabIndex], transform);
         var health = newPlayer.GetComponent<PlayerHealth>();
@@ -58,6 +58,7 @@ public class PlayerManager : Singleton<PlayerManager>
         }
         //charactersUIParent.GetChild(prefabIndex).gameObject.SetActive(true);
         charactersUIParent.GetComponent<ChangeCharacter>().UpdateCharBox(unlockedPlayers.Count);
+        return true;
     }
     private void OnPlayerDeath(int playerIndex)
     {
@@ -90,6 +91,11 @@ public class PlayerManager : Singleton<PlayerManager>
     private void TriggerGameOver()
     {
         Debug.Log("GAME OVER");
+        AudioManager.Instance.PlaySFX("Game Over");
+        Destroy(CameraManager.Instance.gameObject);
+        Destroy(EnemyTargetProvider.Instance.gameObject);
+        Destroy(UISingleton.Instance.gameObject);
+        Destroy(gameObject);
         SceneManager.LoadScene("Level1_Map1");
     }
 

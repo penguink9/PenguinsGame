@@ -55,8 +55,8 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
         if (!canTakeDamage || playerState.CurrentState == PlayerState.State.Dead) return;
-
         playerState.CurrentState = PlayerState.State.TakingDamage;
+        AudioManager.Instance.PlaySFX("Penguin Take Damage");
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
@@ -75,8 +75,8 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
-
         UISingleton.Instance.ShowHealEffect(transform, healAmount);
+        AudioManager.Instance.PlaySFX("Healing");
         UpdateHPSlider();
         return true;
     }
@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
+            AudioManager.Instance.PlaySFX("Penguin Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
     }

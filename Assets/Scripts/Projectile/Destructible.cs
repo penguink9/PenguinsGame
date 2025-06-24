@@ -7,10 +7,11 @@ public class Destructible : MonoBehaviour
     [SerializeField] private int maxCoins = 3; // Amount of max coins to drop
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            // Gọi hàm DestroyObject để phá hủy đối tượng này
-            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
-            SpawnPickup();
-            Destroy(gameObject);
+        // Gọi hàm DestroyObject để phá hủy đối tượng này
+        AudioManager.Instance.PlaySFX("Destroying Item");
+        Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);            
+        SpawnPickup();
+        Destroy(gameObject);
     }
     public void SpawnPickup()
     {

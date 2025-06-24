@@ -19,6 +19,7 @@ public class SnowballSplatter : MonoBehaviour
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         enemyHealth?.TakeSlow(2, transform);
+        AudioManager.Instance.PlaySFX("Enemy Slowed Hit");
     }
 
     private void DisableCollider()

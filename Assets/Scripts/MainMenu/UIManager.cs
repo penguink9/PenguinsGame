@@ -200,6 +200,7 @@ public class UIManager : MonoBehaviour
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        AudioManager.Instance.PlayMusic("Background-2");
     }
 
     // ====== KHI QUA MÀN ======

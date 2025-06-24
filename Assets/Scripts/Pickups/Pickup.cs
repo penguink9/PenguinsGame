@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             OnPickup();
+            AudioManager.Instance.PlaySFX("Pickup Item");
             Destroy(gameObject);
         }
     }

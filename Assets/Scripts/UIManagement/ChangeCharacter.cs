@@ -33,6 +33,7 @@ public class ChangeCharacter : MonoBehaviour
         }
         if (PlayerManager.Instance.SwitchCharacter(numValue - 1))
         {
+            AudioManager.Instance.PlaySFX("Change Char");
             HighlightSelectedChar(numValue - 1);
             StartCoroutine(CooldownCoroutine());
         }

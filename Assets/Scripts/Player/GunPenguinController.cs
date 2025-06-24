@@ -24,6 +24,7 @@ public class GunPenguinController : PlayerBase
             GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
             Projectile projectileScript = bullet.GetComponent<Projectile>();
             projectileScript.SetFireDirection(facingLeft);
+            AudioManager.Instance.PlaySFX("Shooting");
             lastAttackTime = Time.time;
             StartCoroutine(AttackCooldownCoroutine());
         }
