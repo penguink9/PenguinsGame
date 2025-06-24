@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Map4BG_faded_0: 8737787766026449115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
