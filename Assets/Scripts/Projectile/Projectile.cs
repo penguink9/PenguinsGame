@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 22f;
+    [SerializeField] private float moveSpeed = 30f;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
     [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private float projectileRange = 10f;
@@ -41,8 +41,9 @@ public class Projectile : MonoBehaviour
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         Indestructible indestructible = other.gameObject.GetComponent<Indestructible>();
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        bool isDestructible = other.gameObject.GetComponent<Destructible>();
 
-        if (!other.isTrigger && (enemyHealth || indestructible || player))
+        if (!other.isTrigger && (enemyHealth || indestructible || player || isDestructible))
         {
             if (player && isEnemyProjectile)
             {

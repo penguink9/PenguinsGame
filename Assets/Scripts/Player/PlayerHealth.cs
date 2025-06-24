@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -14,53 +16,77 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockback;
-    public bool isDead { get; private set; }
     private Flash flash;
-    [SerializeField] private Slider healthBar;
-    const string MAP = "Level1_Map1";
+    private Slider healthBar;
+    private PlayerState playerState;
+
+    public event Action OnPlayerDeath;
 
     private void Awake()
     {
         flash = GetComponent<Flash>();
         knockback = GetComponent<KnockBack>();
+        playerState = GetComponent<PlayerState>();
+        currentHealth = maxHealth;
     }
 
     private void Start()
     {
-        isDead = false;
-        currentHealth = maxHealth;
         UpdateHPSlider();
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
-
+        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();        
         if (enemy && canTakeDamage)
         {
-            TakeDamage(1, other.transform);
+            int damage = enemy.GetDamage();
+            TakeDamage(damage, other.transform);
             CheckIfPlayerDead();
         }
     }
 
+    public void SetHealthBar(Slider slider)
+    {
+        healthBar = slider;
+        UpdateHPSlider();
+    }
+
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
-        if (!canTakeDamage) { return; }
+        if (!canTakeDamage || playerState.CurrentState == PlayerState.State.Dead) return;
 
+        playerState.CurrentState = PlayerState.State.TakingDamage;
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
         currentHealth -= damageAmount;
+
+        UISingleton.Instance.ShowDmgTakeEffect(transform, damageAmount);
         UpdateHPSlider();
+
         StartCoroutine(DamageRecoveryRoutine());
+    }
+
+    public bool Heal(int healAmount)
+    {
+        if (playerState.CurrentState == PlayerState.State.Dead) return false;
+        if (currentHealth == maxHealth) return false;
+
+        currentHealth += healAmount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        UISingleton.Instance.ShowHealEffect(transform, healAmount);
+        UpdateHPSlider();
+        return true;
     }
 
     private void CheckIfPlayerDead()
     {
-        if (currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && playerState.CurrentState != PlayerState.State.Dead)
         {
-            isDead = true;
             currentHealth = 0;
+            playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
@@ -69,21 +95,23 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator DeadLoadSceneRoutine()
     {
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-        SceneManager.LoadScene(MAP);
+        OnPlayerDeath?.Invoke();
     }
+
     private IEnumerator DamageRecoveryRoutine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
+
+        if (playerState.CurrentState == PlayerState.State.TakingDamage)
+            playerState.CurrentState = PlayerState.State.Idle;
     }
+
     private void UpdateHPSlider()
     {
-        if (healthBar != null)
-        {
-            healthBar.maxValue = maxHealth;
-        }
+        if (healthBar == null) return;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
 }
+

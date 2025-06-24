@@ -16,18 +16,18 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float trackingRange = 3f;
     [SerializeField] private float returnSpeedMultiplier = 2f;
     [SerializeField] private float chasingSpeedMultiplier = 1.5f;
+    [SerializeField] private int damage = 1;
 
     private Vector2 startingPosition;
     private EnemyPathing enemyPathfinding;
-    private Transform playerTransform;
-    private float defaultMoveSpeed;
+    public float defaultMoveSpeed { get; set; }
 
     private void Awake()
     {
         enemyPathfinding = GetComponent<EnemyPathing>();
         state = State.Roaming;
         startingPosition = transform.position;
-        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+        
 
         defaultMoveSpeed = enemyPathfinding.moveSpeed; // cần khai báo public get trong EnemyPathing
     }
@@ -36,15 +36,19 @@ public class EnemyAI : MonoBehaviour
     {
         StartCoroutine(StateRoutine());
     }
-
+    public int GetDamage()
+    {
+        return damage;
+    }
     private IEnumerator StateRoutine()
     {
         while (true)
         {
+            Transform playerTransform = EnemyTargetProvider.Instance.GetTarget();
             switch (state)
             {
                 case State.Roaming:
-                    yield return StartCoroutine(RoamingRoutine());
+                    yield return StartCoroutine(RoamingRoutine(playerTransform));
                     break;
 
                 case State.ReturningToStart:
@@ -86,11 +90,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private IEnumerator RoamingRoutine()
+    private IEnumerator RoamingRoutine(Transform playerTransform)
     {
         Vector2 roamPosition = GetRoamingPosition();
 
-        // Check trước khi di chuyển: nếu vị trí mục tiêu nằm ngoài vùng hoạt động thì bỏ
         if (Vector2.Distance(startingPosition, roamPosition) > roamingRange)
             yield break;
 
@@ -103,7 +106,6 @@ public class EnemyAI : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            // Nếu phát hiện Player → chuyển trạng thái
             if (playerTransform != null &&
                 Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
             {
