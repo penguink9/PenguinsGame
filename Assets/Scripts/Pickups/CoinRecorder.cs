@@ -7,7 +7,7 @@ public class CoinRecorder : Singleton<CoinRecorder>
     public int TotalCoins
     {
         get { return totalCoins; }
-        private set
+        set
         {
             totalCoins = value;
             UpdateCoinUI();

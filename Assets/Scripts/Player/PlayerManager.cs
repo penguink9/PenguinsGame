@@ -92,7 +92,6 @@ public class PlayerManager : Singleton<PlayerManager>
         }
     }
 
-
     private void TriggerGameOver()
     {
         Debug.Log("GAME OVER");
@@ -182,5 +181,68 @@ public class PlayerManager : Singleton<PlayerManager>
 
         return datas;
     }
+    public void SetLoadData(List<CharacterData> characterDatas, int activeCharacterIndex)
+    {
+        if (characterDatas == null || characterDatas.Count == 0)
+        {
+            Debug.LogWarning("Character data is empty, cannot load.");
+            return;
+        }
+
+        // Clear hiện tại
+        unlockedPlayers.Clear();
+        aliveCharacterMap.Clear();
+
+        // Cache lại sliders nếu cần
+        CacheCharacterHPSliders();
+
+        foreach (var data in characterDatas)
+        {
+            int index = data.index;
+
+            // Bỏ qua index không hợp lệ
+            if (index < 0 || index >= prefabDatabase.playerPrefabs.Length)
+                continue;
+
+            GameObject newPlayer = Instantiate(prefabDatabase.playerPrefabs[index], transform);
+            var health = newPlayer.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                health.OnPlayerDeath += () => OnPlayerDeath(index);
+                health.SetHealthBar(characterHPSliders[index]);
+                health.SetCurrentHealth(data.health);
+            }
+
+            newPlayer.SetActive(false);
+            unlockedPlayers[index] = newPlayer;
+            aliveCharacterMap[index] = !data.isDead;
+
+            // Cập nhật UI trạng thái chết nếu có
+            var charUI = charactersUIParent.GetChild(index);
+            if (charUI != null)
+            {
+                bool isDead = data.isDead;
+                charUI.Find("CharBox/Death").gameObject.SetActive(isDead);
+                charUI.Find("CharBox/CharAvt").gameObject.SetActive(!isDead);
+            }
+        }
+
+        // Cập nhật danh sách UI
+        var changeChar = charactersUIParent.GetComponent<ChangeCharacter>();
+        changeChar.UpdateCharBox(new List<int>(unlockedPlayers.Keys));
+
+        // Tự động Switch sang nhân vật đang active
+        int slotIndex = changeChar.GetSlotIndexByPrefabIndex(activeCharacterIndex);
+        if (slotIndex != -1)
+        {
+            changeChar.TriggerSlot(slotIndex + 1); // slotNum truyền vào TriggerSlot là từ 1-based
+        }
+        else
+        {
+            Debug.LogWarning($"Cannot find UI slot for character index {activeCharacterIndex}");
+        }
+    }
+
+
 
 }

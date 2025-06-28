@@ -8,8 +8,9 @@ public class DataManager : Singleton<DataManager>
     [Header("File Storage Config")]
     [SerializeField] private bool useEncryption;
 
-    private List<SaveSlot> slots = new();
+    private List<SaveSlot> slots = new List<SaveSlot>();
     private FileDataHandler fileDataHandler;
+    private SaveSlot loadedSlot;
 
     private const int MaxSlots = 4;
     private const string SlotFilePrefix = "save_slot_";
@@ -18,7 +19,6 @@ public class DataManager : Singleton<DataManager>
     {
         base.Awake();
         fileDataHandler = new FileDataHandler(Application.persistentDataPath, useEncryption);
-        LoadAllSlots();
     }
 
     /// Lưu game vào slot cụ thể (1 đến 4)
@@ -36,7 +36,7 @@ public class DataManager : Singleton<DataManager>
         SaveSlot saveSlot = new SaveSlot
         {
             slotNumber = slotNumber,
-            lastModified = DateTime.Now,
+            LastModified = DateTime.Now,
             slotName = "Slot " + slotNumber,
             playerName = PlayerPrefs.GetString("PlayerName"), // có thể tuỳ chỉnh sau
             fileName = fileName,
@@ -58,19 +58,20 @@ public class DataManager : Singleton<DataManager>
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
         return true;
     }
-
-    /// Tải tất cả các slot (gọi khi khởi động hoặc vào menu Load Game)
-    public void LoadAllSlots()
+    
+    public void RefreshAllSlots()
     {
-        slots.Clear();
+        slots = new List<SaveSlot>(new SaveSlot[MaxSlots]);
+
         for (int i = 1; i <= MaxSlots; i++)
         {
             string fileName = SlotFilePrefix + i + ".json";
             fileDataHandler.SetFileName(fileName);
             SaveSlot loadedSlot = fileDataHandler.LoadData<SaveSlot>();
+
             if (loadedSlot != null)
             {
-                slots.Add(loadedSlot);
+                slots[i - 1] = loadedSlot;
             }
         }
     }
@@ -78,22 +79,15 @@ public class DataManager : Singleton<DataManager>
     /// Lấy danh sách các slot đã lưu (dùng để hiển thị trong UI)
     public List<SaveSlot> GetAllSaveSlots()
     {
+        RefreshAllSlots();
         return new List<SaveSlot>(slots);
     }
 
     /// Tải dữ liệu GameData trong slot được chọn
-    public GameData LoadGameDataInSlot(int slotNumber)
+    public SaveSlot LoadDataInSlot(int slotNumber)
     {
-        if (slotNumber < 1 || slotNumber > MaxSlots)
-        {
-            Debug.LogError("Invalid slot number");
-            return null;
-        }
-
-        string fileName = SlotFilePrefix + slotNumber + ".json";
-        fileDataHandler.SetFileName(fileName);
-        SaveSlot loadedSlot = fileDataHandler.LoadData<SaveSlot>();
-        return loadedSlot?.gameData;
+        var slot = slots.Find(s => s != null && s.slotNumber == slotNumber);
+        return slot;
     }
 
     /// Xoá slot lưu nếu cần (tuỳ chọn)
@@ -107,5 +101,13 @@ public class DataManager : Singleton<DataManager>
             slots.RemoveAll(s => s.slotNumber == slotNumber);
             Debug.Log($"Deleted slot {slotNumber}");
         }
+    }
+    public SaveSlot GetLoadedSlot()
+    {
+        return loadedSlot;
+    }
+    public void SetLoadedSlot(SaveSlot slot)
+    {
+        loadedSlot = slot;
     }
 }

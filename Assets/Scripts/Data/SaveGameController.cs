@@ -9,6 +9,11 @@ public class SaveGameController : MonoBehaviour
     [SerializeField] GameObject slot3Container;
     [SerializeField] GameObject slot4Container;
 
+    private void OnEnable()
+    {
+        StartUIState();
+        SetUpUISlot();
+    }
     public void OnClickBackButton(GameObject obj)
     {
         obj.SetActive(false);
@@ -34,6 +39,20 @@ public class SaveGameController : MonoBehaviour
     {
         return obj.transform.GetChild(1).GetChild(0).gameObject;
     }
+    public void ActiveEmptySlot(GameObject obj)
+    {
+        obj.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+        obj.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+        obj.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
+        obj.transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+    }
+    public void ActiceSlot(GameObject obj)
+    {
+        obj.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+        obj.transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+        obj.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+        obj.transform.GetChild(1).GetChild(3).gameObject.SetActive(true);
+    }
     public GameData CollectGameData()
     {
         GameData gameData = new GameData();
@@ -55,9 +74,65 @@ public class SaveGameController : MonoBehaviour
     {
         GameData gameData = CollectGameData();
         DataManager.Instance.SaveGameToSlot(slotIndex, gameData);
+        SetUpUISlot();
     }
     public void OnClickSaveSlot(int slotNumber)
     {
         SaveGameToSlot(slotNumber);
+    }
+    public void StartUIState()
+    {
+        for(int i = 1; i <= 4; i++)
+        {
+            GameObject slotContainer = null;
+            switch (i)
+            {
+                case 1:
+                    slotContainer = slot1Container;
+                    break;
+                case 2:
+                    slotContainer = slot2Container;
+                    break;
+                case 3:
+                    slotContainer = slot3Container;
+                    break;
+                case 4:
+                    slotContainer = slot4Container;
+                    break;
+            }
+            ActiveEmptySlot(slotContainer);
+        }
+    }
+    public void SetUpUISlot()
+    {
+        List<SaveSlot> slots = DataManager.Instance.GetAllSaveSlots();
+
+        foreach (SaveSlot slot in slots)
+        {
+            GameObject slotContainer = null;
+            if (slot != null)
+            {
+                switch (slot.slotNumber)
+                {
+                    case 1:
+                        slotContainer = slot1Container;
+                        break;
+                    case 2:
+                        slotContainer = slot2Container;
+                        break;
+                    case 3:
+                        slotContainer = slot3Container;
+                        break;
+                    case 4:
+                        slotContainer = slot4Container;
+                        break;
+                }
+                ActiceSlot(slotContainer);
+                GetSlotNameText(slotContainer).text = slot.slotName;
+                GetPlayerNameText(slotContainer).text = slot.playerName;
+                GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString()+" - Map "+ slot.gameData.currentMap.ToString();
+                GetDateText(slotContainer).text = slot.lastModified;
+            }
+        }
     }
 }

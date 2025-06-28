@@ -109,4 +109,29 @@ public class MapStateManager : Singleton<MapStateManager>
         return isCapturedPenguinUnlocked.Select(kvp => new BoolEntry { key = kvp.Key, value = kvp.Value })
     .ToList();
     }
+    public void SetLoadData(List<MapStateEntry> savemapStates, List<BoolEntry> npcUnlockeds)
+    {
+        // Reset lại dictionary mapStates
+        mapStates = new Dictionary<int, MapState>();
+
+        if (savemapStates != null)
+        {
+            foreach (var entry in savemapStates)
+            {
+                mapStates[entry.mapIndex] = entry.state;
+            }
+        }
+
+        // Reset lại trạng thái các NPC
+        isCapturedPenguinUnlocked.Clear();
+
+        if (npcUnlockeds != null)
+        {
+            foreach (var entry in npcUnlockeds)
+            {
+                isCapturedPenguinUnlocked[entry.key] = entry.value;
+            }
+        }
+    }
+
 }

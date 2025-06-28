@@ -119,5 +119,10 @@ public class PlayerHealth : MonoBehaviour
     {
         return currentHealth;
     }
+    public void SetCurrentHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
+        UpdateHPSlider();
+    }
 }
 
