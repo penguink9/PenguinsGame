@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
-
 using System.Collections;
+using System.Collections.Generic;
+
 public class ChangeCharacter : MonoBehaviour
 {
     private int activeSlotIndexNum = 0;
     private bool isCooldown = false;
+
+    // mapping giữa slot UI và index thật trong prefabDatabase
+    private List<int> slotToIndexMap = new List<int>();
+
     private void Start()
     {
         HighlightSelectedChar(PlayerManager.Instance.GetActivePlayerIndex());
@@ -20,24 +25,32 @@ public class ChangeCharacter : MonoBehaviour
         PlayerInputManager.Instance.OnCharacterSelect -= TriggerSlot;
     }
 
-
-    public void TriggerSlot(int numValue)
+    public void TriggerSlot(int slotNum)
     {
         if (isCooldown)
             return;
 
-        if (!PlayerManager.Instance.IsCharacterUnlocked(numValue - 1) || !PlayerManager.Instance.IsCharacterAlive(numValue - 1))
+        int listIndex = slotNum - 1;
+        if (listIndex < 0 || listIndex >= slotToIndexMap.Count)
         {
-            Debug.LogWarning("Character not unlocked or alive: " + numValue);
+            Debug.LogWarning("Slot number out of range: " + slotNum);
             return;
         }
-        if (PlayerManager.Instance.SwitchCharacter(numValue - 1))
+
+        int realCharacterIndex = slotToIndexMap[listIndex];
+
+        if (!PlayerManager.Instance.IsCharacterUnlocked(realCharacterIndex) || !PlayerManager.Instance.IsCharacterAlive(realCharacterIndex))
+        {
+            Debug.LogWarning("Character not unlocked or alive: index " + realCharacterIndex);
+            return;
+        }
+
+        if (PlayerManager.Instance.SwitchCharacter(realCharacterIndex))
         {
             AudioManager.Instance.PlaySFX("Change Char");
-            HighlightSelectedChar(numValue - 1);
+            HighlightSelectedChar(realCharacterIndex);
             StartCoroutine(CooldownCoroutine());
         }
-        else return;
     }
 
     private IEnumerator CooldownCoroutine()
@@ -47,36 +60,51 @@ public class ChangeCharacter : MonoBehaviour
         isCooldown = false;
     }
 
-    private void HighlightSelectedChar(int indexNum)
+    private void HighlightSelectedChar(int realIndex)
     {
-        activeSlotIndexNum = indexNum;
+        activeSlotIndexNum = realIndex;
 
-        foreach (Transform character in transform)
+        for (int i = 0; i < transform.childCount; i++)
         {
+            Transform character = transform.GetChild(i);
             if (!character.gameObject.activeSelf)
                 continue;
 
-            character.GetChild(0).GetChild(0).gameObject.SetActive(false);
-            character.GetChild(1).gameObject.SetActive(true);
+            character.GetChild(0).GetChild(0).gameObject.SetActive(false); // Remove highlight
+            character.GetChild(1).gameObject.SetActive(true);              // Show normal state
         }
 
-        Transform selectedCharacter = transform.GetChild(indexNum);
-        selectedCharacter.GetChild(0).GetChild(0).gameObject.SetActive(true);
-        selectedCharacter.GetChild(1).gameObject.SetActive(false);
+        if (realIndex >= 0 && realIndex < transform.childCount)
+        {
+            Transform selectedCharacter = transform.GetChild(realIndex);
+            selectedCharacter.GetChild(0).GetChild(0).gameObject.SetActive(true); // Add highlight
+            selectedCharacter.GetChild(1).gameObject.SetActive(false);           // Hide normal state
+        }
     }
 
-    public void UpdateCharBox(int unlockedCount)
+
+    public void UpdateCharBox(List<int> unlockedIndices)
     {
         int totalCharBox = transform.childCount;
+        slotToIndexMap = new List<int>();
 
         for (int i = 0; i < totalCharBox; i++)
         {
             Transform charBox = transform.GetChild(i);
-
-            if (i < unlockedCount)
+            if (unlockedIndices.Contains(i))
+            {
                 charBox.gameObject.SetActive(true);
+                slotToIndexMap.Add(i); // Lưu index thật tương ứng với slot này
+            }
             else
+            {
                 charBox.gameObject.SetActive(false);
+            }
         }
     }
+    public int GetSlotIndexByPrefabIndex(int prefabIndex)
+    {
+        return slotToIndexMap.IndexOf(prefabIndex);
+    }
+
 }

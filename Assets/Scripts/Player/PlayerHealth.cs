@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
+            GetComponent<CapsuleCollider2D>().enabled = false;
             AudioManager.Instance.PlaySFX("Penguin Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
