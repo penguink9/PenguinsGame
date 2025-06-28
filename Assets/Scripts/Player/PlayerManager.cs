@@ -160,4 +160,27 @@ public class PlayerManager : Singleton<PlayerManager>
             characterHPSliders.Add(hpSlider);
         }
     }
+    public List<CharacterData> GetCharacterDatas()
+    {
+        List<CharacterData> datas = new List<CharacterData>();
+
+        foreach (var kvp in unlockedPlayers)
+        {
+            int index = kvp.Key;
+            GameObject playerObj = kvp.Value;
+            PlayerHealth healthComponent = playerObj.GetComponent<PlayerHealth>();
+
+            CharacterData data = new CharacterData
+            {
+                index = index,
+                health = healthComponent != null ? healthComponent.GetCurrentHealth() : 0,
+                isDead = aliveCharacterMap.ContainsKey(index) && !aliveCharacterMap[index]
+            };
+
+            datas.Add(data);
+        }
+
+        return datas;
+    }
+
 }

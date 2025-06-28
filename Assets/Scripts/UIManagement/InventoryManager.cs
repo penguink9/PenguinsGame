@@ -5,7 +5,25 @@ using UnityEngine;
 public class InventoryManager : Singleton<InventoryManager>
 {
     private int healthPotions = 0;
+    public int HealthPotions
+    {
+        get { return healthPotions; }
+        set
+        {
+            healthPotions = value;
+            UpdatePotionsCount();
+        }
+    }
     private int keyCount = 0;
+    public int KeyCount
+    {
+        get { return keyCount; }
+        set
+        {
+            keyCount = value;
+            UpdateKeyCount();
+        }
+    }
     private TextMeshProUGUI potionCountText;
     private TextMeshProUGUI keyCountText;
     private bool isCooldown = false;

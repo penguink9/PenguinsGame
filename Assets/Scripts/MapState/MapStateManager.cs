@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 // Singleton trung tâm lưu trạng thái từng map (enemy + item).
 [DefaultExecutionOrder(-1)]
@@ -87,5 +88,25 @@ public class MapStateManager : Singleton<MapStateManager>
 
         Debug.LogWarning("Không thể lấy mapIndex từ scene name: " + sceneName);
         return -1; // hoặc throw exception tùy mục đích
+    }
+
+    public List<MapStateEntry> GetAllMapStates()
+    {
+        return mapStates.Select(kvp => new MapStateEntry { mapIndex = kvp.Key, state = kvp.Value }).ToList();
+    }
+    //Mission: Release all captured penguin
+    public bool IsMissionCompleted()
+    {
+        foreach (var index in isCapturedPenguinUnlocked)
+        {
+            if (!index.Value) return false;
+        }
+        return true;
+    }
+
+    public List<BoolEntry> GetCapturedPenguinState()
+    {
+        return isCapturedPenguinUnlocked.Select(kvp => new BoolEntry { key = kvp.Key, value = kvp.Value })
+    .ToList();
     }
 }

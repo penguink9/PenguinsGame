@@ -115,5 +115,9 @@ public class PlayerHealth : MonoBehaviour
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
     }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
 }
 

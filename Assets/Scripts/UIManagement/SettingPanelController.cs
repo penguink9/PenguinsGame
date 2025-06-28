@@ -48,4 +48,8 @@ public class SettingPanelController : MonoBehaviour
     {
         AudioManager.Instance.SetSfxVolume(sfxScrollbar.value);
     }
+    public void OnClickSaveGameButton(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
+    }
 }
