@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(-3)]
 public class UIFade : Singleton<UIFade>
 {
     private Image fadeScreen;
@@ -18,6 +19,10 @@ public class UIFade : Singleton<UIFade>
         {
             Debug.LogError("UIFade: No Image component found on this GameObject.");
         }
+    }
+    public void FadeBlack()
+    {
+        fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 1); // Ensure the fade screen is fully black at the start
     }
 
     public void FadeToBlack()

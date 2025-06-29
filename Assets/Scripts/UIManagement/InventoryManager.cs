@@ -2,10 +2,29 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class InventoryManager : Singleton<InventoryManager>
+[DefaultExecutionOrder(-2)]
+public class InventoryManager : Singleton<InventoryManager>, ILoadGameInit
 {
     private int healthPotions = 0;
+    public int HealthPotions
+    {
+        get { return healthPotions; }
+        set
+        {
+            healthPotions = value;
+            UpdatePotionsCount();
+        }
+    }
     private int keyCount = 0;
+    public int KeyCount
+    {
+        get { return keyCount; }
+        set
+        {
+            keyCount = value;
+            UpdateKeyCount();
+        }
+    }
     private TextMeshProUGUI potionCountText;
     private TextMeshProUGUI keyCountText;
     private bool isCooldown = false;
@@ -17,6 +36,21 @@ public class InventoryManager : Singleton<InventoryManager>
         base.Awake();
         potionCountText = transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
         keyCountText = transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+    }
+    private void Start()
+    {
+        LoadGameInit();
+    }
+    public void LoadGameInit()
+    {
+        if (!TrackCurrentMap.Instance.HasLoadData())
+        {
+            HealthPotions = 0;
+            KeyCount = 0;
+            return;
+        }
+        HealthPotions = DataManager.Instance.GetLoadedSlot().gameData.healthPotions;
+        KeyCount = DataManager.Instance.GetLoadedSlot().gameData.keys;
     }
     private void OnEnable()
     {

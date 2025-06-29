@@ -4,9 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     [Header("Levels To Load")]
-    public string newGameLevel  ;
-    private string levelToLoad;
-    [SerializeField] private GameObject noSaveGameDialog = null;
+    public string newGameLevel;
 
     public void NewGameDialogYes()
     {
@@ -14,15 +12,7 @@ public class MenuController : MonoBehaviour
     }
     public void LoadGameDialogYes()
     {
-       if (PlayerPrefs.HasKey("SavedLevel"))
-        {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
-        }
-        else
-        {
-            noSaveGameDialog.SetActive(true);
-        }
+       SceneManager.LoadScene("LoadGameScene");
     }
     public void ExitButton() { 
         Application.Quit();

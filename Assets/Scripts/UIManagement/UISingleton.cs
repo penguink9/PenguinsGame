@@ -2,6 +2,7 @@
 using TMPro;
 using System.Collections;
 
+[DefaultExecutionOrder(-3)]
 public class UISingleton : Singleton<UISingleton>
 {
     [SerializeField] private TextMeshProUGUI healTextPrefab;  // Prefab của TextMeshPro

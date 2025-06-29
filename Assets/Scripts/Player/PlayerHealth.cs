@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
+            GetComponent<CapsuleCollider2D>().enabled = false;
             AudioManager.Instance.PlaySFX("Penguin Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
@@ -113,6 +114,15 @@ public class PlayerHealth : MonoBehaviour
         if (healthBar == null) return;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
+    }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+    public void SetCurrentHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
+        UpdateHPSlider();
     }
 }
 

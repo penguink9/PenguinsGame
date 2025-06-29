@@ -1,42 +1,69 @@
 ﻿using System.Collections.Generic;
-using TMPro;
-using Unity.Cinemachine;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-[DefaultExecutionOrder(-100)]
-public class PlayerManager : Singleton<PlayerManager>
+[DefaultExecutionOrder(-2)]
+public class PlayerManager : Singleton<PlayerManager>, ILoadGameInit
 {
     [SerializeField] private PlayerPrefabsDatabase prefabDatabase;
     [SerializeField] private Transform charactersUIParent;
     [SerializeField] private Slider healthSlider;
     [SerializeField] List<int> beginningCharacterIndexs;
+    private Dictionary<int, GameObject> unlockedPlayers = new Dictionary<int, GameObject>();
+    private Dictionary<int, bool> aliveCharacterMap = new Dictionary<int, bool>();
     private List<Slider> characterHPSliders = new List<Slider>();
+    private int activePlayerIndex = -1;
 
-    private List<GameObject> unlockedPlayers = new List<GameObject>();
-    private List<bool> aliveCharacterList = new List<bool>();
-    private int activePlayerIndex = 0;
-
-
-   
     private void Start()
     {
+        //CacheCharacterHPSliders();
+
+        //if (beginningCharacterIndexs.Count != 0)
+        //{
+        //    foreach (int index in beginningCharacterIndexs)
+        //    {
+        //        UnlockCharacter(index);
+        //    }
+        //}
+
+        //if (unlockedPlayers.Count > 0)
+        //{
+        //    SwitchCharacter(beginningCharacterIndexs[0]);
+        //}
+        LoadGameInit();
+    }
+    public void LoadGameInit()
+    {
         CacheCharacterHPSliders();
-        if (beginningCharacterIndexs.Count != 0) 
+        if (!TrackCurrentMap.Instance.HasLoadData())
         {
-            foreach (int index in beginningCharacterIndexs)
+            if (beginningCharacterIndexs.Count != 0)
             {
-                UnlockCharacter(index);
+                foreach (int index in beginningCharacterIndexs)
+                {
+                    UnlockCharacter(index);
+                }
             }
+
+            if (unlockedPlayers.Count > 0)
+            {
+                SwitchCharacter(beginningCharacterIndexs[0]);
+            }
+            return;
         }
-        SwitchCharacter(0);
+        // Load data from saved game
+        var loadedData = DataManager.Instance.GetLoadedSlot().gameData.unlockCharacters;
+        SetLoadData(loadedData, DataManager.Instance.GetLoadedSlot().gameData.activeCharacterIndex);
     }
 
     public bool UnlockCharacter(int prefabIndex)
     {
-        if (prefabIndex < 0 || prefabIndex >= prefabDatabase.playerPrefabs.Length) return false;
+        if (prefabIndex < 0 || prefabIndex >= prefabDatabase.playerPrefabs.Length)
+            return false;
+
+        if (unlockedPlayers.ContainsKey(prefabIndex))
+            return false; // already unlocked
 
         GameObject newPlayer = Instantiate(prefabDatabase.playerPrefabs[prefabIndex], transform);
         var health = newPlayer.GetComponent<PlayerHealth>();
@@ -45,47 +72,48 @@ public class PlayerManager : Singleton<PlayerManager>
             health.OnPlayerDeath += () => OnPlayerDeath(prefabIndex);
             health.SetHealthBar(characterHPSliders[prefabIndex]);
         }
+
         newPlayer.SetActive(false);
-        unlockedPlayers.Add(newPlayer);
-        aliveCharacterList.Add(true); // Assume the character is alive when unlocked
-        List<int> unlockedPlayersIndext = new List<int>();
-        for (int i = 0; i < unlockedPlayers.Count; i++)
-        {
-            if (unlockedPlayers[i])
-            {
-                unlockedPlayersIndext.Add(i);
-            }
-        }
-        //charactersUIParent.GetChild(prefabIndex).gameObject.SetActive(true);
-        charactersUIParent.GetComponent<ChangeCharacter>().UpdateCharBox(unlockedPlayers.Count);
+        unlockedPlayers[prefabIndex] = newPlayer;
+        aliveCharacterMap[prefabIndex] = true;
+
+        // Update UI
+        charactersUIParent.GetComponent<ChangeCharacter>().UpdateCharBox(new List<int>(unlockedPlayers.Keys));
         return true;
     }
+
     private void OnPlayerDeath(int playerIndex)
     {
-        aliveCharacterList[playerIndex] = false;
+        if (!aliveCharacterMap.ContainsKey(playerIndex)) return;
 
-        // Cập nhật UI Death
+        aliveCharacterMap[playerIndex] = false;
+
+        // UI: Death icon on
+        var changeChar = charactersUIParent.GetComponent<ChangeCharacter>();
         var charUI = charactersUIParent.GetChild(playerIndex);
-        charUI.Find("CharBox/Death").gameObject.SetActive(true);
-        charUI.Find("CharBox/CharAvt").gameObject.SetActive(false);
-        // Tự động tìm nhân vật sống và switch
-        bool switched = false;
-        for (int i = 0; i < aliveCharacterList.Count; i++)
+
+        if (charUI != null)
         {
-            if (aliveCharacterList[i])
+            charUI.Find("CharBox/Death").gameObject.SetActive(true);
+            charUI.Find("CharBox/CharAvt").gameObject.SetActive(false);
+        }
+
+        // Try switch to another alive character
+        bool switched = false;
+        foreach (var kvp in aliveCharacterMap)
+        {
+            if (kvp.Value)
             {
-                charactersUIParent.GetComponent<ChangeCharacter>().TriggerSlot(i + 1);
+                changeChar.TriggerSlot(changeChar.GetSlotIndexByPrefabIndex(kvp.Key) + 1);
                 switched = true;
                 break;
             }
         }
 
-        // Nếu không còn nhân vật nào sống -> GameOver
         if (!switched)
         {
             TriggerGameOver();
         }
-
     }
 
     private void TriggerGameOver()
@@ -101,50 +129,144 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public bool SwitchCharacter(int index)
     {
-        Vector3 currentPosition = unlockedPlayers[activePlayerIndex].transform.position;
-        if (index < 0 || index >= unlockedPlayers.Count) return false;
-        //Set old player's health bar to the UI
-        if (!unlockedPlayers[activePlayerIndex].GetComponent<PlayerState>().CanSwitch()) return false;
-        unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(characterHPSliders[activePlayerIndex]);
+        if (!unlockedPlayers.ContainsKey(index)) return false;
+        if (!aliveCharacterMap.ContainsKey(index) || !aliveCharacterMap[index]) return false;
 
-        // Deactivate all players and activate the selected one
-        unlockedPlayers[activePlayerIndex].SetActive(false);
-        // Activate the new player and set its position
+        GameObject newPlayer = unlockedPlayers[index];
+
+        if (activePlayerIndex != -1 && unlockedPlayers.ContainsKey(activePlayerIndex))
+        {
+            var current = unlockedPlayers[activePlayerIndex];
+            if (!current.GetComponent<PlayerState>().CanSwitch()) return false;
+            current.GetComponent<PlayerHealth>().SetHealthBar(characterHPSliders[activePlayerIndex]);
+            current.SetActive(false);
+        }
+
+        Vector3 spawnPos = (activePlayerIndex != -1 && unlockedPlayers.ContainsKey(activePlayerIndex)) ?
+            unlockedPlayers[activePlayerIndex].transform.position : transform.position;
+
         activePlayerIndex = index;
-        unlockedPlayers[activePlayerIndex].SetActive(true);
-        unlockedPlayers[activePlayerIndex].transform.position = currentPosition;
-        // Update the camera to follow the new player
-        CameraManager.Instance.SetFollow(unlockedPlayers[activePlayerIndex].transform);
-        // Set the health bar for the active player
-        unlockedPlayers[activePlayerIndex].GetComponent<PlayerHealth>().SetHealthBar(healthSlider);
-        // Update the enemy target provider to follow the new player
-        EnemyTargetProvider.Instance.SetTarget(unlockedPlayers[activePlayerIndex].transform);
+        newPlayer.SetActive(true);
+        newPlayer.transform.position = spawnPos;
+
+        newPlayer.GetComponent<PlayerHealth>().SetHealthBar(healthSlider);
+        CameraManager.Instance.SetFollow(newPlayer.transform);
+        EnemyTargetProvider.Instance.SetTarget(newPlayer.transform);
+
         return true;
     }
 
     public GameObject GetActivePlayer()
     {
-        return unlockedPlayers[activePlayerIndex];
+        if (activePlayerIndex != -1 && unlockedPlayers.ContainsKey(activePlayerIndex))
+            return unlockedPlayers[activePlayerIndex];
+        return null;
     }
-    public int GetActivePlayerIndex()
-    {
-        return activePlayerIndex;
-    }  
-    public bool IsCharacterUnlocked(int index) => index < unlockedPlayers.Count;
+
+    public int GetActivePlayerIndex() => activePlayerIndex;
+
+    public bool IsCharacterUnlocked(int index) => unlockedPlayers.ContainsKey(index);
+
     public int UnlockedCharacterCount() => unlockedPlayers.Count;
+
+    public bool IsCharacterAlive(int index)
+    {
+        return aliveCharacterMap.ContainsKey(index) && aliveCharacterMap[index];
+    }
 
     private void CacheCharacterHPSliders()
     {
         characterHPSliders.Clear();
-
         foreach (Transform character in charactersUIParent)
         {
             Slider hpSlider = character.GetChild(1).GetComponent<Slider>();
             characterHPSliders.Add(hpSlider);
         }
     }
-    public bool IsCharacterAlive(int index)
+    public List<CharacterData> GetCharacterDatas()
     {
-        return index >= 0 && index < aliveCharacterList.Count && aliveCharacterList[index];
+        List<CharacterData> datas = new List<CharacterData>();
+
+        foreach (var kvp in unlockedPlayers)
+        {
+            int index = kvp.Key;
+            GameObject playerObj = kvp.Value;
+            PlayerHealth healthComponent = playerObj.GetComponent<PlayerHealth>();
+
+            CharacterData data = new CharacterData
+            {
+                index = index,
+                health = healthComponent != null ? healthComponent.GetCurrentHealth() : 0,
+                isDead = aliveCharacterMap.ContainsKey(index) && !aliveCharacterMap[index]
+            };
+
+            datas.Add(data);
+        }
+
+        return datas;
     }
+    public void SetLoadData(List<CharacterData> characterDatas, int activeCharacterIndex)
+    {
+        if (characterDatas == null || characterDatas.Count == 0)
+        {
+            Debug.LogWarning("Character data is empty, cannot load.");
+            return;
+        }
+
+        // Clear hiện tại
+        unlockedPlayers.Clear();
+        aliveCharacterMap.Clear();
+
+        // Cache lại sliders nếu cần
+        CacheCharacterHPSliders();
+
+        foreach (var data in characterDatas)
+        {
+            int index = data.index;
+
+            // Bỏ qua index không hợp lệ
+            if (index < 0 || index >= prefabDatabase.playerPrefabs.Length)
+                continue;
+
+            GameObject newPlayer = Instantiate(prefabDatabase.playerPrefabs[index], transform);
+            var health = newPlayer.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                health.OnPlayerDeath += () => OnPlayerDeath(index);
+                health.SetHealthBar(characterHPSliders[index]);
+                health.SetCurrentHealth(data.health);
+            }
+
+            newPlayer.SetActive(false);
+            unlockedPlayers[index] = newPlayer;
+            aliveCharacterMap[index] = !data.isDead;
+
+            // Cập nhật UI trạng thái chết nếu có
+            var charUI = charactersUIParent.GetChild(index);
+            if (charUI != null)
+            {
+                bool isDead = data.isDead;
+                charUI.Find("CharBox/Death").gameObject.SetActive(isDead);
+                charUI.Find("CharBox/CharAvt").gameObject.SetActive(!isDead);
+            }
+        }
+
+        // Cập nhật danh sách UI
+        var changeChar = charactersUIParent.GetComponent<ChangeCharacter>();
+        changeChar.UpdateCharBox(new List<int>(unlockedPlayers.Keys));
+
+        // Tự động Switch sang nhân vật đang active
+        int slotIndex = changeChar.GetSlotIndexByPrefabIndex(activeCharacterIndex);
+        if (slotIndex != -1)
+        {
+            changeChar.TriggerSlot(slotIndex + 1); // slotNum truyền vào TriggerSlot là từ 1-based
+        }
+        else
+        {
+            Debug.LogWarning($"Cannot find UI slot for character index {activeCharacterIndex}");
+        }
+    }
+
+
+
 }
