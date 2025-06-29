@@ -15,7 +15,7 @@ public class RangedEnemyAI : EnemyAI
 
     protected override void Awake()
     {
-        base.Awake(); // Gọi phương thức Awake của lớp cha (EnemyAI)
+        base.Awake(); 
         myAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         lastAttackTime = -attackCooldown;
@@ -52,8 +52,14 @@ public class RangedEnemyAI : EnemyAI
 
     private void TryAttack()
     {
-        if (Time.time - lastAttackTime >= attackCooldown)
-        {
+        
+
+        if (Time.time - lastAttackTime < attackCooldown)
+            return;
+        lastAttackTime = Time.time;
+
+        //if (Time.time - lastAttackTime >= attackCooldown)
+        //{
             myAnimator.SetTrigger("Attack");
 
             // Flip hướng ném
@@ -65,7 +71,7 @@ public class RangedEnemyAI : EnemyAI
             StartCoroutine(DelayedProjectile());
 
             lastAttackTime = Time.time;
-        }
+        //}
     }
     private IEnumerator DelayedProjectile()
     {

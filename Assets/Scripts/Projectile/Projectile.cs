@@ -45,12 +45,13 @@ public class Projectile : MonoBehaviour
 
         if (!other.isTrigger && (enemyHealth || indestructible || player || isDestructible))
         {
+            
             if (player && isEnemyProjectile)
             {
                 player.TakeDamage(1, transform);
             } else if (enemyHealth)
             {
-                enemyHealth.TakeDamage(1, transform);
+                enemyHealth.TakeDamage(1, transform);   
             }
             AudioManager.Instance.PlaySFX("Enemy Shot");
             Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);

@@ -46,7 +46,6 @@ public class EnemyAI : MonoBehaviour
         
         while (true)
         {
-            Debug.Log("State:" + state);
             playerTransform = EnemyTargetProvider.Instance.GetTarget();
             switch (state)
             {
