@@ -12,6 +12,7 @@ public class ToggleSettingBtn : MonoBehaviour
     {
         if (settingPanel != null)
         {
+            PlayerInputManager.Instance.ToggleEnable(settingPanel.activeSelf);
             settingPanel.SetActive(!settingPanel.activeSelf);
         }
         else

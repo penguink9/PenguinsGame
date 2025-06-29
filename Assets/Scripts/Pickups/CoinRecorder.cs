@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class CoinRecorder : Singleton<CoinRecorder>
+[DefaultExecutionOrder(-2)]
+public class CoinRecorder : Singleton<CoinRecorder>, ILoadGameInit
 {
     private int totalCoins;
     public int TotalCoins
@@ -29,6 +30,10 @@ public class CoinRecorder : Singleton<CoinRecorder>
         UpdateCoinUI();
     }
 
+    private void Start()
+    {
+        LoadGameInit();
+    }
     public void PickupCoin()
     {
         TotalCoins++;
@@ -40,6 +45,15 @@ public class CoinRecorder : Singleton<CoinRecorder>
         {
             coinText.text = totalCoins.ToString();
         }
+    }
+    public void LoadGameInit()
+    {
+        if(!TrackCurrentMap.Instance.HasLoadData())
+        {
+            TotalCoins = 0;
+            return;
+        }
+        TotalCoins = DataManager.Instance.GetLoadedSlot().gameData.coinCollected; 
     }
 }
 

@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(-100)]
 public class TrackCurrentMap : Singleton<TrackCurrentMap> 
 {
     private TextMeshProUGUI mapText;
@@ -37,5 +38,9 @@ public class TrackCurrentMap : Singleton<TrackCurrentMap>
             // Trường hợp lỗi tên scene
             mapText.text = "Unknown Level";
         }
+    }
+    public bool HasLoadData()
+    {
+        return DataManager.Instance.GetLoadedSlot() != null && DataManager.Instance.GetLoadedSlot().gameData.level == level;
     }
 }

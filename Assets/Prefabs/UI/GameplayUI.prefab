@@ -5496,7 +5496,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032896388928666507}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3525777325512277541}
+        m_TargetAssemblyTypeName: SettingPanelController, Assembly-CSharp
+        m_MethodName: ExitToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3078820615698716350
 GameObject:
   m_ObjectHideFlags: 0
@@ -12595,7 +12607,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4854005525125583237}
   - {fileID: 9021290923121034670}
   - {fileID: 5770628374578325259}
   - {fileID: 5134330130900013531}
@@ -12605,6 +12616,7 @@ RectTransform:
   - {fileID: 2744599727844442783}
   - {fileID: 900891178743362353}
   - {fileID: 6636652986758162049}
+  - {fileID: 4854005525125583237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

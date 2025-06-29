@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-[DefaultExecutionOrder(-100)]
-public class PlayerManager : Singleton<PlayerManager>
+[DefaultExecutionOrder(-2)]
+public class PlayerManager : Singleton<PlayerManager>, ILoadGameInit
 {
     [SerializeField] private PlayerPrefabsDatabase prefabDatabase;
     [SerializeField] private Transform charactersUIParent;
@@ -17,20 +17,44 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void Start()
     {
+        //CacheCharacterHPSliders();
+
+        //if (beginningCharacterIndexs.Count != 0)
+        //{
+        //    foreach (int index in beginningCharacterIndexs)
+        //    {
+        //        UnlockCharacter(index);
+        //    }
+        //}
+
+        //if (unlockedPlayers.Count > 0)
+        //{
+        //    SwitchCharacter(beginningCharacterIndexs[0]);
+        //}
+        LoadGameInit();
+    }
+    public void LoadGameInit()
+    {
         CacheCharacterHPSliders();
-
-        if (beginningCharacterIndexs.Count != 0)
+        if (!TrackCurrentMap.Instance.HasLoadData())
         {
-            foreach (int index in beginningCharacterIndexs)
+            if (beginningCharacterIndexs.Count != 0)
             {
-                UnlockCharacter(index);
+                foreach (int index in beginningCharacterIndexs)
+                {
+                    UnlockCharacter(index);
+                }
             }
-        }
 
-        if (unlockedPlayers.Count > 0)
-        {
-            SwitchCharacter(beginningCharacterIndexs[0]);
+            if (unlockedPlayers.Count > 0)
+            {
+                SwitchCharacter(beginningCharacterIndexs[0]);
+            }
+            return;
         }
+        // Load data from saved game
+        var loadedData = DataManager.Instance.GetLoadedSlot().gameData.unlockCharacters;
+        SetLoadData(loadedData, DataManager.Instance.GetLoadedSlot().gameData.activeCharacterIndex);
     }
 
     public bool UnlockCharacter(int prefabIndex)

@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 
 // Singleton trung tâm lưu trạng thái từng map (enemy + item).
-[DefaultExecutionOrder(-1)]
-public class MapStateManager : Singleton<MapStateManager>
+[DefaultExecutionOrder(-2)]
+public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
 {
     [SerializeField] List<int> capturedPenguinIndexs = new();
     public Dictionary<int,bool> isCapturedPenguinUnlocked = new();
@@ -23,6 +23,26 @@ public class MapStateManager : Singleton<MapStateManager>
         {
             isCapturedPenguinUnlocked.Add(index, false);
         }
+    }
+    private void Start()
+    {
+        LoadGameInit();
+    }
+    public void LoadGameInit()
+    {
+        if (!TrackCurrentMap.Instance.HasLoadData())
+        {
+            // Nếu chưa có dữ liệu đã lưu → khởi tạo trạng thái rỗng
+            mapStates.Clear();
+            enemyGroups.Clear();
+            itemGroups.Clear();
+            return;
+        }
+
+        // Lấy dữ liệu đã lưu từ DataManager
+        var savedMapStates = DataManager.Instance.GetLoadedSlot().gameData.mapStates;
+        var savedNpcUnlockeds = DataManager.Instance.GetLoadedSlot().gameData.npcUnlockeds;
+        SetLoadData(savedMapStates, savedNpcUnlockeds);
     }
     // Đăng ký enemy group với mapIndex cụ thể
     public void RegisterEnemyGroup(int mapIndex, EnemyGroupManager group)

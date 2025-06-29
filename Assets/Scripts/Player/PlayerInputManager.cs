@@ -37,7 +37,13 @@ public class PlayerInputManager : Singleton<PlayerInputManager>
         //Binding cho character selection
         playerControls.SelectChar.Keyboard.performed += ctx => OnCharacterSelect?.Invoke((int)ctx.ReadValue<float>());
     }
-
+    public void ToggleEnable(bool isEnable)
+    {
+        if (isEnable)
+            playerControls.Enable();
+        else
+            playerControls.Disable();
+    }
     private void OnDisable()
     {
         playerControls.Disable();
