@@ -6,9 +6,9 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 30f;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
-    [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private float projectileRange = 10f;
     [SerializeField] private float fireAngleLimit = 60f;
+
 
     private Vector3 startPosition;
     private Transform target;
@@ -19,10 +19,7 @@ public class Projectile : MonoBehaviour
     {
         startPosition = transform.position;
 
-        if (isEnemyProjectile)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }
+        
     }
 
     private void Update()
@@ -40,17 +37,14 @@ public class Projectile : MonoBehaviour
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         Indestructible indestructible = other.gameObject.GetComponent<Indestructible>();
-        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
         bool isDestructible = other.gameObject.GetComponent<Destructible>();
 
-        if (!other.isTrigger && (enemyHealth || indestructible || player || isDestructible))
+        if (!other.isTrigger && (enemyHealth || indestructible  || isDestructible))
         {
-            if (player && isEnemyProjectile)
+            
+             if (enemyHealth)
             {
-                player.TakeDamage(1, transform);
-            } else if (enemyHealth)
-            {
-                enemyHealth.TakeDamage(1, transform);
+                enemyHealth.TakeDamage(1, transform);   
             }
             AudioManager.Instance.PlaySFX("Enemy Shot");
             Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
@@ -99,14 +93,10 @@ public class Projectile : MonoBehaviour
 
     private void MoveProjectile()
     {
-        if (!isEnemyProjectile && directionSet)
+        if ( directionSet)
         {
             transform.Translate(fireDirection * Time.deltaTime * moveSpeed);
         }
-        else if (target != null)
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            transform.Translate(direction * Time.deltaTime * moveSpeed);
-        }
+        
     }
 }

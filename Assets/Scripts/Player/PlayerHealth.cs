@@ -37,12 +37,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();        
+        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();  
+        
         if (enemy && canTakeDamage)
         {
             int damage = enemy.GetDamage();
             TakeDamage(damage, other.transform);
-            CheckIfPlayerDead();
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
 
         UISingleton.Instance.ShowDmgTakeEffect(transform, damageAmount);
         UpdateHPSlider();
-
+        CheckIfPlayerDead();
         StartCoroutine(DamageRecoveryRoutine());
     }
 
