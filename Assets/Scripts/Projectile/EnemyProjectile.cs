@@ -4,7 +4,6 @@ using System.Collections;
 public class EnemyProjectile : MonoBehaviour
 {
     [SerializeField] private float duration = 1f;
-    [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
     [SerializeField] private int damage = 1;
 
@@ -41,7 +40,7 @@ public class EnemyProjectile : MonoBehaviour
 
         if (!other.isTrigger && (player != null || indestructible != null || isDestructible))
         {
-            if (player != null && isEnemyProjectile)
+            if (player != null )
             {
                 player.TakeDamage(damage, transform);
             }

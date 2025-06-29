@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
-  deathVFXPrefab: {fileID: 0}
+  deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
   healthDropChance: 0.5
   hasKey: 0
   maxCoins: 3
