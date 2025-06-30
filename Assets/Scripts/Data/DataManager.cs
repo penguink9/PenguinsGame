@@ -29,7 +29,7 @@ public class DataManager : Singleton<DataManager>
             Debug.LogError("Invalid slot number: " + slotNumber);
             return false;
         }
-
+        RefreshAllSlots();
         string fileName = SlotFilePrefix + slotNumber + ".json";
         fileDataHandler.SetFileName(fileName);
 
@@ -42,17 +42,6 @@ public class DataManager : Singleton<DataManager>
             fileName = fileName,
             gameData = gameData
         };
-
-        // Ghi đè hoặc thêm mới
-        int existingIndex = slots.FindIndex(s => s.slotNumber == slotNumber);
-        if (existingIndex >= 0)
-        {
-            slots[existingIndex] = saveSlot;
-        }
-        else
-        {
-            slots.Add(saveSlot);
-        }
 
         fileDataHandler.SaveData(saveSlot);
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");

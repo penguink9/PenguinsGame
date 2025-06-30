@@ -13,6 +13,7 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
     {
         // Check if the current scene is the one we want to load the game in
         if (!TrackCurrentMap.Instance.HasLoadData()) return;
+        AudioManager.Instance.PlayMusic("Background-1");
         UIFade.Instance.FadeBlack();
 
         // Load the game data for the specified level        

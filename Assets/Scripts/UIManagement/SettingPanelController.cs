@@ -37,6 +37,10 @@ public class SettingPanelController : MonoBehaviour
         Destroy(EnemyTargetProvider.Instance.gameObject);
         Destroy(AudioManager.Instance.gameObject);
         Destroy(UISingleton.Instance.gameObject);
+        Destroy(PlayerManager.Instance.gameObject);
+        Destroy(InventoryManager.Instance.gameObject);
+        Destroy(MapStateManager.Instance.gameObject);
+        Destroy(CoinRecorder.Instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 

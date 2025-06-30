@@ -2280,6 +2280,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 893505170154973843, guid: 0bbce0f0d4eb7564c8b4f7ce542bc678, type: 3}
+      propertyPath: m_Volume
+      value: 0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 2829271370003678404, guid: 0bbce0f0d4eb7564c8b4f7ce542bc678, type: 3}
       propertyPath: m_Volume
       value: 0.211
@@ -2643,7 +2647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameLevel: CharacterSelection
-  noSaveGameDialog: {fileID: 517630279}
 --- !u!4 &1741989860
 Transform:
   m_ObjectHideFlags: 0
