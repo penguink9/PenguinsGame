@@ -113,11 +113,16 @@ public class LoadGameController : MonoBehaviour
         if (slot != null)
         {
             DataManager.Instance.SetLoadedSlot(slot);
-            GameData gameData = slot.gameData;
-            //Get Scene to load
             PlayerPrefs.SetString("PlayerName", slot.playerName);
-            string firstSceneLoad = "Level" + gameData.level + "_Map1";
-            SceneManager.LoadScene(firstSceneLoad);
+            if(slot.isLevelCompleted)
+            {
+                SceneManager.LoadScene("MapSelection");
+            } else
+            {
+                GameData gameData = slot.gameData;
+                string firstSceneLoad = "Level" + gameData.level + "_Map1";
+                SceneManager.LoadScene(firstSceneLoad);
+            }
         }
         else
         {

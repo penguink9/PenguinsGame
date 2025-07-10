@@ -33,14 +33,7 @@ public class SettingPanelController : MonoBehaviour
     }
     public void ExitToMainMenu()
     {
-        Destroy(CameraManager.Instance.gameObject);
-        Destroy(EnemyTargetProvider.Instance.gameObject);
-        Destroy(AudioManager.Instance.gameObject);
-        Destroy(UISingleton.Instance.gameObject);
-        Destroy(PlayerManager.Instance.gameObject);
-        Destroy(InventoryManager.Instance.gameObject);
-        Destroy(MapStateManager.Instance.gameObject);
-        Destroy(CoinRecorder.Instance.gameObject);
+        DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene("MainMenu");
     }
 

@@ -15,6 +15,8 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     // Quản lý các group theo map
     private Dictionary<int, EnemyGroupManager> enemyGroups = new();
     private Dictionary<int, ItemGroupManager> itemGroups = new();
+    // Lưu trạng thái màn chơi
+    public bool isLevelCompleted = true;
 
     protected override void Awake()
     {
@@ -40,6 +42,7 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         }
 
         // Lấy dữ liệu đã lưu từ DataManager
+        isLevelCompleted = true;
         var savedMapStates = DataManager.Instance.GetLoadedSlot().gameData.mapStates;
         var savedNpcUnlockeds = DataManager.Instance.GetLoadedSlot().gameData.npcUnlockeds;
         SetLoadData(savedMapStates, savedNpcUnlockeds);
@@ -129,6 +132,7 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         return isCapturedPenguinUnlocked.Select(kvp => new BoolEntry { key = kvp.Key, value = kvp.Value })
     .ToList();
     }
+
     public void SetLoadData(List<MapStateEntry> savemapStates, List<BoolEntry> npcUnlockeds)
     {
         // Reset lại dictionary mapStates
@@ -153,5 +157,4 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
             }
         }
     }
-
 }

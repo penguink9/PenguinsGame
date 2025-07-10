@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SaveGameController : MonoBehaviour
 {
@@ -78,7 +79,24 @@ public class SaveGameController : MonoBehaviour
     }
     public void OnClickSaveSlot(int slotNumber)
     {
-        SaveGameToSlot(slotNumber);
+        if(MapStateManager.Instance.isLevelCompleted)
+        {
+            SaveGameAfterCompleted(slotNumber);
+        } else
+        {
+            SaveGameToSlot(slotNumber);
+        }        
+    }
+    public void SaveGameAfterCompleted(int slotNumber)
+    {
+        ScoreRecord record = new ScoreRecord
+        {
+            levelIndex = TrackCurrentMap.Instance.level,
+            score = CoinRecorder.Instance.TotalCoins
+        };
+        DataManager.Instance.SaveGameAfterCompletedLevel(record, slotNumber);
+        DataManager.Instance.DestroyManagerInLevel();
+        SceneManager.LoadScene("MapSelection");
     }
     public void StartUIState()
     {

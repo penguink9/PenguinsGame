@@ -5678,7 +5678,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1889637424}
   - component: {fileID: 1889637425}
-  - component: {fileID: 1889637426}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -5728,20 +5727,6 @@ MonoBehaviour:
   - {fileID: 1737044031}
   - {fileID: 1774915184}
   - {fileID: 1090779650}
---- !u!114 &1889637426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889637423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28309a3edb8fc6a44808daf96d336afd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unlockPanel: {fileID: 0}
-  panelAnimator: {fileID: 0}
 --- !u!1 &1934766003
 GameObject:
   m_ObjectHideFlags: 0
