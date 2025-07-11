@@ -16,8 +16,6 @@ public class  GameOverPopup : MonoBehaviour
 
     // Giá trị này được set từ bên ngoài khi kết thúc map
     public int final_gold;
-
-    // Tên map hiện tại, ví dụ "Level1_Map1"
     public string currentMapName;
 
 
@@ -38,7 +36,7 @@ public class  GameOverPopup : MonoBehaviour
 
         goldText.text = final_gold.ToString();
 
-        string level = ExtractLevelFromMapName(currentMapName);
+        string level = ExtractLevelFromMap(currentMapName);
         levelText.text = level;
 
         // Reset scale và alpha trước khi bật animation
@@ -50,17 +48,27 @@ public class  GameOverPopup : MonoBehaviour
         gameOverAnimator.SetTrigger("ShowPopUp");
     }
 
-    private string ExtractLevelFromMapName(string mapName)
+    private string ExtractLevelFromMap(string mapName)
     {
         if (string.IsNullOrEmpty(mapName))
             return "";
 
-        int underscoreIndex = mapName.IndexOf('_');
-        if (underscoreIndex > 0)
-            return mapName.Substring(0, underscoreIndex);
-        else
-            return mapName;
+        string prefix = "Level";
+        if (!mapName.StartsWith(prefix))
+            return "";
+        string afterLevel = mapName.Substring(prefix.Length);
+
+        int i = 0;
+        while (i < afterLevel.Length && char.IsDigit(afterLevel[i]))
+        {
+            i++;
+        }
+
+        if (i == 0)
+            return "";  
+        return afterLevel.Substring(0, i);  
     }
+
 
     private void OnTryAgainClicked()
     {
