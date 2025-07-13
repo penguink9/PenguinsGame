@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 48e780dbbc4b61f42b52ab70bb9dad2b
+guid: 0b063c9bdc200584b88d03175b0744c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 103797112969959299
-    second: BG-Small-Panel_0
+      213: 144775311990115912
+    second: LeftArrow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG-Small-Panel_0
+      name: LeftArrow_0
       rect:
         serializedVersion: 2
-        x: 33
+        x: 38
         y: 40
-        width: 434
-        height: 417
+        width: 426
+        height: 416
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 387194f9ce2c07100800000000000000
-      internalID: 103797112969959299
+      spriteID: 84eca631168520200800000000000000
+      internalID: 144775311990115912
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BG-Small-Panel_0: 103797112969959299
+      LeftArrow_0: 144775311990115912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
