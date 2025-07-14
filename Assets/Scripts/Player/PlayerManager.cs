@@ -17,20 +17,6 @@ public class PlayerManager : Singleton<PlayerManager>, ILoadGameInit
 
     private void Start()
     {
-        //CacheCharacterHPSliders();
-
-        //if (beginningCharacterIndexs.Count != 0)
-        //{
-        //    foreach (int index in beginningCharacterIndexs)
-        //    {
-        //        UnlockCharacter(index);
-        //    }
-        //}
-
-        //if (unlockedPlayers.Count > 0)
-        //{
-        //    SwitchCharacter(beginningCharacterIndexs[0]);
-        //}
         LoadGameInit();
     }
     public void LoadGameInit()
@@ -120,11 +106,8 @@ public class PlayerManager : Singleton<PlayerManager>, ILoadGameInit
     {
         Debug.Log("GAME OVER");
         AudioManager.Instance.PlaySFX("Game Over");
-        Destroy(CameraManager.Instance.gameObject);
-        Destroy(EnemyTargetProvider.Instance.gameObject);
-        Destroy(UISingleton.Instance.gameObject);
-        Destroy(gameObject);
-        SceneManager.LoadScene("Level1_Map1");
+        gameObject.SetActive(false);
+        UISingleton.Instance.ShowGameOverPopup();
     }
 
     public bool SwitchCharacter(int index)

@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class SaveSlot
@@ -10,6 +10,8 @@ public class SaveSlot
     public string playerName;
     public string fileName;
     public GameData gameData;
+    public bool isLevelCompleted;
+    public List<ScoreRecord> scores;
 
     public DateTime LastModified
     {

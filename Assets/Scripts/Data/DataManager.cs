@@ -11,6 +11,7 @@ public class DataManager : Singleton<DataManager>
     private List<SaveSlot> slots = new List<SaveSlot>();
     private FileDataHandler fileDataHandler;
     private SaveSlot loadedSlot;
+    private int currentSlotNumber = -1;
 
     private const int MaxSlots = 4;
     private const string SlotFilePrefix = "save_slot_";
@@ -38,7 +39,7 @@ public class DataManager : Singleton<DataManager>
             slotNumber = slotNumber,
             LastModified = DateTime.Now,
             slotName = "Slot " + slotNumber,
-            playerName = PlayerPrefs.GetString("PlayerName"), // có thể tuỳ chỉnh sau
+            playerName = PlayerPrefs.GetString("PlayerName"),
             fileName = fileName,
             gameData = gameData
         };
@@ -47,7 +48,61 @@ public class DataManager : Singleton<DataManager>
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
         return true;
     }
-    
+
+    public bool SaveGameAfterCompletedLevel(ScoreRecord record, int slotNumber)
+    {
+        if (slotNumber < 1 || slotNumber > MaxSlots)
+        {
+            Debug.LogError("Invalid slot number: " + slotNumber);
+            return false;
+        }
+
+        RefreshAllSlots();
+
+        string fileName = SlotFilePrefix + slotNumber + ".json";
+        fileDataHandler.SetFileName(fileName);
+
+        SaveSlot saveSlot = LoadDataInSlot(slotNumber) ?? new SaveSlot
+        {
+            slotNumber = slotNumber,
+            scores = new List<ScoreRecord>()
+        };
+
+        // Ghi đè nếu đã có record cùng levelIndex, ngược lại thêm mới
+        int index = saveSlot.scores.FindIndex(r => r.levelIndex == record.levelIndex);
+        if (index >= 0)
+            saveSlot.scores[index] = record;
+        else
+            saveSlot.scores.Add(record);
+        saveSlot.playerName = PlayerPrefs.GetString("PlayerName");
+        saveSlot.isLevelCompleted = true;
+        saveSlot.LastModified = DateTime.Now;
+        saveSlot.fileName = fileName;
+        GameData gameData = new GameData()
+        {
+            level = record.levelIndex, // Cập nhật level hiện tại
+        };
+        saveSlot.gameData = gameData;
+        fileDataHandler.SaveData(saveSlot);
+        Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
+        // Cập nhật loadedSlot nếu cần
+        SetLoadedSlot(saveSlot);
+        return true;
+    }
+
+
+    public int GetEmptySlotNumber()
+    {
+        RefreshAllSlots();
+        for (int i = 0; i < MaxSlots; i++)
+        {
+            if (slots[i] == null)
+            {
+                return i + 1; // Trả về số slot (1 đến 4)
+            }
+        }
+        return -1; // Không có slot trống
+    }
     public void RefreshAllSlots()
     {
         slots = new List<SaveSlot>(new SaveSlot[MaxSlots]);
@@ -98,5 +153,23 @@ public class DataManager : Singleton<DataManager>
     public void SetLoadedSlot(SaveSlot slot)
     {
         loadedSlot = slot;
+        if (slot != null)
+        {
+            // Cập nhật currentSlotNumber nếu slot hợp lệ
+            currentSlotNumber = slot.slotNumber;
+        } else
+        {
+            currentSlotNumber = -1; // Reset
+        }
+    }
+    public void DestroyManagerInLevel()
+    {
+        Destroy(CameraManager.Instance.gameObject);
+        Destroy(EnemyTargetProvider.Instance.gameObject);
+        Destroy(UISingleton.Instance.gameObject);
+        Destroy(PlayerManager.Instance.gameObject);
+        Destroy(InventoryManager.Instance.gameObject);
+        Destroy(MapStateManager.Instance.gameObject);
+        Destroy(CoinRecorder.Instance.gameObject);
     }
 }

@@ -175,7 +175,7 @@ MonoBehaviour:
   startingHealth: 6
   deathVFXPrefab: {fileID: 7969724450858621170, guid: 35adb7f17ce1e764abaf45a121de882d, type: 3}
   healthDropChance: 1
-  hasKey: 0
+  hasKey: 1
   maxCoins: 8
   knockBackThrust: 5
 --- !u!114 &3068320797017887159

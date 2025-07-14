@@ -75,5 +75,13 @@ public class UISingleton : Singleton<UISingleton>
         // Gọi Coroutine để di chuyển text lên
         StartCoroutine(MoveTextUp(dmgText));
     }
+    public void ShowGameOverPopup()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+    public void ShowLevelCompletedPopup()
+    {
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
 }
 

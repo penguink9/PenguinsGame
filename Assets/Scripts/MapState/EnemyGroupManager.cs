@@ -11,14 +11,13 @@ public class EnemyGroupManager : MonoBehaviour
     private void Awake()
     {
         // Lấy toàn bộ EnemyHealth trong con
-        enemies = new List<EnemyHealth>(GetComponentsInChildren<EnemyHealth>());
-
-        // Đăng ký với MapStateManager
-        MapStateManager.Instance.RegisterEnemyGroup(mapIndex, this);
+        enemies = new List<EnemyHealth>(GetComponentsInChildren<EnemyHealth>());        
     }
 
     private void Start()
     {
+        // Đăng ký với MapStateManager
+        MapStateManager.Instance.RegisterEnemyGroup(mapIndex, this);
         // Nếu có trạng thái map đã lưu → khôi phục lại trạng thái cho enemy
         if (MapStateManager.Instance.TryGetMapState(mapIndex, out var state))
         {
