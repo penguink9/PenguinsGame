@@ -157,46 +157,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // ===== PANEL SWITCHING =====
-    public void PressMapButton(int mapIndex)
-    {
-        if (!mapSelections[mapIndex].isUnlock)
-        {
-            Debug.Log("Map is locked, please unlock it first.");
-            return;
-        }
-        for (int i = 0; i < levelSelectionPanels.Length; i++)
-        {
-            // Bật panel đúng map, tắt các panel khác
-            levelSelectionPanels[i].SetActive(i == mapIndex);
-        }
-        mapSelectionPanel.SetActive(false); // <- Cần dòng này để tắt panel chọn map!
-    }
-
-    public void BackMapButton()
-    {
-        mapSelectionPanel.SetActive(true);
-        foreach (var panel in levelSelectionPanels)
-            panel.SetActive(false); // <- Tắt hết panel chọn level!
-    }
-
-
-    // Được LevelSelectionButton gọi khi bấm nút
-    public void PressLevelButton(int mapIndex, int levelIndex)
-    {
-        if (!allLevels[mapIndex][levelIndex].isUnlocked)
-        {
-            Debug.Log("Level is locked!");
-            // Có thể show popup ở đây nếu muốn
-            return;
-        }
-
-        // Ghép tên scene theo đúng cấu trúc của bạn:
-        string sceneName = $"Level1_Map{levelIndex + 1}";
-        Debug.Log("Loading scene: " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
-
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

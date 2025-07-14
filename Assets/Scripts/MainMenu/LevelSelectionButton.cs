@@ -48,6 +48,6 @@ public class LevelSelectionButton : MonoBehaviour
     // Gán sự kiện này vào Button.OnClick trong Editor
     public void OnClick()
     {
-        UIManager.instance.PressLevelButton(mapIndex, levelIndex);
+       
     }
 }
