@@ -159,7 +159,6 @@ public class DataManager : Singleton<DataManager>
     {
         Destroy(CameraManager.Instance.gameObject);
         Destroy(EnemyTargetProvider.Instance.gameObject);
-        Destroy(AudioManager.Instance.gameObject);
         Destroy(UISingleton.Instance.gameObject);
         Destroy(PlayerManager.Instance.gameObject);
         Destroy(InventoryManager.Instance.gameObject);
