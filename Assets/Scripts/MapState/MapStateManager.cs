@@ -15,8 +15,12 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     // Quản lý các group theo map
     private Dictionary<int, EnemyGroupManager> enemyGroups = new();
     private Dictionary<int, ItemGroupManager> itemGroups = new();
-    // Lưu trạng thái màn chơi
-    public bool isLevelCompleted = true;
+    private bool entryExitArea = false;
+    public bool EntryExitArea
+    {
+        get => entryExitArea;
+        set => entryExitArea = value;
+    }
 
     protected override void Awake()
     {
@@ -42,7 +46,6 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         }
 
         // Lấy dữ liệu đã lưu từ DataManager
-        isLevelCompleted = true;
         var savedMapStates = DataManager.Instance.GetLoadedSlot().gameData.mapStates;
         var savedNpcUnlockeds = DataManager.Instance.GetLoadedSlot().gameData.npcUnlockeds;
         SetLoadData(savedMapStates, savedNpcUnlockeds);

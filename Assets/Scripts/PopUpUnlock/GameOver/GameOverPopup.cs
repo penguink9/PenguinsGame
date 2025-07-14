@@ -5,7 +5,6 @@ using TMPro;
 
 public class  GameOverPopup : MonoBehaviour
 {
-    public static GameOverPopup instance;
     public GameObject gameOverPanel;       // Panel Game Over
     public Animator gameOverAnimator;      // Animator của panel
 
@@ -13,12 +12,6 @@ public class  GameOverPopup : MonoBehaviour
     public TMP_Text levelText;
     public Button tryAgainButton;
     public Button backToMainMenuButton;
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
     private void Start()
     {
         tryAgainButton.onClick.AddListener(OnTryAgainClicked);

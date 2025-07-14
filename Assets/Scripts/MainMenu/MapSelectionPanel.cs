@@ -29,7 +29,7 @@ public class MapSelectionPanel : MonoBehaviour, ILoadGameInit
             UnlockMap(mapButtons[scoreRecord.levelIndex-1]);
             DisplayStat(mapButtons[scoreRecord.levelIndex - 1], scoreRecord.score);
         }
-        UnlockMap(mapButtons[slot.gameData.currentMap]); // Mở khóa map tiếp theo
+        UnlockMap(mapButtons[slot.gameData.level]); // Mở khóa map tiếp theo
         DataManager.Instance.SetLoadedSlot(null);
     }
     public void SceneTransition(string sceneName)
@@ -44,7 +44,7 @@ public class MapSelectionPanel : MonoBehaviour, ILoadGameInit
     public void DisplayStat(Button mapButton, int coinRecorder)
     {
         // Hiển thị thông tin thống kê cho map
-        mapButton.transform.GetChild(1).GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Player Name:" +PlayerPrefs.GetString("PlayerName", "DefaultName");
+        mapButton.transform.GetChild(1).GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Player:" +PlayerPrefs.GetString("PlayerName", "DefaultName");
         // Map CoinRecorder
         mapButton.transform.GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = coinRecorder.ToString();
         mapButton.transform.GetChild(1).gameObject.SetActive(true);

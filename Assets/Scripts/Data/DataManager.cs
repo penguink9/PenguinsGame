@@ -39,7 +39,7 @@ public class DataManager : Singleton<DataManager>
             slotNumber = slotNumber,
             LastModified = DateTime.Now,
             slotName = "Slot " + slotNumber,
-            playerName = PlayerPrefs.GetString("PlayerName"), // có thể tuỳ chỉnh sau
+            playerName = PlayerPrefs.GetString("PlayerName"),
             fileName = fileName,
             gameData = gameData
         };
@@ -74,11 +74,15 @@ public class DataManager : Singleton<DataManager>
             saveSlot.scores[index] = record;
         else
             saveSlot.scores.Add(record);
-
+        saveSlot.playerName = PlayerPrefs.GetString("PlayerName");
         saveSlot.isLevelCompleted = true;
         saveSlot.LastModified = DateTime.Now;
         saveSlot.fileName = fileName;
-
+        GameData gameData = new GameData()
+        {
+            level = record.levelIndex, // Cập nhật level hiện tại
+        };
+        saveSlot.gameData = gameData;
         fileDataHandler.SaveData(saveSlot);
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
         // Cập nhật loadedSlot nếu cần
@@ -153,6 +157,9 @@ public class DataManager : Singleton<DataManager>
         {
             // Cập nhật currentSlotNumber nếu slot hợp lệ
             currentSlotNumber = slot.slotNumber;
+        } else
+        {
+            currentSlotNumber = -1; // Reset
         }
     }
     public void DestroyManagerInLevel()

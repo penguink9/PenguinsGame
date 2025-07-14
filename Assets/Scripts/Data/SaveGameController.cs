@@ -79,7 +79,7 @@ public class SaveGameController : MonoBehaviour
     }
     public void OnClickSaveSlot(int slotNumber)
     {
-        if(MapStateManager.Instance.isLevelCompleted)
+        if(MapStateManager.Instance.IsMissionCompleted() && MapStateManager.Instance.EntryExitArea)
         {
             SaveGameAfterCompleted(slotNumber);
         } else
@@ -148,7 +148,13 @@ public class SaveGameController : MonoBehaviour
                 ActiceSlot(slotContainer);
                 GetSlotNameText(slotContainer).text = slot.slotName;
                 GetPlayerNameText(slotContainer).text = slot.playerName;
-                GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString()+" - Map "+ slot.gameData.currentMap.ToString();
+                if(slot.gameData.currentMap != 0)
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString() + " - Map " + slot.gameData.currentMap.ToString();
+                } else
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString();
+                }
                 GetDateText(slotContainer).text = slot.lastModified;
             }
         }

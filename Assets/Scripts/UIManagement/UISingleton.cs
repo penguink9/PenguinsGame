@@ -79,5 +79,9 @@ public class UISingleton : Singleton<UISingleton>
     {
         transform.GetChild(0).gameObject.SetActive(true);
     }
+    public void ShowLevelCompletedPopup()
+    {
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
 }
 
