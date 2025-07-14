@@ -39,9 +39,9 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         if (!TrackCurrentMap.Instance.HasLoadData())
         {
             // Nếu chưa có dữ liệu đã lưu → khởi tạo trạng thái rỗng
-            mapStates.Clear();
-            enemyGroups.Clear();
-            itemGroups.Clear();
+            mapStates = new();
+            enemyGroups = new();
+            itemGroups = new();
             return;
         }
 
@@ -96,24 +96,6 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     {
         foreach (var key in enemyGroups.Keys)
             SaveMapState(key);
-    }
-
-    public int GetMapIndexFromSceneName()
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        // Tách bằng dấu gạch dưới
-        string[] parts = sceneName.Split('_');
-
-        if (parts.Length >= 2 && parts[1].StartsWith("Map"))
-        {
-            string mapPart = parts[1].Substring(3); // bỏ "Map" → còn lại là số
-            if (int.TryParse(mapPart, out int mapIndex))
-                return mapIndex;
-        }
-
-        Debug.LogWarning("Không thể lấy mapIndex từ scene name: " + sceneName);
-        return -1; // hoặc throw exception tùy mục đích
     }
 
     public List<MapStateEntry> GetAllMapStates()
