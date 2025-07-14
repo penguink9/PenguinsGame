@@ -253,6 +253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croc3
       objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
       value: 11
@@ -683,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lion2
       objectReference: {fileID: 0}
+    - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5422987211684413674, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.6
@@ -809,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: m_Name
       value: Lion1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5422987211684413674, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6996,6 +7008,7 @@ GameObject:
   - component: {fileID: 572038639}
   - component: {fileID: 572038638}
   - component: {fileID: 572038637}
+  - component: {fileID: 572038642}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7153,6 +7166,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572038642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572038636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2b526398d0ca848b8b021c0f3c1709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &588102077
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,6 +8634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croc5
       objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
       value: 11
@@ -8696,6 +8725,10 @@ PrefabInstance:
     - target: {fileID: 4310990579706374819, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
       propertyPath: m_Name
       value: EliteCroc1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310990579706374819, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7758560853068021529, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
       propertyPath: m_SortingOrder
@@ -8828,6 +8861,10 @@ PrefabInstance:
     - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: m_Name
       value: Lion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5422987211684413674, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9654,6 +9691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croc4
       objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
       value: 11
@@ -9724,6 +9765,10 @@ PrefabInstance:
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
       value: Croc2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder
@@ -36789,6 +36834,10 @@ PrefabInstance:
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
       value: Croc1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5498119305839997971, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_SortingOrder

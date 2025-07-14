@@ -72,7 +72,7 @@ public class PlayerBase : MonoBehaviour
         {
             if (!hasPlayedWalkSFX)
             {
-                AudioManager.Instance.PlaySFX("Penguin Walking");
+                //AudioManager.Instance.PlaySFX("Penguin Walking");
                 hasPlayedWalkSFX = true;
             }
         }

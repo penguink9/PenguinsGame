@@ -2,9 +2,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(-100)]
 public class TrackCurrentMap : Singleton<TrackCurrentMap> 
 {
     private TextMeshProUGUI mapText;
+    public int level;
+    public int map;
     private void Start()
     {
         mapText = GetComponent<TextMeshProUGUI>();
@@ -24,16 +27,20 @@ public class TrackCurrentMap : Singleton<TrackCurrentMap>
 
         if (parts.Length == 2)
         {
-            string levelPart = parts[0].Replace("Level", ""); // "1"
-            string mapPart = parts[1].Replace("Map", "");     // "1"
+            level =  int.Parse(parts[0].Replace("Level", "")); // "1"
+            map = int.Parse(parts[1].Replace("Map", ""));     // "1"
 
-            mapText.text = $"Level {levelPart} - Map {mapPart}";
-            Debug.Log($"Current Level: {levelPart}, Map: {mapPart}"); // Debug log để kiểm tra
+            mapText.text = $"Level {level} - Map {map}";
+            Debug.Log($"Current Level: {level}, Map: {map}"); // Debug log để kiểm tra
         }
         else
         {
             // Trường hợp lỗi tên scene
             mapText.text = "Unknown Level";
         }
+    }
+    public bool HasLoadData()
+    {
+        return DataManager.Instance.GetLoadedSlot() != null && DataManager.Instance.GetLoadedSlot().gameData.level == level;
     }
 }

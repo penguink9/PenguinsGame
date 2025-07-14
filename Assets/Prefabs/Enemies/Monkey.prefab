@@ -188,8 +188,10 @@ MonoBehaviour:
   roamingRange: 5
   trackingRange: 10
   returnSpeedMultiplier: 2
+  chasingSpeedMultiplier: 1.5
+  damage: 1
   attackCooldown: 2
-  bananaProjectilePrefab: {fileID: 6100429040915409503, guid: b023c867ead7ebd45a05889d277faf92, type: 3}
+  weaponProjectilePrefab: {fileID: 6100429040915409503, guid: b023c867ead7ebd45a05889d277faf92, type: 3}
 --- !u!114 &8737995239656155052
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,6 +37,10 @@ public class SettingPanelController : MonoBehaviour
         Destroy(EnemyTargetProvider.Instance.gameObject);
         Destroy(AudioManager.Instance.gameObject);
         Destroy(UISingleton.Instance.gameObject);
+        Destroy(PlayerManager.Instance.gameObject);
+        Destroy(InventoryManager.Instance.gameObject);
+        Destroy(MapStateManager.Instance.gameObject);
+        Destroy(CoinRecorder.Instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -47,5 +51,9 @@ public class SettingPanelController : MonoBehaviour
     public void OnSfxVolumeChange()
     {
         AudioManager.Instance.SetSfxVolume(sfxScrollbar.value);
+    }
+    public void OnClickSaveGameButton(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
     }
 }

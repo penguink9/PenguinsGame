@@ -21738,6 +21738,7 @@ GameObject:
   - component: {fileID: 674806030}
   - component: {fileID: 674806029}
   - component: {fileID: 674806033}
+  - component: {fileID: 674806034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21895,6 +21896,19 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &674806034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674806028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2b526398d0ca848b8b021c0f3c1709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1001 &709509255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21946,6 +21960,10 @@ PrefabInstance:
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
       value: Croc5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22294,6 +22312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lion3
       objectReference: {fileID: 0}
+    - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2704420470847709477, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: maxCoins
       value: 5
@@ -22608,6 +22630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lion4
       objectReference: {fileID: 0}
+    - target: {fileID: 2537830771005015885, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2704420470847709477, guid: acea9b614a2aa0245a02820ff07fdeba, type: 3}
       propertyPath: maxCoins
       value: 5
@@ -22797,6 +22823,10 @@ PrefabInstance:
     - target: {fileID: 4310990579706374819, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
       propertyPath: m_Name
       value: EliteCroc
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310990579706374819, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047050876755545177, guid: 89aebc6fe0927ce4a88af4fdb3578871, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49853,6 +49883,10 @@ PrefabInstance:
     - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
       propertyPath: m_Name
       value: Croc6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634511865418256570, guid: f5d69956741ff9c419f583b74012c374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

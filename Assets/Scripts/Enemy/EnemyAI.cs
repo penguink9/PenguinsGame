@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    private enum State
+    protected enum State
     {
         Roaming,
         ReturningToStart,
         ChasingPlayer
     }
 
-    private State state;
+    protected State state;
 
-    [SerializeField] private float roamingRange = 5f;
-    [SerializeField] private float trackingRange = 3f;
-    [SerializeField] private float returnSpeedMultiplier = 2f;
-    [SerializeField] private float chasingSpeedMultiplier = 1.5f;
-    [SerializeField] private int damage = 1;
+    [SerializeField] protected float roamingRange = 5f;
+    [SerializeField] protected float trackingRange = 3f;
+    [SerializeField] protected float returnSpeedMultiplier = 2f;
+    [SerializeField] protected float chasingSpeedMultiplier = 1.5f;
+    [SerializeField] protected int damage = 1;
 
-    private Vector2 startingPosition;
-    private EnemyPathing enemyPathfinding;
+    protected Transform playerTransform;
+    protected Vector2 startingPosition;
+    protected EnemyPathing enemyPathfinding;
     public float defaultMoveSpeed { get; set; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         enemyPathfinding = GetComponent<EnemyPathing>();
         state = State.Roaming;
@@ -32,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         defaultMoveSpeed = enemyPathfinding.moveSpeed; // cần khai báo public get trong EnemyPathing
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         StartCoroutine(StateRoutine());
     }
@@ -40,11 +41,12 @@ public class EnemyAI : MonoBehaviour
     {
         return damage;
     }
-    private IEnumerator StateRoutine()
+    protected virtual IEnumerator StateRoutine()
     {
+        
         while (true)
         {
-            Transform playerTransform = EnemyTargetProvider.Instance.GetTarget();
+            playerTransform = EnemyTargetProvider.Instance.GetTarget();
             switch (state)
             {
                 case State.Roaming:
@@ -62,19 +64,7 @@ public class EnemyAI : MonoBehaviour
                     break;
 
                 case State.ChasingPlayer:
-                    if (playerTransform != null)
-                    {
-                        Vector2 dirToPlayer = playerTransform.position - transform.position;
-                        enemyPathfinding.moveSpeed = defaultMoveSpeed*chasingSpeedMultiplier;
-                        enemyPathfinding.MoveTo(dirToPlayer);
-                    }
-
-                    if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
-                    {
-                        // vẫn tiếp tục đuổi thêm 2s
-                        yield return new WaitForSeconds(2f);
-                        state = State.ReturningToStart;
-                    }
+                    yield return StartCoroutine(ChasingPlayer(playerTransform));
                     break;
             }
 
@@ -90,7 +80,25 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private IEnumerator RoamingRoutine(Transform playerTransform)
+    protected virtual IEnumerator ChasingPlayer(Transform playerTransform)
+    {
+        if (playerTransform != null)
+        {
+            Vector2 dirToPlayer = playerTransform.position - transform.position;
+            enemyPathfinding.moveSpeed = defaultMoveSpeed * chasingSpeedMultiplier;
+            enemyPathfinding.MoveTo(dirToPlayer);
+        }
+
+        if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
+        {
+            // vẫn tiếp tục đuổi thêm 2s
+            yield return new WaitForSeconds(2f);
+            state = State.ReturningToStart;
+        }
+        
+    }
+
+    protected virtual IEnumerator RoamingRoutine(Transform playerTransform)
     {
         Vector2 roamPosition = GetRoamingPosition();
 
@@ -118,7 +126,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    private Vector2 GetRoamingPosition()
+    protected Vector2 GetRoamingPosition()
     {
         // Tạo một hướng ngẫu nhiên (góc)
         float angle = Random.Range(0f, Mathf.PI * 2f);

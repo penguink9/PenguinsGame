@@ -37,12 +37,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();        
+        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();  
+        
         if (enemy && canTakeDamage)
         {
             int damage = enemy.GetDamage();
             TakeDamage(damage, other.transform);
-            CheckIfPlayerDead();
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
 
         UISingleton.Instance.ShowDmgTakeEffect(transform, damageAmount);
         UpdateHPSlider();
-
+        CheckIfPlayerDead();
         StartCoroutine(DamageRecoveryRoutine());
     }
 
@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
+            GetComponent<CapsuleCollider2D>().enabled = false;
             AudioManager.Instance.PlaySFX("Penguin Death");
             StartCoroutine(DeadLoadSceneRoutine());
         }
@@ -113,6 +114,15 @@ public class PlayerHealth : MonoBehaviour
         if (healthBar == null) return;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
+    }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+    public void SetCurrentHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
+        UpdateHPSlider();
     }
 }
 

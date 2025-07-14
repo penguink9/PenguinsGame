@@ -4,7 +4,7 @@ public class CapturedPenguin : MonoBehaviour
 {
     [SerializeField] private int penguinIndex;
 
-    private void Awake()
+    private void Start()
     {
         MapStateManager.Instance.isCapturedPenguinUnlocked.TryGetValue(penguinIndex, out bool isUnlocked);
         if (isUnlocked)

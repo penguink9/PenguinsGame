@@ -19,7 +19,7 @@ public class PlayerState : MonoBehaviour
     }
     public bool CanSwitch()
     {
-        Debug.Log($"Current State: {CurrentState}");
+        //Debug.Log($"Current State: {CurrentState}");
         return CurrentState == State.Idle || CurrentState == State.Dead;
     }
 }
