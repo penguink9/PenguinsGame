@@ -100,7 +100,6 @@ public class LoadGameController : MonoBehaviour
                         break;
                 }
                 ActiceSlot(slotContainer);
-                GetSlotNameText(slotContainer).text = slot.slotName;
                 GetPlayerNameText(slotContainer).text = slot.playerName;
                 if (slot.gameData.currentMap != 0)
                 {

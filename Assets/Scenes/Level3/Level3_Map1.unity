@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 514438559}
   - component: {fileID: 514438558}
   - component: {fileID: 514438557}
+  - component: {fileID: 514438562}
   m_Layer: 0
   m_Name: Rock_Tree
   m_TagString: Untagged
@@ -3052,6 +3053,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &514438562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514438555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420f9f7f164ad374086874cc9f65b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &615444780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3636,11 +3649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937437286760399459, guid: 76c649375131cb54da5a02463ee508f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.61435986
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 3937437286760399459, guid: 76c649375131cb54da5a02463ee508f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.76056
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 3937437286760399459, guid: 76c649375131cb54da5a02463ee508f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29729,6 +29742,7 @@ GameObject:
   - component: {fileID: 1861371363}
   - component: {fileID: 1861371362}
   - component: {fileID: 1861371361}
+  - component: {fileID: 1861371366}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -31909,6 +31923,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1861371366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861371359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420f9f7f164ad374086874cc9f65b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1899101253
 GameObject:
   m_ObjectHideFlags: 0

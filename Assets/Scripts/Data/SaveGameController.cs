@@ -95,9 +95,11 @@ public class SaveGameController : MonoBehaviour
             score = CoinRecorder.Instance.TotalCoins
         };
         int currentSlot = PlayerPrefs.GetInt("CurrentSlot", 0);
+        Debug.Log("Current slot number:" + currentSlot);
         List<ScoreRecord> scores = new List<ScoreRecord>();
         if (currentSlot!= 0)
         {
+            DataManager.Instance.RefreshAllSlots();
             scores = DataManager.Instance.LoadDataInSlot(currentSlot).scores;
             // Ghi đè nếu đã có record cùng levelIndex, ngược lại thêm mới
             int index = scores.FindIndex(r => r.levelIndex == record.levelIndex);
@@ -161,7 +163,6 @@ public class SaveGameController : MonoBehaviour
                         break;
                 }
                 ActiceSlot(slotContainer);
-                GetSlotNameText(slotContainer).text = slot.slotName;
                 GetPlayerNameText(slotContainer).text = slot.playerName;
                 if(slot.gameData.currentMap != 0)
                 {
