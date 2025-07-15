@@ -20253,11 +20253,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 372031631821871637, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
       propertyPath: sceneToLoad
-      value: Level1_Map3
+      value: Level2_Map4
       objectReference: {fileID: 0}
     - target: {fileID: 372031631821871637, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
       propertyPath: sceneTransitionName
-      value: MEntry
+      value: Level2_Map1_to_Level2_Map4
       objectReference: {fileID: 0}
     - target: {fileID: 683268889603522814, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
       propertyPath: m_Name
@@ -20302,6 +20302,10 @@ PrefabInstance:
     - target: {fileID: 2506010896372484294, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930057823630868589, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
+      propertyPath: transitionName
+      value: Level2_Map4_to_Level2_Map1
       objectReference: {fileID: 0}
     - target: {fileID: 4762207657172789688, guid: 4b28dff33aefaa445a38e76cb7eecca2, type: 3}
       propertyPath: m_Name
