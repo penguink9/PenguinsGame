@@ -5,7 +5,6 @@ using TMPro;
 
 public class  GameOverPopup : MonoBehaviour
 {
-    public static GameOverPopup instance;
     public GameObject gameOverPanel;       // Panel Game Over
     public Animator gameOverAnimator;      // Animator của panel
 
@@ -13,30 +12,23 @@ public class  GameOverPopup : MonoBehaviour
     public TMP_Text levelText;
     public Button tryAgainButton;
     public Button backToMainMenuButton;
-
-    // Giá trị này được set từ bên ngoài khi kết thúc map
-    public int final_gold;
-    public string currentMapName;
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
     private void Start()
     {
         tryAgainButton.onClick.AddListener(OnTryAgainClicked);
         backToMainMenuButton.onClick.AddListener(OnBackToMainMenuClicked);
     }
 
-    public void ShowGameOverPopUp(int gold, string mapName)
+    private void OnEnable()
     {
-        final_gold = gold;
-        currentMapName = mapName;
+        ShowGameOverPopUp();
+    }
 
-        goldText.text = final_gold.ToString();
+    public void ShowGameOverPopUp()
+    {
 
-        string level = ExtractLevelFromMap(currentMapName);
+        goldText.text = CoinRecorder.Instance.TotalCoins.ToString();
+
+        string level = TrackCurrentMap.Instance.level.ToString();
         levelText.text = level;
 
         // Reset scale và alpha trước khi bật animation
@@ -47,36 +39,16 @@ public class  GameOverPopup : MonoBehaviour
         gameOverAnimator.ResetTrigger("ShowPopUp");
         gameOverAnimator.SetTrigger("ShowPopUp");
     }
-
-    private string ExtractLevelFromMap(string mapName)
-    {
-        if (string.IsNullOrEmpty(mapName))
-            return "";
-
-        string prefix = "Level";
-        if (!mapName.StartsWith(prefix))
-            return "";
-        string afterLevel = mapName.Substring(prefix.Length);
-
-        int i = 0;
-        while (i < afterLevel.Length && char.IsDigit(afterLevel[i]))
-        {
-            i++;
-        }
-
-        if (i == 0)
-            return "";  
-        return afterLevel.Substring(0, i);  
-    }
-
-
     private void OnTryAgainClicked()
     {
+        string currentMapName = "Level"+TrackCurrentMap.Instance.level+"_Map1";
+        DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene(currentMapName);
     }
 
     private void OnBackToMainMenuClicked()
     {
+        DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene("MainMenu");
     }
 

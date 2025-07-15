@@ -19,3 +19,9 @@ public class BoolEntry
     public int key;
     public bool value;
 }
+[System.Serializable]
+public class ScoreRecord
+{
+    public int levelIndex;
+    public int score;
+}

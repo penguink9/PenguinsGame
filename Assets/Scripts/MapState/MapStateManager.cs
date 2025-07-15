@@ -15,6 +15,12 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     // Quản lý các group theo map
     private Dictionary<int, EnemyGroupManager> enemyGroups = new();
     private Dictionary<int, ItemGroupManager> itemGroups = new();
+    private bool entryExitArea = false;
+    public bool EntryExitArea
+    {
+        get => entryExitArea;
+        set => entryExitArea = value;
+    }
 
     protected override void Awake()
     {
@@ -33,9 +39,9 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         if (!TrackCurrentMap.Instance.HasLoadData())
         {
             // Nếu chưa có dữ liệu đã lưu → khởi tạo trạng thái rỗng
-            mapStates.Clear();
-            enemyGroups.Clear();
-            itemGroups.Clear();
+            mapStates = new();
+            enemyGroups = new();
+            itemGroups = new();
             return;
         }
 
@@ -92,24 +98,6 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
             SaveMapState(key);
     }
 
-    public int GetMapIndexFromSceneName()
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        // Tách bằng dấu gạch dưới
-        string[] parts = sceneName.Split('_');
-
-        if (parts.Length >= 2 && parts[1].StartsWith("Map"))
-        {
-            string mapPart = parts[1].Substring(3); // bỏ "Map" → còn lại là số
-            if (int.TryParse(mapPart, out int mapIndex))
-                return mapIndex;
-        }
-
-        Debug.LogWarning("Không thể lấy mapIndex từ scene name: " + sceneName);
-        return -1; // hoặc throw exception tùy mục đích
-    }
-
     public List<MapStateEntry> GetAllMapStates()
     {
         return mapStates.Select(kvp => new MapStateEntry { mapIndex = kvp.Key, state = kvp.Value }).ToList();
@@ -129,6 +117,7 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
         return isCapturedPenguinUnlocked.Select(kvp => new BoolEntry { key = kvp.Key, value = kvp.Value })
     .ToList();
     }
+
     public void SetLoadData(List<MapStateEntry> savemapStates, List<BoolEntry> npcUnlockeds)
     {
         // Reset lại dictionary mapStates
@@ -153,5 +142,4 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
             }
         }
     }
-
 }

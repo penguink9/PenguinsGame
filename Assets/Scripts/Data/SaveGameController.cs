@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SaveGameController : MonoBehaviour
 {
@@ -78,7 +79,24 @@ public class SaveGameController : MonoBehaviour
     }
     public void OnClickSaveSlot(int slotNumber)
     {
-        SaveGameToSlot(slotNumber);
+        if(MapStateManager.Instance.IsMissionCompleted() && MapStateManager.Instance.EntryExitArea)
+        {
+            SaveGameAfterCompleted(slotNumber);
+        } else
+        {
+            SaveGameToSlot(slotNumber);
+        }        
+    }
+    public void SaveGameAfterCompleted(int slotNumber)
+    {
+        ScoreRecord record = new ScoreRecord
+        {
+            levelIndex = TrackCurrentMap.Instance.level,
+            score = CoinRecorder.Instance.TotalCoins
+        };
+        DataManager.Instance.SaveGameAfterCompletedLevel(record, slotNumber);
+        DataManager.Instance.DestroyManagerInLevel();
+        SceneManager.LoadScene("MapSelection");
     }
     public void StartUIState()
     {
@@ -130,7 +148,13 @@ public class SaveGameController : MonoBehaviour
                 ActiceSlot(slotContainer);
                 GetSlotNameText(slotContainer).text = slot.slotName;
                 GetPlayerNameText(slotContainer).text = slot.playerName;
-                GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString()+" - Map "+ slot.gameData.currentMap.ToString();
+                if(slot.gameData.currentMap != 0)
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString() + " - Map " + slot.gameData.currentMap.ToString();
+                } else
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString();
+                }
                 GetDateText(slotContainer).text = slot.lastModified;
             }
         }

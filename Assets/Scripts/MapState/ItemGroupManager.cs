@@ -13,13 +13,12 @@ public class ItemGroupManager : MonoBehaviour
     {
         // Lấy toàn bộ Destructible trong con
         items = new List<Destructible>(GetComponentsInChildren<Destructible>());
-
-        // Đăng ký với MapStateManager
-        MapStateManager.Instance.RegisterItemGroup(mapIndex, this);
     }
 
     private void Start()
     {
+        // Đăng ký với MapStateManager
+        MapStateManager.Instance.RegisterItemGroup(mapIndex, this);
         // Nếu có trạng thái map đã lưu → khôi phục lại trạng thái cho item
         if (MapStateManager.Instance.TryGetMapState(mapIndex, out var state))
         {

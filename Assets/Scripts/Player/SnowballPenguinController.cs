@@ -4,7 +4,7 @@ public class SnowballPenguinController : PlayerBase
 {
     [SerializeField] Transform snowballSpawnPoint;
     [SerializeField] private GameObject snowballProjectilePrefab;
-    private float attackCooldown = 0.8f;
+    private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f;
 
     private void Start()

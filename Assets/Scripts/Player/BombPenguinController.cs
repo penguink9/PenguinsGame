@@ -5,7 +5,7 @@ public class BombPenguinController : PlayerBase
 {
     [SerializeField] Transform bombSpawnPoint;
     [SerializeField] private GameObject bombProjectilePrefab;
-    private float attackCooldown = 0.8f;
+    private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f;
 
     private void Start()

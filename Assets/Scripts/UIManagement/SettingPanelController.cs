@@ -8,12 +8,14 @@ public class SettingPanelController : MonoBehaviour
     [SerializeField] private Scrollbar musicScrollbar;
     [SerializeField] private Scrollbar sfxScrollbar;
     private Transform audioContent;
-    private void Start()
+    private Transform guideContent;
+    private void Awake()
     {
         // Initialize scrollbars with current volume levels
         musicScrollbar.value = AudioManager.Instance.GetMusicVolume();
         sfxScrollbar.value = AudioManager.Instance.GetSfxVolume();
-        audioContent = transform.GetChild(0).GetChild(1).GetChild(0).GetChild(1);
+        audioContent = transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0);
+        guideContent = transform.GetChild(0).GetChild(1).GetChild(0).GetChild(1);
     }
     private void OnEnable()
     {
@@ -29,18 +31,17 @@ public class SettingPanelController : MonoBehaviour
     }
     public void OnClickAudioButton()
     {
+        guideContent.gameObject.SetActive(false);
         audioContent.gameObject.SetActive(true);
+    }
+    public void OnClickGuideButton()
+    {
+        audioContent.gameObject.SetActive(false);
+        guideContent.gameObject.SetActive(true);
     }
     public void ExitToMainMenu()
     {
-        Destroy(CameraManager.Instance.gameObject);
-        Destroy(EnemyTargetProvider.Instance.gameObject);
-        Destroy(AudioManager.Instance.gameObject);
-        Destroy(UISingleton.Instance.gameObject);
-        Destroy(PlayerManager.Instance.gameObject);
-        Destroy(InventoryManager.Instance.gameObject);
-        Destroy(MapStateManager.Instance.gameObject);
-        Destroy(CoinRecorder.Instance.gameObject);
+        DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene("MainMenu");
     }
 
