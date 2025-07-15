@@ -8,6 +8,8 @@ public class UISingleton : Singleton<UISingleton>
     [SerializeField] private TextMeshProUGUI healTextPrefab;  // Prefab của TextMeshPro
     [SerializeField] private TextMeshProUGUI dmgTakePrefab;
     [SerializeField] private TextMeshProUGUI dmgDealPrefab;
+    [SerializeField] private TextMeshProUGUI messageText;
+    [SerializeField] private TextMeshProUGUI warningText;
     private void Start()
     {
     }
@@ -82,6 +84,57 @@ public class UISingleton : Singleton<UISingleton>
     public void ShowLevelCompletedPopup()
     {
         transform.GetChild(1).gameObject.SetActive(true);
+    }
+    public void ShowMessageText(Transform targetTransform, string message)
+    {
+        // Tạo hiệu ứng heal
+        TextMeshProUGUI mgsText = Instantiate(messageText, transform);  // Gán parent là Canvas
+        mgsText.text = message;
+        Vector3 target = targetTransform.position;
+        target.y += 1f;
+        target.x += 1f;
+
+        // Đặt vị trí hiển thị text trên màn hình
+        mgsText.transform.position = Camera.main.WorldToScreenPoint(target);
+
+        // Gọi Coroutine để di chuyển text lên
+        StartCoroutine(MoveTextUp(mgsText));
+    }
+
+    public void ShowWarningText(Transform targetTransform, string message)
+    {
+        // Tạo hiệu ứng heal
+        TextMeshProUGUI mgsText = Instantiate(warningText, transform);  // Gán parent là Canvas
+        mgsText.text = message;
+        Vector3 target = targetTransform.position;
+        target.y += 1f;
+        target.x += 1f;
+
+        // Đặt vị trí hiển thị text trên màn hình
+        mgsText.transform.position = Camera.main.WorldToScreenPoint(target);
+
+        // Gọi Coroutine để di chuyển text lên
+        StartCoroutine(MoveTextUp(mgsText));
+    }
+    public TextMeshProUGUI ShowMessageStay(Transform targetTransform, string message)
+    {
+        // Tạo hiệu ứng heal
+        TextMeshProUGUI mgsText = Instantiate(messageText, transform);  // Gán parent là Canvas
+        mgsText.text = message;
+        Vector3 target = targetTransform.position;
+        target.y += 1f;
+        target.x += 1f;
+
+        // Đặt vị trí hiển thị text trên màn hình
+        mgsText.transform.position = Camera.main.WorldToScreenPoint(target);
+        return mgsText;
+    }
+    public void HideMessageStay(TextMeshProUGUI mgsText)
+    {
+        if (mgsText != null)
+        {
+            Destroy(mgsText.gameObject);
+        }
     }
 }
 

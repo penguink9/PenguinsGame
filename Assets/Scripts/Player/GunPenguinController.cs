@@ -6,7 +6,7 @@ public class GunPenguinController : PlayerBase
 {
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject bulletPrefab;
-    private float attackCooldown = 0.8f;
+    private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f;
 
     private void Start()

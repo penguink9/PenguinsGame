@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class CapturedPenguin : MonoBehaviour
 {
     [SerializeField] private int penguinIndex;
+    private TextMeshProUGUI text;
 
     private void Start()
     {
@@ -16,6 +18,7 @@ public class CapturedPenguin : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            text = UISingleton.Instance.ShowMessageStay(transform,"Press F to use key");
             InventoryManager.Instance.EnterInteractArea(penguinIndex);
         }
     }
@@ -27,6 +30,7 @@ public class CapturedPenguin : MonoBehaviour
             InventoryManager.Instance.usedKey = false;
             Debug.Log("Penguin Captured: " + penguinIndex);
             MapStateManager.Instance.isCapturedPenguinUnlocked[penguinIndex] = true;
+            UISingleton.Instance.HideMessageStay(text);
             Destroy(gameObject);
         }
     }
@@ -35,6 +39,7 @@ public class CapturedPenguin : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             InventoryManager.Instance.ExitInteractArea();
+            UISingleton.Instance.HideMessageStay(text);
         }
     }
 }
