@@ -6495,7 +6495,6 @@ GameObject:
   - component: {fileID: 2148242244124907779}
   - component: {fileID: 1313469333500653304}
   - component: {fileID: 5464578610995386547}
-  - component: {fileID: 1860977374628820101}
   m_Layer: 5
   m_Name: GunPenguin
   m_TagString: Untagged
@@ -6560,28 +6559,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &1860977374628820101
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2426310212981522198}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 158ff1a9d4d8d7843853c55188e37308, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2441983427294107408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10614,7 +10591,6 @@ GameObject:
   - component: {fileID: 758732779393568319}
   - component: {fileID: 2176460517141303003}
   - component: {fileID: 2383590948859954813}
-  - component: {fileID: 7498772144581074502}
   m_Layer: 5
   m_Name: SnowPenguin
   m_TagString: Untagged
@@ -10679,28 +10655,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &7498772144581074502
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073697697552282043}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4f237d504e7d4540babdbc57b019f69, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4104424899457912308
 GameObject:
   m_ObjectHideFlags: 0
@@ -16812,7 +16766,6 @@ GameObject:
   - component: {fileID: 664604060343359712}
   - component: {fileID: 7988642298831776464}
   - component: {fileID: 2004360916746664800}
-  - component: {fileID: 6402967106616854729}
   m_Layer: 5
   m_Name: BombPenguin
   m_TagString: Untagged
@@ -16877,28 +16830,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &6402967106616854729
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6805709814974452672}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38c2ba361544ab64bb8afe8dba7684f6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6874780658196126050
 GameObject:
   m_ObjectHideFlags: 0
