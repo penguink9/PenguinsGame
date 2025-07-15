@@ -19,7 +19,18 @@ public class CameraManager : Singleton<CameraManager>
         if (confiner == null)
             Debug.LogError("CameraManager: Missing CinemachineConfiner2D component!");
     }
-
+    private void Start()
+    {
+        GameObject confiner = GameObject.FindGameObjectWithTag("Confiner");
+        if (confiner != null)
+        {
+            SetConfiner(confiner.GetComponent<Collider2D>());
+        }
+        else
+        {
+            Debug.LogWarning("CameraManager: No confiner found with tag 'Confiner'.");
+        }
+    }
     public void SetFollow(Transform target)
     {
         virtualCamera.Follow = target;

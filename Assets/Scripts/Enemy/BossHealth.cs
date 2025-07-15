@@ -38,10 +38,10 @@ public class BossHealth : EnemyHealth
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             SpawnPickup();
             HPContainer.SetActive(false);
+            MapStateManager.Instance.IsBossDefeated = true;
+            UISingleton.Instance.ShowMessageText(transform, "You have defeated Polar Bear! Congratulations!");
             Destroy(gameObject);
         }
-
-
     }
 
     private void UpdateHPSlider()
@@ -54,5 +54,11 @@ public class BossHealth : EnemyHealth
     public void DisplayHPContainer()
     {
         HPContainer.SetActive(true);
+    }
+
+    public override void LoadState(EnemyState state)
+    {
+        currentHealth = state.currentHP;
+        UpdateHPSlider();
     }
 }

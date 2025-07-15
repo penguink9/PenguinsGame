@@ -1,96 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Playables;
-using Unity.Jobs;
 
-
-public class PolarBear : MonoBehaviour
+public class PolarBear : EnemyAI
 {
-    protected enum State
-    {
-        Roaming,
-        ReturningToStart,
-        ChasingPlayer,
-
-    }
-
-    protected State state;
-    [Header("ThrowEnemy AI Settings")]
+    [Header("Boss Settings")]
     [SerializeField] private float attackCooldown = 2f;
-
-    [Header("Projectile Settings")]
     [SerializeField] private GameObject weaponProjectilePrefab;
-    //[SerializeField] private GameObject slashAnimPrefab;
-    //[SerializeField] private Transform slashAnimSpawnPoint;
-    private float lastAttackTime;
-    private Animator myAnimator;
-    private SpriteRenderer spriteRenderer;
-
-    [SerializeField] protected float roamingRange = 5f;
-    [SerializeField] protected float trackingRange = 3f;
-    [SerializeField] protected float returnSpeedMultiplier = 2f;
-    [SerializeField] protected float chasingSpeedMultiplier = 1.5f;
-    [SerializeField] protected int damage = 1;
     [SerializeField] private Transform attackCollider;
     [SerializeField] private float attackRange = 1.5f;
 
+    private Animator myAnimator;
+    private SpriteRenderer spriteRenderer;
 
-    protected Transform playerTransform;
-    protected Vector2 startingPosition;
-    protected BossPathing enemyPathfinding;
-
-    public float defaultMoveSpeed { get; set; }
-    protected BossHealth health;
-
+    private float lastAttackTime;
+    private BossHealth health;
     public int currentHealth;
     public int startingHealth;
-    [SerializeField] protected float HealthPoint = 0.6f;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         myAnimator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
-        enemyPathfinding = GetComponent<BossPathing>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<BossHealth>();
-
-
-        state = State.Roaming;
-        startingPosition = transform.position;
-
-        defaultMoveSpeed = enemyPathfinding.moveSpeed; 
-       
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         currentHealth = health.currentHealth;
         startingHealth = health.startingHealth;
-        StartCoroutine(StateRoutine());
-        attackCollider.gameObject.SetActive(false);  // Tắt collider khi bắt đầu
-
-    }
-    public int GetDamage()
-    {
-        return damage;
+        attackCollider.gameObject.SetActive(false); // Tắt collider khi bắt đầu
     }
 
-    protected virtual IEnumerator StateRoutine()
+    protected override IEnumerator StateRoutine()
     {
         while (true)
         {
-
             playerTransform = EnemyTargetProvider.Instance.GetTarget();
 
             switch (state)
             {
                 case State.Roaming:
-                    enemyPathfinding.allowFlipByDirection = true;
+                    SetFlipDirection(true);
                     yield return StartCoroutine(RoamingRoutine(playerTransform));
                     break;
 
                 case State.ReturningToStart:
-                    enemyPathfinding.allowFlipByDirection = true;
+                    SetFlipDirection(true);
                     enemyPathfinding.moveSpeed = defaultMoveSpeed * returnSpeedMultiplier;
                     enemyPathfinding.MoveTo(startingPosition - (Vector2)transform.position);
                     if (Vector2.Distance(transform.position, startingPosition) < 0.2f)
@@ -101,7 +58,7 @@ public class PolarBear : MonoBehaviour
                     break;
 
                 case State.ChasingPlayer:
-                    enemyPathfinding.allowFlipByDirection= false;
+                    SetFlipDirection(false);
                     yield return StartCoroutine(ChasingPlayer(playerTransform));
                     break;
             }
@@ -109,9 +66,7 @@ public class PolarBear : MonoBehaviour
             yield return null;
         }
     }
-    
-
-    protected virtual IEnumerator RoamingRoutine(Transform playerTransform)
+    protected override IEnumerator RoamingRoutine(Transform playerTransform)
     {
         Vector2 roamPosition = GetRoamingPosition();
 
@@ -126,10 +81,13 @@ public class PolarBear : MonoBehaviour
         while (timer < 2f)
         {
             timer += Time.deltaTime;
-            if (playerTransform != null && Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
-                {
-                state = State.ChasingPlayer;
+
+            if (playerTransform != null &&
+                Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
+            {
+                // Hiện thanh máu khi bắt đầu đuổi
                 health.DisplayHPContainer();
+                state = State.ChasingPlayer;
                 yield break;
             }
 
@@ -137,178 +95,85 @@ public class PolarBear : MonoBehaviour
         }
     }
 
-    protected virtual IEnumerator ChasingPlayer(Transform playerTransform)
+
+    protected override IEnumerator ChasingPlayer(Transform playerTransform)
     {
-
         if (playerTransform == null)
-        {
-            yield return null;
             yield break;
-        }
+
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-            //Debug.Log($"Enemy: {transform.position}, Player: {playerTransform.position}, Distance: {distanceToPlayer}");
 
-            if (Time.time - lastAttackTime >= attackCooldown)
+        if (Time.time - lastAttackTime >= attackCooldown)
+        {
+            if (distanceToPlayer <= attackRange)
             {
-                if (distanceToPlayer <= attackRange)
-                {
-                    enemyPathfinding.moveSpeed = 0;
-                    Attack();
-                }
-                else if (distanceToPlayer <= trackingRange)
-                {
-                    TryRangeAttack();
-                }
+                enemyPathfinding.moveSpeed = 0;
+                Attack();
             }
-            else
-            //if (distanceToPlayer > attackRange)
+            else if (distanceToPlayer <= trackingRange)
             {
-                Vector2 dirToPlayer = playerTransform.position - transform.position;
-                enemyPathfinding.moveSpeed = defaultMoveSpeed * chasingSpeedMultiplier;
-                enemyPathfinding.MoveTo(dirToPlayer);
+                TryRangeAttack();
             }
+        }
+        else
+        {
+            Vector2 dirToPlayer = playerTransform.position - transform.position;
+            enemyPathfinding.moveSpeed = defaultMoveSpeed * chasingSpeedMultiplier;
+            enemyPathfinding.MoveTo(dirToPlayer);
+        }
 
+        if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
+        {
+            yield return new WaitForSeconds(2f);
+            state = State.ReturningToStart;
+        }
 
-            //if (distanceToPlayer <= attackRange)
-            //{
-            //    enemyPathfinding.moveSpeed = 0;
-            //}
+        yield return null;
+    }
 
-            if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
-            {
-                yield return new WaitForSeconds(2f);
-                state = State.ReturningToStart;
-                yield break;
-            }
-
-            yield return null;
-        
-
-    
-
-}
-
-    //protected virtual IEnumerator RangeAttack(Transform playerTransform)
-    //{
-    //    if (playerTransform != null)
-    //    {
-    //        Vector2 dirToPlayer = playerTransform.position - transform.position;
-    //        if (Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
-    //        {
-    //            enemyPathfinding.moveSpeed = 0;
-    //            TryRangeAttack();
-
-    //        }
-    //        else
-    //        {
-    //            enemyPathfinding.moveSpeed = defaultMoveSpeed;
-    //            enemyPathfinding.MoveTo(dirToPlayer);
-    //        }
-    //    }
-
-    //    if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
-    //    {
-    //        yield return new WaitForSeconds(2f);
-    //        state = State.ReturningToStart;
-    //    }
-
-
-
-    //}
-
-    
     public virtual void Attack()
     {
-        //UpdatePlayerTransform();
-        //if (playerTransform == null) return;
-        //float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-        //if (distanceToPlayer > attackRange) return;  // ❗ CHẶN ĐÁNH KHI ĐÃ RA XA
-
-
-        ShouldFaceLeft();
+        FacePlayer();
         myAnimator.SetTrigger("Scratch");
         attackCollider.gameObject.SetActive(true);
-
         lastAttackTime = Time.time;
-        StartCoroutine(AttackCooldownCoroutine());
+        StartCoroutine(DisableAttackCollider());
     }
-
 
     protected virtual void TryRangeAttack()
     {
-        //UpdatePlayerTransform();
-        ////if (playerTransform == null) return;
-
-        //if (Time.time - lastAttackTime < attackCooldown)  
-        //    return; 
-
-        //    lastAttackTime = Time.time;
-        //    myAnimator.SetTrigger("Stomp");
-        //    ShouldFaceLeft();
-        //    StartCoroutine(DelayedProjectile());
-
-        //    lastAttackTime = Time.time;
-        //    //StartCoroutine(CooldownCoroutine());
-
-        //UpdatePlayerTransform();
-        //if (playerTransform == null) return;
-
-        ShouldFaceLeft();
+        FacePlayer();
         myAnimator.SetTrigger("Stomp");
         StartCoroutine(DelayedProjectile());
-
         lastAttackTime = Time.time;
-
     }
 
-    private void UpdatePlayerTransform()
-    {
-        playerTransform = EnemyTargetProvider.Instance.GetTarget();
-        //Debug.Log(playerTransform.position);
-
-    }
-
-    private IEnumerator AttackCooldownCoroutine()
+    private IEnumerator DisableAttackCollider()
     {
         yield return new WaitForSeconds(0.3f);
         attackCollider.gameObject.SetActive(false);
     }
 
-    //private IEnumerator CooldownCoroutine()
-    //{
-    //    yield return new WaitForSeconds(attackCooldown);
-    //}
-
-    private IEnumerator DelayScratchCoroutine()
+    private IEnumerator DelayedProjectile()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(weaponProjectilePrefab, playerTransform.position, Quaternion.identity);
     }
-    private void ShouldFaceLeft()
+
+    private void FacePlayer()
     {
         bool shouldFaceLeft = playerTransform.position.x < transform.position.x;
         Vector3 scale = transform.localScale;
         scale.x = shouldFaceLeft ? -1 : 1;
         transform.localScale = scale;
     }
-    private IEnumerator DelayedProjectile()
+
+    // Gán allowFlipByDirection nếu enemyPathfinding là BossPathing
+    private void SetFlipDirection(bool allow)
     {
-        yield return new WaitForSeconds(0.5f);
-
-        Instantiate(weaponProjectilePrefab, playerTransform.position, Quaternion.identity);
+        if (enemyPathfinding is BossPathing bossPath)
+        {
+            bossPath.allowFlipByDirection = allow;
+        }
     }
-
-    protected Vector2 GetRoamingPosition()
-    {
-        // T?o m?t h??ng ng?u nhiên (góc)
-        float angle = Random.Range(0f, Mathf.PI * 2f);
-        float radius = Random.Range(0.5f, roamingRange);
-
-        Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-        return startingPosition + offset;
-    }
-
 }
-
-
-
-

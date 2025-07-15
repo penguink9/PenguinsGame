@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 1600165972360290933}
   m_Layer: 0
   m_Name: PolarBear
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,18 +196,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10207e96a92d64d8e2b55329d56b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  weaponProjectilePrefab: {fileID: 367941147432126641, guid: 32c12ba763818ed4fb491745989d2684, type: 3}
-  roamingRange: 20
+  roamingRange: 40
   trackingRange: 10
   returnSpeedMultiplier: 2
   chasingSpeedMultiplier: 1.5
   damage: 1
+  attackCooldown: 2
+  weaponProjectilePrefab: {fileID: 367941147432126641, guid: 32c12ba763818ed4fb491745989d2684, type: 3}
   attackCollider: {fileID: 2345887851700107964}
-  attackRange: 5
+  attackRange: 8
   currentHealth: 0
   startingHealth: 0
-  HealthPoint: 0.6
 --- !u!114 &94782607476186032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,12 +275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e09b03b76a7984f911346889b45910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 40
   deathVFXPrefab: {fileID: 4100299304819800612, guid: 838daea10eaaf3c489a2c925116b86ff, type: 3}
-  healthDropChance: 0.5
+  healthDropChance: 1
   hasKey: 0
-  maxCoins: 3
-  knockBackThrust: 15
+  maxCoins: 50
+  knockBackThrust: 0
   currentHealth: 0
   HPContainer: {fileID: 0}
 --- !u!1 &4300191287818109494

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 6268904782297715663}
   m_Layer: 0
   m_Name: Cobra
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   hasKey: 0
   maxCoins: 3
   knockBackThrust: 15
+  currentHealth: 0
 --- !u!114 &5614015444678792762
 MonoBehaviour:
   m_ObjectHideFlags: 0

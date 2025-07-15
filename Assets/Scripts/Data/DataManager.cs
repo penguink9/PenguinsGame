@@ -45,6 +45,7 @@ public class DataManager : Singleton<DataManager>
         };
 
         fileDataHandler.SaveData(saveSlot);
+        PlayerPrefs.SetInt("CurrentSlot", slotNumber);
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
         return true;
     }
@@ -78,6 +79,7 @@ public class DataManager : Singleton<DataManager>
         saveSlot.gameData = gameData;
         fileDataHandler.SaveData(saveSlot);
         Debug.Log($"Game saved to slot {slotNumber} at {fileName}");
+        PlayerPrefs.SetInt("CurrentSlot", slotNumber);
         // Cập nhật loadedSlot nếu cần
         SetLoadedSlot(saveSlot);
         return true;

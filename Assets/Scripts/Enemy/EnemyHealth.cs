@@ -74,7 +74,7 @@ public class EnemyHealth : MonoBehaviour
         return new EnemyState { id = name, currentHP = currentHealth };
     }
 
-    public void LoadState(EnemyState state)
+    public virtual void LoadState(EnemyState state)
     {
         currentHealth = state.currentHP;
     }

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 3367407615745353580}
   m_Layer: 0
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   hasKey: 0
   maxCoins: 3
   knockBackThrust: 15
+  currentHealth: 0
 --- !u!114 &9007278460791584416
 MonoBehaviour:
   m_ObjectHideFlags: 0

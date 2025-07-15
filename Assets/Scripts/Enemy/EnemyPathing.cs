@@ -4,38 +4,36 @@ public class EnemyPathing : MonoBehaviour
 {
     public float moveSpeed = 2f;
 
-    private Rigidbody2D rb;
-    private Vector2 moveDir;
-    private KnockBack knockback;
+    protected Rigidbody2D rb;
+    protected Vector2 moveDir;
+    protected KnockBack knockback;
+    protected SpriteRenderer spriteRenderer;
 
-
-    private SpriteRenderer spriteRenderer;
-
-    private void Awake()
+    protected virtual void Awake()
     {
         knockback = GetComponent<KnockBack>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (knockback.gettingKnockedBack) { return; }
+        if (knockback.gettingKnockedBack) return;
 
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
 
         if (moveDir.x > 0.01f)
         {
-            spriteRenderer.flipX = false;  
+            spriteRenderer.flipX = false;
         }
         else if (moveDir.x < -0.01f)
         {
-            spriteRenderer.flipX = true;  
+            spriteRenderer.flipX = true;
         }
     }
 
-    public void MoveTo(Vector2 targetPosition)
+    public virtual void MoveTo(Vector2 targetPosition)
     {
-        moveDir = targetPosition.normalized; 
+        moveDir = targetPosition.normalized;
     }
 }

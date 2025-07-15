@@ -18,6 +18,12 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     private Dictionary<int, ItemGroupManager> itemGroups = new();
     private bool entryExitArea = false;
     private bool firstTimeLoad = true;
+    private bool isBossDefeated = false;
+    public bool IsBossDefeated
+    {
+        get => isBossDefeated;
+        set => isBossDefeated = value;
+    }
     public bool FirstTimeLoad
     {
         get => firstTimeLoad;
@@ -32,9 +38,12 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     protected override void Awake()
     {
         base.Awake();
-        foreach (var index in capturedPenguinIndexs)
+        if (capturedPenguinIndexs.Count > 0)
         {
-            isCapturedPenguinUnlocked.Add(index, false);
+            foreach (var index in capturedPenguinIndexs)
+            {
+                isCapturedPenguinUnlocked.Add(index, false);
+            }
         }
     }
     private void Start()
@@ -109,9 +118,14 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     {
         return mapStates.Select(kvp => new MapStateEntry { mapIndex = kvp.Key, state = kvp.Value }).ToList();
     }
-    //Mission: Release all captured penguin
+
+    //Mission: Release all captured penguin or defeat boss
     public bool IsMissionCompleted()
     {
+        if (isCapturedPenguinUnlocked.Count == 0) 
+        {
+            return isBossDefeated;
+        }
         foreach (var index in isCapturedPenguinUnlocked)
         {
             if (!index.Value) return false;
