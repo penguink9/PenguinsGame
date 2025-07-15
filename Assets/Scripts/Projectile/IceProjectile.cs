@@ -5,20 +5,6 @@ public class IceProjectile : MonoBehaviour
 {
     [SerializeField] private GameObject splatterPrefab;
     [SerializeField] private float delay = 0.5f;
-
-    //private void Start()
-    //{
-
-    //    //Vector3 playerPos = PlayerBase.Instance.transform.position;
-    //    GameObject player = GameObject.FindGameObjectWithTag("Player");
-    //    if (player != null)
-    //    {
-    //        Vector3 playerPos = player.transform.position;
-    //        Instantiate(splatterPrefab, playerPos, Quaternion.identity);
-    //    }
-    //    Destroy(gameObject);
-
-    //}
     private void Start()
     {
         StartCoroutine(SpawnSplatterRoutine());

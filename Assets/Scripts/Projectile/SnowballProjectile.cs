@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using TMPro;
-using UnityEngine.Splines;
 
 
 public class SnowballProjectile : MonoBehaviour

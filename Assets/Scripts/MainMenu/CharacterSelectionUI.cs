@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 public class CharacterSelectionUI : MonoBehaviour
 {
     public TMP_InputField characterName;

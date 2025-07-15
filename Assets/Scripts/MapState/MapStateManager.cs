@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 // Singleton trung tâm lưu trạng thái từng map (enemy + item).
 [DefaultExecutionOrder(-2)]
