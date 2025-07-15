@@ -121,7 +121,8 @@ public class LoadGameController : MonoBehaviour
         {
             DataManager.Instance.SetLoadedSlot(slot);
             PlayerPrefs.SetString("PlayerName", slot.playerName);
-            if(slot.isLevelCompleted)
+            PlayerPrefs.SetInt("CurrentSlot", slot.slotNumber);
+            if (slot.isLevelCompleted)
             {
                 SceneManager.LoadScene("MapSelection");
             } else

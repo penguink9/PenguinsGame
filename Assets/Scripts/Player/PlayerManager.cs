@@ -92,6 +92,7 @@ public class PlayerManager : Singleton<PlayerManager>, ILoadGameInit
             {
                 changeChar.TriggerSlot(changeChar.GetSlotIndexByPrefabIndex(kvp.Key) + 1);
                 switched = true;
+                InventoryManager.Instance.gameObject.SetActive(true);
                 break;
             }
         }

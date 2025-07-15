@@ -41,6 +41,11 @@ public class  GameOverPopup : MonoBehaviour
     }
     private void OnTryAgainClicked()
     {
+        int slotNumber = PlayerPrefs.GetInt("CurrentSlot", 0);
+        if(slotNumber != 0)
+        {
+            LoadGameFromSlot(slotNumber);
+        }
         string currentMapName = "Level"+TrackCurrentMap.Instance.level+"_Map1";
         DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene(currentMapName);
@@ -63,6 +68,18 @@ public class  GameOverPopup : MonoBehaviour
         else
         {
             gameOverPanel.SetActive(false);
+        }
+    }
+    public void LoadGameFromSlot(int slotNumber)
+    {
+        SaveSlot slot = DataManager.Instance.LoadDataInSlot(slotNumber);
+        if (slot != null && slot.isLevelCompleted)
+        {
+            DataManager.Instance.SetLoadedSlot(null);
+        }
+        else
+        {
+            DataManager.Instance.SetLoadedSlot(slot);
         }
     }
 }

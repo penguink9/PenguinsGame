@@ -49,7 +49,7 @@ public class DataManager : Singleton<DataManager>
         return true;
     }
 
-    public bool SaveGameAfterCompletedLevel(ScoreRecord record, int slotNumber)
+    public bool SaveGameAfterCompletedLevel(List<ScoreRecord> records, int slotNumber, int level)
     {
         if (slotNumber < 1 || slotNumber > MaxSlots)
         {
@@ -62,25 +62,18 @@ public class DataManager : Singleton<DataManager>
         string fileName = SlotFilePrefix + slotNumber + ".json";
         fileDataHandler.SetFileName(fileName);
 
-        SaveSlot saveSlot = LoadDataInSlot(slotNumber) ?? new SaveSlot
+        SaveSlot saveSlot = new SaveSlot
         {
             slotNumber = slotNumber,
-            scores = new List<ScoreRecord>()
+            scores = records,
+            playerName = PlayerPrefs.GetString("PlayerName"),
+            isLevelCompleted = true,
+            LastModified = DateTime.Now,
+            fileName = fileName
         };
-
-        // Ghi đè nếu đã có record cùng levelIndex, ngược lại thêm mới
-        int index = saveSlot.scores.FindIndex(r => r.levelIndex == record.levelIndex);
-        if (index >= 0)
-            saveSlot.scores[index] = record;
-        else
-            saveSlot.scores.Add(record);
-        saveSlot.playerName = PlayerPrefs.GetString("PlayerName");
-        saveSlot.isLevelCompleted = true;
-        saveSlot.LastModified = DateTime.Now;
-        saveSlot.fileName = fileName;
         GameData gameData = new GameData()
         {
-            level = record.levelIndex, // Cập nhật level hiện tại
+            level = level, // Cập nhật level hiện tại
         };
         saveSlot.gameData = gameData;
         fileDataHandler.SaveData(saveSlot);

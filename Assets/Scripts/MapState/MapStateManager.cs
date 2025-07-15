@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 // Singleton trung tâm lưu trạng thái từng map (enemy + item).
 [DefaultExecutionOrder(-2)]
@@ -16,6 +17,12 @@ public class MapStateManager : Singleton<MapStateManager>, ILoadGameInit
     private Dictionary<int, EnemyGroupManager> enemyGroups = new();
     private Dictionary<int, ItemGroupManager> itemGroups = new();
     private bool entryExitArea = false;
+    private bool firstTimeLoad = true;
+    public bool FirstTimeLoad
+    {
+        get => firstTimeLoad;
+        set => firstTimeLoad = value;
+    }
     public bool EntryExitArea
     {
         get => entryExitArea;

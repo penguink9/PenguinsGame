@@ -90,6 +90,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<Animator>().SetTrigger("Death");
             GetComponent<CapsuleCollider2D>().enabled = false;
             AudioManager.Instance.PlaySFX("Penguin Death");
+            InventoryManager.Instance.gameObject.SetActive(false);
             StartCoroutine(DeadLoadSceneRoutine());
         }
     }

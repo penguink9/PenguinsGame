@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -94,7 +94,22 @@ public class SaveGameController : MonoBehaviour
             levelIndex = TrackCurrentMap.Instance.level,
             score = CoinRecorder.Instance.TotalCoins
         };
-        DataManager.Instance.SaveGameAfterCompletedLevel(record, slotNumber);
+        int currentSlot = PlayerPrefs.GetInt("CurrentSlot", 0);
+        List<ScoreRecord> scores = new List<ScoreRecord>();
+        if (currentSlot!= 0)
+        {
+            scores = DataManager.Instance.LoadDataInSlot(currentSlot).scores;
+            // Ghi đè nếu đã có record cùng levelIndex, ngược lại thêm mới
+            int index = scores.FindIndex(r => r.levelIndex == record.levelIndex);
+            if (index >= 0)
+                scores[index] = record;
+            else
+                scores.Add(record);
+        } else
+        {
+            scores.Add(record);
+        }
+        DataManager.Instance.SaveGameAfterCompletedLevel(scores, slotNumber, TrackCurrentMap.Instance.level);
         DataManager.Instance.DestroyManagerInLevel();
         SceneManager.LoadScene("MapSelection");
     }

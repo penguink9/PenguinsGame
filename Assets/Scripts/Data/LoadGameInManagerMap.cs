@@ -14,10 +14,10 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
         // Check if the current scene is the one we want to load the game in
         if (!TrackCurrentMap.Instance.HasLoadData())
         {
-            if(TrackCurrentMap.Instance.map == 1)
+            if(MapStateManager.Instance.FirstTimeLoad && TrackCurrentMap.Instance.map == 1)
             {
-                // If it's the first map of level, show the mission panel
                 UISingleton.Instance.ShowMissionPanel();
+                MapStateManager.Instance.FirstTimeLoad = false;
             }
             return;
         }            
@@ -34,6 +34,7 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
             CameraManager.Instance.SetConfiner(confiner.GetComponent<PolygonCollider2D>());
             DataManager.Instance.SetLoadedSlot(null);
             UIFade.Instance.FadeToClear();
+            UISingleton.Instance.ShowMissionPanel();
         }
         else
         {

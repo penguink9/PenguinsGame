@@ -33,7 +33,6 @@ public class LevelExitArea : MonoBehaviour
                 UISingleton.Instance.HideMessageStay(text);
                 isTextShown = false;
             }
-            MapStateManager.Instance.EntryExitArea = false;
         }
     }
 }

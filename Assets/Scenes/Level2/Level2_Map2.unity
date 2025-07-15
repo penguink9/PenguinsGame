@@ -1170,6 +1170,7 @@ GameObject:
   - component: {fileID: 402793558}
   - component: {fileID: 402793560}
   - component: {fileID: 402793559}
+  - component: {fileID: 402793561}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -14382,6 +14383,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &402793561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402793554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420f9f7f164ad374086874cc9f65b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &432477103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7716382106239871967, guid: 6560ef247bc3f6445b3723829caabb45, type: 3}
@@ -61823,6 +61836,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1468079814}
   - {fileID: 1655154571}
+  - {fileID: 1012008646}
   - {fileID: 1238766612}
   - {fileID: 10513794}
   - {fileID: 1838730612}
@@ -61830,4 +61844,3 @@ SceneRoots:
   - {fileID: 1594920111}
   - {fileID: 127187065}
   - {fileID: 1794146730}
-  - {fileID: 1012008646}
