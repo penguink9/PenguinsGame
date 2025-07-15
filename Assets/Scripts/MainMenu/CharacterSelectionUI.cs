@@ -14,7 +14,6 @@ public class CharacterSelectionUI : MonoBehaviour
         string playerName = characterName.text;
         PlayerPrefs.SetString("PlayerName", playerName);
         PlayerPrefs.Save();
-        Debug.Log("Welcome " + characterName.text);
     }
 
 

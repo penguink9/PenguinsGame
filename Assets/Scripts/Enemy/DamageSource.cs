@@ -7,12 +7,6 @@ public class DamageSource : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.GetComponent<EnemyHealth>())
-        //{
-        //    EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-        //    enemyHealth.TakeDamage(damageAmount, transform);
-        //}
-
         Transform parent = transform.parent;
 
         if (parent != null && parent.CompareTag("Player"))
@@ -24,7 +18,6 @@ public class DamageSource : MonoBehaviour
                 enemyHealth.TakeDamage(damageAmount, transform);
             }
         }
-
         else
         {
             // Gây damage cho người chơi nếu không phải từ Player

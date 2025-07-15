@@ -27,10 +27,6 @@ public class LoadGameController : MonoBehaviour
     {
         return obj.transform.GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
     }
-    public TextMeshProUGUI GetSlotNameText(GameObject obj)
-    {
-        return obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-    }
     public GameObject GetEmptyText(GameObject obj)
     {
         return obj.transform.GetChild(1).gameObject;
