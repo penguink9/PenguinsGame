@@ -68,7 +68,7 @@ public class InventoryManager : Singleton<InventoryManager>, ILoadGameInit
         if (isCooldown) return;
         if (healthPotions <= 0)
         {
-            Debug.LogWarning("No health potions available to use.");
+            UISingleton.Instance.ShowMessageText(PlayerManager.Instance.GetActivePlayer().transform,"No health potions");
             return;
         }
         if(PlayerManager.Instance.GetActivePlayer().GetComponent<PlayerHealth>().Heal(2))
@@ -77,14 +77,14 @@ public class InventoryManager : Singleton<InventoryManager>, ILoadGameInit
             UpdatePotionsCount();
         } else
         {
-            Debug.LogWarning("Player is already at full health or cannot heal further.");
+            UISingleton.Instance.ShowMessageText(PlayerManager.Instance.GetActivePlayer().transform, "Already full health");
         }
         StartCoroutine(HealingCooldown());
     }
     private IEnumerator HealingCooldown()
     {
         isCooldown = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         isCooldown = false;
     }
     private void UseKey()
@@ -92,7 +92,7 @@ public class InventoryManager : Singleton<InventoryManager>, ILoadGameInit
         if (!canInteract) return;
         if (keyCount <= 0)
         {
-            Debug.LogWarning("No keys available to use.");
+            UISingleton.Instance.ShowMessageText(PlayerManager.Instance.GetActivePlayer().transform, "No keys");
             return;
         }
         else

@@ -12,7 +12,15 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
     public void LoadGameInit()
     {
         // Check if the current scene is the one we want to load the game in
-        if (!TrackCurrentMap.Instance.HasLoadData()) return;
+        if (!TrackCurrentMap.Instance.HasLoadData())
+        {
+            if(TrackCurrentMap.Instance.map == 1)
+            {
+                // If it's the first map of level, show the mission panel
+                UISingleton.Instance.ShowMissionPanel();
+            }
+            return;
+        }            
         AudioManager.Instance.PlayMusic("Background-1");
         UIFade.Instance.FadeBlack();
 

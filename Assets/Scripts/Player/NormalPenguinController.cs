@@ -11,7 +11,7 @@ public class NormalPenguinController : PlayerBase
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform attackCollider;
-    private float attackCooldown = 0.75f;
+    private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f;
     private GameObject slashAnim;
 

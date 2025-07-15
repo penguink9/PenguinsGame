@@ -29,7 +29,10 @@ public class MapSelectionPanel : MonoBehaviour, ILoadGameInit
             UnlockMap(mapButtons[scoreRecord.levelIndex-1]);
             DisplayStat(mapButtons[scoreRecord.levelIndex - 1], scoreRecord.score);
         }
-        UnlockMap(mapButtons[slot.gameData.level]); // Mở khóa map tiếp theo
+        if(slot.gameData.level <3)
+        {
+            UnlockMap(mapButtons[slot.gameData.level]); // Mở khóa map tiếp theo
+        }        
         DataManager.Instance.SetLoadedSlot(null);
     }
     public void SceneTransition(string sceneName)
