@@ -136,5 +136,9 @@ public class UISingleton : Singleton<UISingleton>
             Destroy(mgsText.gameObject);
         }
     }
+    public void ShowMissionPanel()
+    {
+        gameObject.GetComponent<MissionPanelController>().ShowMissionPanel();
+    }
 }
 
