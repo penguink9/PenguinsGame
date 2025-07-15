@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int startingHealth = 3;
-    [SerializeField] private GameObject deathVFXPrefab;
+    [SerializeField] public int startingHealth = 3;
+    [SerializeField] protected GameObject deathVFXPrefab;
     [SerializeField] private float healthDropChance = 0.5f; // 50% chance to drop health on death
     [SerializeField] private bool hasKey; // Enemy has a key to drop
     [SerializeField] private int maxCoins = 3; // Amount of max coins to drop
     [SerializeField] private float knockBackThrust = 15f; // Thrust amount for knockback
 
 
-    private int currentHealth;
+    public int currentHealth;
     private KnockBack knockback;
     private SlowEffect sloweffect;
     private Flash flash;
@@ -22,13 +22,15 @@ public class EnemyHealth : MonoBehaviour
         flash = GetComponent<Flash>();
         knockback = GetComponent<KnockBack>();
         sloweffect = GetComponent<SlowEffect>();
+        currentHealth = startingHealth;
+
     }
     private void Start()
     {
-        currentHealth = startingHealth;
+        //currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damage, Transform damageSrc)
+    public virtual void TakeDamage(int damage, Transform damageSrc)
     {
         currentHealth -= damage;
         knockback.GetKnockedBack(damageSrc, knockBackThrust);
@@ -36,14 +38,14 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(flash.FlashRoutine());
         DetectDeath();
     }
-    public void TakeSlow(int damage, Transform damageSrc)
+    public virtual void TakeSlow(int damage, Transform damageSrc)
     {
         currentHealth -= damage;
         sloweffect.ApplySlow();
         UISingleton.Instance.ShowDmgDealEffect(transform, damage);
         DetectDeath();
     }
-    public void DetectDeath()
+    public virtual void DetectDeath()
     {
         if (currentHealth <= 0)
         {

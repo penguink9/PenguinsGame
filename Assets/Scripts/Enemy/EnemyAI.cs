@@ -47,6 +47,7 @@ public class EnemyAI : MonoBehaviour
         while (true)
         {
             playerTransform = EnemyTargetProvider.Instance.GetTarget();
+
             switch (state)
             {
                 case State.Roaming:
