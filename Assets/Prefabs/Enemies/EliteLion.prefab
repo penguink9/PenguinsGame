@@ -207,7 +207,7 @@ MonoBehaviour:
   healthDropChance: 1
   hasKey: 1
   maxCoins: 8
-  knockBackThrust: 0
+  knockBackThrust: 3
 --- !u!114 &5601927525957353938
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,8 +40,6 @@ public class CharacterSelectionUI : MonoBehaviour
         string playerName = characterName.text;
         PlayerPrefs.SetString("PlayerName", playerName);
         PlayerPrefs.Save();
-        // Load map/gameplay scene ở đây (nếu muốn)
-        // SceneManager.LoadScene("TênSceneMap");
         Debug.Log("Welcome " + characterName.text);
     }
 

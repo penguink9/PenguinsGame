@@ -102,7 +102,14 @@ public class LoadGameController : MonoBehaviour
                 ActiceSlot(slotContainer);
                 GetSlotNameText(slotContainer).text = slot.slotName;
                 GetPlayerNameText(slotContainer).text = slot.playerName;
-                GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString() + " - Map " + slot.gameData.currentMap.ToString();
+                if (slot.gameData.currentMap != 0)
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString() + " - Map " + slot.gameData.currentMap.ToString();
+                }
+                else
+                {
+                    GetLevelText(slotContainer).text = "Level " + slot.gameData.level.ToString();
+                }
                 GetDateText(slotContainer).text = slot.lastModified;
             }
         }
@@ -113,11 +120,16 @@ public class LoadGameController : MonoBehaviour
         if (slot != null)
         {
             DataManager.Instance.SetLoadedSlot(slot);
-            GameData gameData = slot.gameData;
-            //Get Scene to load
             PlayerPrefs.SetString("PlayerName", slot.playerName);
-            string firstSceneLoad = "Level" + gameData.level + "_Map1";
-            SceneManager.LoadScene(firstSceneLoad);
+            if(slot.isLevelCompleted)
+            {
+                SceneManager.LoadScene("MapSelection");
+            } else
+            {
+                GameData gameData = slot.gameData;
+                string firstSceneLoad = "Level" + gameData.level + "_Map1";
+                SceneManager.LoadScene(firstSceneLoad);
+            }
         }
         else
         {

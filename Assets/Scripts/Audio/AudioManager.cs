@@ -6,11 +6,6 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private Audio[] musicTracks, sfxSounds;
     [SerializeField] private AudioSource musicSrc, sfxSrc;
 
-    private void Start()
-    {
-        PlayMusic("Theme");
-    }
-
     public void PlayMusic(string name)
     {
         Audio music = Array.Find(musicTracks, track => track.name == name);

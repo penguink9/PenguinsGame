@@ -17,7 +17,7 @@ public class AreaExit : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {         
             SceneManagement.Instance.SetTransitionName(sceneTransitionName);
-            int mapIndex = MapStateManager.Instance.GetMapIndexFromSceneName();
+            int mapIndex = TrackCurrentMap.Instance.map;
             MapStateManager.Instance.SaveMapState(mapIndex);
             UIFade.Instance.FadeToBlack();
             StartCoroutine(LoadSceneRoutine());

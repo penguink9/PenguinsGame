@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionName: 
-  player: {fileID: 0}
 --- !u!1 &4762207657172789688
 GameObject:
   m_ObjectHideFlags: 0
