@@ -13,6 +13,7 @@ public class CharacterSelectionUI : MonoBehaviour
     {
         string playerName = characterName.text;
         PlayerPrefs.SetString("PlayerName", playerName);
+        PlayerPrefs.SetInt("CurrentSlot", 0);
         PlayerPrefs.Save();
     }
 

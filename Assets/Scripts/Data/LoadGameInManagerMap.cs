@@ -12,6 +12,13 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
     public void LoadGameInit()
     {
         // Check if the current scene is the one we want to load the game in
+        if(TrackCurrentMap.Instance.level != 3)
+        {
+            AudioManager.Instance.PlayMusic("Background-1");
+        } else
+        {
+            AudioManager.Instance.PlayMusic("Background-2");
+        }
         if (!TrackCurrentMap.Instance.HasLoadData())
         {
             if(MapStateManager.Instance.FirstTimeLoad && TrackCurrentMap.Instance.map == 1)
@@ -20,8 +27,7 @@ public class LoadGameInManagerMap : MonoBehaviour, ILoadGameInit
                 MapStateManager.Instance.FirstTimeLoad = false;
             }
             return;
-        }            
-        AudioManager.Instance.PlayMusic("Background-1");
+        }
         UIFade.Instance.FadeBlack();
 
         // Load the game data for the specified level        

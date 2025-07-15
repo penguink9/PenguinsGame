@@ -84,7 +84,15 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
             playerState.CurrentState = PlayerState.State.Dead;
             GetComponent<Animator>().SetTrigger("Death");
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            //GetComponent<CapsuleCollider2D>().enabled = false;
+            knockback.enabled = false;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+            }
+            EnemyTargetProvider.Instance.SetTarget(null);
             AudioManager.Instance.PlaySFX("Penguin Death");
             InventoryManager.Instance.gameObject.SetActive(false);
             StartCoroutine(DeadLoadSceneRoutine());
