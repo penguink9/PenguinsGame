@@ -81,8 +81,6 @@ public class PolarBear : MonoBehaviour
         {
 
             playerTransform = EnemyTargetProvider.Instance.GetTarget();
-            //Debug.Log($"Enemy: {transform.position}, Player: {playerTransform.position}");
-
 
             switch (state)
             {
@@ -111,22 +109,7 @@ public class PolarBear : MonoBehaviour
             yield return null;
         }
     }
-    //private IEnumerator UpdateHealthStatus()
-    //{
-    //    if (health != null && playerTransform != null   )
-    //    {
-    //        int current = health.currentHealth;
-    //        int starting = health.startingHealth;
-    //        float distance = Vector2.Distance(transform.position, playerTransform.position);
-
-    //        if (current > 0  && current <= (starting * HealthPoint)  && state != State.ChasingPlayer)
-    //        {
-    //            state = State.ChasingPlayer;
-    //            yield break; // chuyển trạng thái ngay, không chờ hết vòng lặp
-    //        }
-    //    }
-    //    yield return null;
-    //}
+    
 
     protected virtual IEnumerator RoamingRoutine(Transform playerTransform)
     {
