@@ -40,7 +40,7 @@ public class PolarBear : MonoBehaviour
     protected BossPathing enemyPathfinding;
 
     public float defaultMoveSpeed { get; set; }
-    protected EnemyHealth health;
+    protected BossHealth health;
 
     public int currentHealth;
     public int startingHealth;
@@ -52,7 +52,7 @@ public class PolarBear : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); 
         enemyPathfinding = GetComponent<BossPathing>();
 
-        health = GetComponent<EnemyHealth>();
+        health = GetComponent<BossHealth>();
 
 
         state = State.Roaming;
@@ -81,9 +81,7 @@ public class PolarBear : MonoBehaviour
         {
 
             playerTransform = EnemyTargetProvider.Instance.GetTarget();
-            //Debug.Log("Positon: " + playerTransform.position);
-            //yield return UpdateHealthStatus();
-            Debug.Log($"Enemy: {transform.position}, Player: {playerTransform.position}");
+            //Debug.Log($"Enemy: {transform.position}, Player: {playerTransform.position}");
 
 
             switch (state)
@@ -108,10 +106,6 @@ public class PolarBear : MonoBehaviour
                     enemyPathfinding.allowFlipByDirection= false;
                     yield return StartCoroutine(ChasingPlayer(playerTransform));
                     break;
-
-                //case State.RangeAttack:
-                //    yield return StartCoroutine(RangeAttack(playerTransform));
-                //    break;
             }
 
             yield return null;
@@ -149,13 +143,10 @@ public class PolarBear : MonoBehaviour
         while (timer < 2f)
         {
             timer += Time.deltaTime;
-
-
-            //if (playerTransform != null && currentHealth >= (startingHealth * HealthPoint) &&
-            //   Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
             if (playerTransform != null && Vector2.Distance(transform.position, playerTransform.position) <= trackingRange)
                 {
                 state = State.ChasingPlayer;
+                health.DisplayHPContainer();
                 yield break;
             }
 
@@ -165,43 +156,6 @@ public class PolarBear : MonoBehaviour
 
     protected virtual IEnumerator ChasingPlayer(Transform playerTransform)
     {
-
-        //while (playerTransform != null)
-        //{
-        //    //UpdatePlayerTransform();
-        //    float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-        //    //Debug.Log($"Enemy: {transform.position}, Player: {playerTransform.position}, Distance: {distanceToPlayer}");
-
-        //    if (Time.time - lastAttackTime >= attackCooldown)
-        //    {
-        //        if (distanceToPlayer <= attackRange)
-        //        {
-        //            enemyPathfinding.moveSpeed = 0;
-        //            Attack();
-        //        }
-        //        else if (distanceToPlayer <= trackingRange)
-        //        {
-        //            TryRangeAttack();
-        //        }
-        //    }
-        //    else 
-        //    //if (distanceToPlayer > attackRange)
-        //    {
-        //        Vector2 dirToPlayer = playerTransform.position - transform.position;
-        //        enemyPathfinding.moveSpeed = defaultMoveSpeed * chasingSpeedMultiplier;
-        //        enemyPathfinding.MoveTo(dirToPlayer);
-        //    }
-
-        //    if (Vector2.Distance(transform.position, startingPosition) > roamingRange)
-        //    {
-        //        yield return new WaitForSeconds(2f);
-        //        state = State.ReturningToStart;
-        //        yield break;
-        //    }
-
-        //    yield return null;
-        //}
-
 
         if (playerTransform == null)
         {
