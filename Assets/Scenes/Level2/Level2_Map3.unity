@@ -40397,7 +40397,6 @@ GameObject:
   - component: {fileID: 1868341196}
   - component: {fileID: 1868341195}
   - component: {fileID: 1868341198}
-  - component: {fileID: 1868341197}
   m_Layer: 0
   m_Name: Noncollision_High
   m_TagString: Untagged
@@ -41058,20 +41057,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1868341197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868341193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e170a74d133a204bb829fb6977ed204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transparencyAmount: 0.8
-  fadeTime: 0.4
 --- !u!61 &1868341198
 BoxCollider2D:
   m_ObjectHideFlags: 0
